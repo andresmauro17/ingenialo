@@ -123,9 +123,10 @@ ENV/
 src/db.sqlite3
 
 
-# front templates
-#node_modules/
-#package-lock.json
+# Front Template
+node_modules/
+package-lock.json
+
 
 #!assets/include/*
 
