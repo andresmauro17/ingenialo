@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- JS Global Compulsory -->
+<script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jquery-migrate/dist/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'vendor/popper.js/dist/umd/popper.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
+
+<!-- JS Front -->
+<script src="{% static 'js/hs.core.js' %}"></script>
+
+
+<!-- JS Implementing Plugins -->
+<script src="{% static 'vendor/hs-megamenu/src/hs.megamenu.js' %}"></script>
+
+<!-- JS Front -->
+<script src="{% static 'js/components/hs.header.js' %}"></script>
+<script src="{% static 'js/components/hs.unfold.js' %}"></script>
+<script src="{% static 'js/components/hs.go-to.js' %}"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+$(window).on('load', function () {
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+    event: 'hover',
+    pageContainer: $('.container'),
+    breakpoint: 767,
+    hideTimeOut: 0
+    });
+});
+
+$(document).on('ready', function () {
+    // initialization of header
+    $.HSCore.components.HSHeader.init($('#header'));
+
+    // initialization of go to
+    $.HSCore.components.HSGoTo.init('.js-go-to');
+});
+</script>
+
+{% block javascript %}{% endblock %}
+
+
