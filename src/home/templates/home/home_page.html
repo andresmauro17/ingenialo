@@ -1,44 +1,199 @@
 {% extends "base.html" %}
+{% load static %}
 
+{% block base_head %}
+  <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
+
+  <style>
+      .slide-1{ background-image: url('https://cdn-shop.adafruit.com/heroes/feathernest.jpg'); }
+      .slide-2{ background-image: url('https://cdn-shop.adafruit.com/heroes/adafruit_microbit_hero.jpg'); }
+      .slide-3{ background-image: url('http://localhost:8000/static/img/1920x1080/img23.jpg');}  
+  </style>
+{% endblock base_head%}
 
 {% block content %}
 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
-    <!-- Hero Section -->
-    <div class="u-gradient-half-primary-v1">
-      <div class="container text-center u-space-3">
-        <!-- Title -->
-        <div class="w-md-80 w-lg-50 mx-auto mb-5">
-          <span class="u-label u-label--sm u-label--white mb-2">Starter</span>
-          <h1 class="h1 text-white">
-            <span class="font-weight-bold">Header default</span>
-          </h1>
+    <!-- Images Carousel Section -->
+    <div class="container-fluid">
+      <div class="js-slick-carousel u-slick"
+          data-autoplay="true"
+          data-speed="5000"
+          data-pagi-classes="text-center u-slick__pagination u-slick__pagination--white position-absolute-bottom-0">
+        <div class="js-slide rounded u-bg-img-hero-center u-space-3-top min-height-600 slide-1" >
+          <div class="container">
+            <div class="w-lg-30">
+              <h4 class="display-4 text-white font-weight-bold mb-3"
+                  data-scs-animation-in="fadeInUp">High<br>quality</h4>
+              <p class="lead text-white"
+                data-scs-animation-in="fadeInUp">We aim high at being focused on hight quality materials.</p>
+            </div>
+          </div>
         </div>
-        <!-- End Title -->
-
-        <a class="btn text-primary u-btn-white u-btn-wide transition-3d-hover" href="../header-layouts.html">Header Layouts</a>
+        <div class="js-slide rounded u-bg-img-hero-center u-space-3-top min-height-600 slide-2" >
+          <div class="container">
+            <div class="w-lg-30">
+              <h4 class="display-4 text-white font-weight-bold mb-3"
+                  data-scs-animation-in="fadeInUp">Soft<br>papers</h4>
+              <p class="lead text-white"
+                data-scs-animation-in="fadeInUp">Using our creative gifts drives this foundation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="js-slide rounded u-bg-img-hero-center u-space-3-top min-height-600 slide-3" >
+          <div class="container">
+            <div class="w-lg-30">
+              <h4 class="display-4 text-white font-weight-bold mb-3"
+                  data-scs-animation-in="fadeInUp">Long<br>lasting</h4>
+              <p class="lead text-white"
+                data-scs-animation-in="fadeInUp">This a powerful outlet that constantly gets overlooked.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- End Hero Section -->
+    <!-- End Images Carousel Section -->
 
-    <!-- Content -->
-    <div class="container u-space-5">
-      <h2 class="h5">contenido de ingenialo</h2>
-      <p>We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt. As creatives, it's important that we strive to do work outside of obligation. This lets us stay ahead of the curve for our clients and internal projects. At the end of the day, it's important to not let being busy distract us from having fun. Smiling, laughing, and hanging helps us work together to achieve this.</p>
-      <p>It's important to stay detail oriented with every project we tackle. Staying focused allows us to turn every project we complete into something we love. Working together on the daily requires each individual to let the greater good of the team's work surface above their own ego. We aim high at being focused on building relationships with our clients and community. Using our creative gifts drives this foundation.</p>
-      <p>This is where we sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is key. Now that we've aligned the details, it's time to get things mapped out and organized. This part is really crucial in keeping the project in line to completion. The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
-      <p>Whether through commerce or just an experience to tell your brand's story, the time has come to start using development languages that fit your projects needs. Now that your brand is all dressed up and ready to party, it's time to release it to the world. By the way, let's celebrate already.</p>
-      <p>Understanding who you are and what you want is our strategy for your brand. We are always figuring out ways to capture your vision, so people can get on board. Whether it's branding, print, UI + UX we've got you covered. We strive to figure out the right solutions for your look to stand out amongst the rest.</p>
-      <p>Whether it's branding, print, UI + UX we've got you covered. We strive to figure out the right solutions for your look to stand out amongst the rest. This a powerful outlet that constantly gets overlooked. We strive to figure out ways to help your audience grow through all social platforms. Finding ways to help tell your story through photography is a powerful tool to make your branded content stand out from the rest. Finding ways to help tell your story through video is a powerful tool to make your branded content stand out from the rest.</p>
-      <p>Staying focused allows us to turn every project we complete into something we love. Working together on the daily requires each individual to let the greater good of the team's work surface above their own ego. We aim high at being focused on building relationships with our clients and community. Using our creative gifts drives this foundation. It's important to stay detail oriented with every project we tackle.</p>
-      <p>Now that your brand is all dressed up and ready to party, it's time to release it to the world. By the way, let's celebrate already. Whether through commerce or just an experience to tell your brand's story, the time has come to start using development languages that fit your projects needs.</p>
-      <p>As creatives, it's important that we strive to do work outside of obligation. This lets us stay ahead of the curve for our clients and internal projects. At the end of the day, it's important to not let being busy distract us from having fun. Smiling, laughing, and hanging helps us work together to achieve this. We strive to embrace and drive change in our industry which allows us to keep our clients relevant and ready to adapt.</p>
+    <!-- Blog Masonry Section -->
+    <div class="container u-space-2-top u-space-3-top--md u-space-2-top--lg u-space-2-bottom">
+        <!-- Content -->
+        <div class="cbp mb-7"
+        data-layout="mosaic"
+        data-animation="quicksand"
+        data-x-gap="16"
+        data-y-gap="16"
+        data-load-more-selector="#cubeLoadMore"
+        data-load-more-action="click"
+        data-load-items-amount="4"
+        data-media-queries='[
+          {"width": 1500, "cols": 3},
+          {"width": 1100, "cols": 3},
+          {"width": 800, "cols": 3},
+          {"width": 480, "cols": 2},
+          {"width": 300, "cols": 1}
+        ]'>
+
+          <!-- Item -->
+          <div class="cbp-item">
+            <article>
+              <img class="rounded" src="{% static '/img/900x450/img10.jpg' %}" alt="Image Description">
+              <div class="bg-white rounded-bottom p-5">
+                <small class="d-block text-secondary mb-1">March 20, 2018</small>
+                <h2 class="h5 mb-0">
+                  <a href="single-article-classic.html">Remote workers, here's how to dodge distractions</a>
+                </h2>
+              </div>
+            </article>
+          </div>
+          <!-- End Item -->
+
+          <!-- Item -->
+          <div class="cbp-item">
+            <article>
+              <img class="rounded" src="{% static '/img/480x320/img13.jpg' %}" alt="Image Description">
+              <div class="bg-white rounded-bottom p-5">
+                <small class="d-block text-secondary mb-1">March 20, 2018</small>
+                <h3 class="h6 mb-0">
+                  <a href="single-article-classic.html">How to change careers or start a home-based business?</a>
+                </h3>
+              </div>
+            </article>
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="cbp-item">
+            <article>
+              <img class="rounded" src="{% static '/img/500x550/img2.jpg' %}" alt="Image Description">
+              <div class="bg-white rounded-bottom p-5">
+                <small class="d-block text-secondary mb-1">April 1, 2018</small>
+                <h3 class="h6 mb-0">
+                  <a href="single-article-classic.html">Create your adventure</a>
+                </h3>
+              </div>
+            </article>
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="cbp-item rounded">
+            <article class="bg-primary rounded p-5">
+              <small class="d-block u-text-light mb-1">April 22, 2018</small>
+              <h3 class="h6 text-white mb-0">
+                <a href="single-article-classic.html">Ideas to stay happy and productive all day for 365 days</a>
+              </h3>
+            </article>
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="cbp-item">
+            <article>
+              <img class="rounded" src="{% static '/img/380x360/img5.jpg' %}" alt="Image Description">
+              <div class="bg-white rounded-bottom p-5">
+                <small class="d-block text-secondary mb-1">March 18, 2018</small>
+                <h3 class="h6 mb-0">
+                  <a href="single-article-classic.html">Announcing a free plan for small teams</a>
+                </h3>
+              </div>
+            </article>
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="cbp-item">
+            <article>
+              <img class="rounded" src="{% static '/img/480x320/img16.jpg' %}" alt="Image Description">
+              <div class="bg-white rounded-bottom p-5">
+                <small class="d-block text-secondary mb-1">March 18, 2018</small>
+                <h3 class="h6 mb-0">
+                  <a href="single-article-classic.html">How to make trust your competitive advantage</a>
+                </h3>
+              </div>
+            </article>
+          </div>
+          <!-- End Item -->
+  
+          <!-- Item -->
+          <div class="cbp-item">
+            <article>
+              <img class="rounded" src="{% static '/img/380x250/img8.jpg' %}" alt="Image Description">
+              <div class="bg-white rounded-bottom p-5">
+                <small class="d-block text-secondary mb-1">April 29, 2018</small>
+                <h3 class="h6 mb-0">
+                  <a href="single-article-classic.html">Classic design principles</a>
+                </h3>
+              </div>
+            </article>
+          </div>
+          <!-- End Item -->
+
+      </div>
+       <!-- End Content -->  
+
     </div>
-    <!-- End Content -->
+    <!-- End Blog Masonry Section -->
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
-
 {% endblock content%}
 
+{% block javascript %}
+
+  <!-- JS Implementing Plugins -->
+  <script src="{% static 'vendor/slick-carousel/slick/slick.js' %}"></script>
+  <script src="{% static 'vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
+  <script src="{% static 'js/components/hs.slick-carousel.js' %}"></script>
+  <script src="{% static 'js/components/hs.cubeportfolio.js' %}"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+      $.HSCore.components.HSCubeportfolio.init('.cbp');
+    });
+  </script>
+
+{% endblock javascript%}

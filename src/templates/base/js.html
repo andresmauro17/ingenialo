@@ -6,17 +6,20 @@
 <script src="{% static 'vendor/popper.js/dist/umd/popper.min.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
 
-<!-- JS Front -->
-<script src="{% static 'js/hs.core.js' %}"></script>
-
-
 <!-- JS Implementing Plugins -->
 <script src="{% static 'vendor/hs-megamenu/src/hs.megamenu.js' %}"></script>
 
+
+
 <!-- JS Front -->
+<script src="{% static 'js/hs.core.js' %}"></script>
 <script src="{% static 'js/components/hs.header.js' %}"></script>
 <script src="{% static 'js/components/hs.unfold.js' %}"></script>
+<script src="{% static 'js/helpers/hs.focus-state.js' %}"></script>
 <script src="{% static 'js/components/hs.go-to.js' %}"></script>
+
+
+ 
 
 <!-- JS Plugins Init. -->
 <script>
@@ -34,11 +37,20 @@ $(document).on('ready', function () {
     // initialization of header
     $.HSCore.components.HSHeader.init($('#header'));
 
+    // initialization of unfold component
+    $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+    afterOpen: function () {
+        $(this).find('input[type="search"]').focus();
+    }
+    });
+
+    // initialization of forms
+    $.HSCore.helpers.HSFocusState.init();
+
     // initialization of go to
     $.HSCore.components.HSGoTo.init('.js-go-to');
+
 });
 </script>
-
-{% block javascript %}{% endblock %}
 
 
