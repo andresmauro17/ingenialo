@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+
+{% block base_head %}
+    <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/custombox/dist/custombox.min.css' %}">
+{% endblock base_head%}
+
+
+{% block content %}
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- Hero Section -->
+      <div class="bg-light">
+        <div class="container-fluid u-space-2">
+          <div class="row justify-content-md-between">
+            <!-- Item Image -->
+            <div class="col-md-9 col-sm-12 mb-7 mb-md-0">
+              <div class="js-slick-carousel u-slick" data-pagi-classes="text-center position-absolute position-absolute-bottom-0 u-slick__pagination u-slick__pagination--white mb-5">
+                <div class="js-slide px-2 my-4">
+                  <img class="img-fluid" src="https://cdn-shop.adafruit.com/1200x900/2795-01.jpg" alt="Image Description">
+                </div>
+                <div class="js-slide px-2 my-4">
+                  <img class="img-fluid" src="https://cdn-shop.adafruit.com/1200x900/2795-02.jpg" alt="Image Description">
+                </div>
+                <div class="js-slide px-2 my-4">
+                  <img class="img-fluid" src="https://cdn-shop.adafruit.com/1200x900/2795-03.jpg" alt="Image Description">
+                </div>
+              </div>
+            </div>
+            <!-- End Item Image -->
+      
+            <!-- Content -->
+            <div class="col-md-3">
+              <div class="mb-5">
+                <h1 class="font-weight-normal"><b>{{object.title}}</b></h1>
+                <span class="d-block h3  mb-3">COP ${{object.price|floatformat:0|intcomma }}</span>
+                <span class="d-block h5  mb-3">{{disponibility}}</span>
+                <p class="text-black-50">{{ object.description|truncatewords:40 }}</p>
+              </div>      
+              <form class="form-inline ">
+                <div class="row">
+                  <div class="form-group col-4">
+                    <div class="js-quantity input-group u-form u-quantity">
+                      <input class="js-result form-control  u-form__input u-quantity__input" type="text" value="1">
+                      <div class="u-quantity__arrows">
+                        <span class="js-plus u-quantity__arrows-inner fa fa-angle-up"></span>
+                        <span class="js-minus u-quantity__arrows-inner fa fa-angle-down"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-8">
+                    <button type="submit" class="btn u-btn-primary--air transition-3d-hover"><span class="fa fa-cart-arrow-down mr-2"></span>
+                    Añadir al carro</button>
+                  </div>                  
+                </div>                
+              </form>
+            </div>
+            <!-- End Content -->
+          </div>
+        </div>
+      </div>
+      <!-- End Hero Section -->
+      
+      <!-- Product Details Section -->
+      <div class="container u-space-2">       
+        <div class="w-lg-80 mx-auto">
+          <h2 class="h2 text-primary mb-3">Descripción</h2>
+          <p class="text-justify">{{object.description|linebreaks}}</p>
+        </div>  
+        <hr class="my-0 mb-3">
+        <div class="w-lg-80 mx-auto">
+          <h2 class="h2 text-primary mb-3">Detalles tecnicos</h2>
+          <p>{{object.tecnical_detail|linebreaks}}</p>
+        </div>
+      </div>
+      <!-- End Product Details Section -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+{% endblock content%}
+
+
+{% block javascript %}
+
+    <!-- JS Implementing Plugins -->
+    <script src="{% static 'vendor/slick-carousel/slick/slick.js' %}"></script>
+    <script src="{% static 'vendor/custombox/dist/custombox.min.js' %}"></script>
+
+    <script src="{% static 'js/components/hs.slick-carousel.js' %}"></script>
+    <script src="{% static 'js/components/hs.cubeportfolio.js' %}"></script>
+    <script src="{% static 'js/components/hs.quantity-counter.js' %}"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+    $(document).on('ready', function () {
+        // initialization of slick carousel
+        $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+        // initialization of quantity counter
+        $.HSCore.components.HSQantityCounter.init('.js-quantity');
+    });
+    </script>
+
+{% endblock javascript%}
