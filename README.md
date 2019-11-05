@@ -21,5 +21,10 @@ for more information please visit [http://www.ingenialo.com/]
         npm install gulp-cli -g
 7.  install node dependency
 	npm install
+	
+# runing the ingenialo web site:
+
+1.  run this command:
+        python3 manage.py runserver --settings=ingenialo.settings.local
    
    
