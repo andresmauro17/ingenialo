@@ -9,7 +9,15 @@ for more information please visit [http://www.ingenialo.com/]
 
 1.  clone this repository, type:
         git clone https://ingenialo@bitbucket.org/ingenialo/ingenialo.git
-2.  you have to create enviroment variables. maybe un bash files
+2.  you have to create enviroment variables. maybe un bash files as show:
+       
+        export INGENIALO_SECRET_KEY=""
+        export INGENIALO_DB_NAME=""
+        export INGENIALO_DB_USER=""
+        export INGENIALO_DB_PASSWORD=""
+        export INGENIALO_DB_HOST=""
+        export INGENIALO_DB_PORT=""
+        
 2.  start a python virtual enviroment
         cd ingenialo && python3 -m venv .
 3.  active virtualenv 

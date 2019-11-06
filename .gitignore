@@ -130,3 +130,5 @@ package-lock.json
 
 #!assets/include/*
 
+static_cdn/*
+
