@@ -1,132 +1,92 @@
 {% load static %}
 
 <!-- ========== HEADER ========== -->
-<header id="header" class="u-header--full-container">
+<header id="header" class="u-header">
+
     <!-- Search -->
     <div id="searchPushTop" class="u-search-push-top">
         <div class="container position-relative">
-        <div class="u-search-push-top__content mx-auto">
-            <!-- Close Button -->
-            <button type="button" class="close u-search-push-top__close-btn"
+            <div class="u-search-push-top__content">
+               <!-- Close Button -->
+                <button type="button" class="close u-search-push-top__close-btn"
                     aria-haspopup="true"
                     aria-expanded="false"
                     aria-controls="searchPushTop"
                     data-unfold-type="jquery-slide"
                     data-unfold-target="#searchPushTop">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            <!-- End Close Button -->
-
-            <!-- Input -->
-            <form class="js-focus-state input-group u-form">         
-                <div class="input-group-prepend u-form__prepend">
-                    <span class="input-group-text u-form__text">
-                        <span class="fa fa-search"></span>
-                    </span>
-                </div>
-                <input type="search" class="form-control u-form__input" placeholder="Buscar" aria-label="Search Front">
-            </form>
-            <!-- End Input -->
-        
-        </div>
+                        <span aria-hidden="true">×</span>
+                </button>
+                <!-- End Close Button -->
+                <!-- Input -->
+                <form class="js-focus-state input-group input-group-lg">
+                    <input type="search" class="form-control" placeholder="Search Front" aria-label="Search Front">
+                    <div class="input-group-append">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+                <!-- End Input -->
+            </div>
         </div>
     </div>
     <!-- End Search -->
-
+    
     <div class="u-header__section">
         <!-- Topbar -->
-        <div class="container pt-2">
-        <div class="d-flex align-items-center mb-0">
-            <div class="ml-auto">    
+        <div class="container u-header__hide-content pt-2">
+            <div class="d-flex align-items-center">
+                <div class="ml-auto">
+                    <div class="ml-auto">
+                    </div>
+                    <ul class="list-inline ml-2 mb-0">
+                        <!-- Search -->
+                        <li class="list-inline-item">
+                            <a class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-controls="searchPushTop"
+                                    data-unfold-type="jquery-slide"
+                                    data-unfold-target="#searchPushTop">
+                            <span class="fas fa-search btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <!-- End Search -->
+    
+                        <!-- Shopping Cart -->
+                        <li class="list-inline-item position-relative">
+                            <a id="shoppingCartDropdownInvoker" class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
+                                    aria-controls="shoppingCartDropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    data-unfold-event="hover"
+                                    data-unfold-target="#shoppingCartDropdown"
+                                    data-unfold-type="css-animation"
+                                    data-unfold-duration="300"
+                                    data-unfold-delay="300"
+                                    data-unfold-hide-on-scroll="true"
+                                    data-unfold-animation-in="slideInUp"
+                                    data-unfold-animation-out="fadeOut">
+                                <span class="fas fa-shopping-cart btn-icon__inner"></span>
+                            </a>
+                
+                            <div id="shoppingCartDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right text-center p-7" aria-labelledby="shoppingCartDropdownInvoker" style="min-width: 250px;">
+                                <span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
+                                    <span class="fas fa-shopping-basket btn-icon__inner"></span>
+                                </span>
+                                <span class="d-block">Tu carrito esta vacio</span>
+                            </div>
+                        </li>
+                        <!-- End Shopping Cart -->
+                    </ul>
+                </div>
             </div>
-
-            <ul class="list-inline ml-2 mb-0">
-            <!-- Search -->
-            <li class="list-inline-item">
-                <a class="btn btn-xs u-btn--icon u-btn-text-secondary" href="javascript:;" role="button"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-controls="searchPushTop"
-                        data-unfold-type="jquery-slide"
-                        data-unfold-target="#searchPushTop">
-                <span class="fa fa-search u-btn--icon__inner"></span>
-                </a>
-            </li>
-            <!-- End Search -->
-
-            <!-- Shopping Cart -->
-            <li class="list-inline-item position-relative">
-                <a id="shoppingCartDropdownInvoker" class="btn btn-xs u-btn--icon u-btn-text-secondary" href="javascript:;" role="button"
-                        aria-controls="shoppingCartDropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        data-unfold-event="hover"
-                        data-unfold-target="#shoppingCartDropdown"
-                        data-unfold-type="css-animation"
-                        data-unfold-duration="300"
-                        data-unfold-delay="300"
-                        data-unfold-hide-on-scroll="true"
-                        data-unfold-animation-in="slideInUp"
-                        data-unfold-animation-out="fadeOut">
-                <span class="fa fa-shopping-cart u-btn--icon__inner"></span>
-                </a>
-
-                <div id="shoppingCartDropdown" class="text-center u-unfold right-0 p-7 mt-2" aria-labelledby="shoppingCartDropdownInvoker" style="min-width: 250px;">
-                <span class="u-shopping-cart-icon mb-4">
-                    <span class="fa fa-shopping-basket u-shopping-cart-icon__inner"></span>
-                </span>
-                <span class="d-block">Tu carro esta vacio</span>
-                </div>
-            </li>
-            <!-- End Shopping Cart -->
-
-            <!-- Account Login -->
-            <li class="list-inline-item position-relative">
-                <!-- Account Dropdown -->
-                <a id="account-dropdown-invoker" class="btn btn-xs u-btn-text-secondary u-sidebar--account__toggle-bg ml-1" href="javascript:;" role="button"
-                    aria-controls="account-dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    data-unfold-event="hover"
-                    data-unfold-target="#account-dropdown"
-                    data-unfold-type="css-animation"
-                    data-unfold-duration="300"
-                    data-unfold-delay="300"
-                    data-unfold-hide-on-scroll="true"
-                    data-unfold-animation-in="slideInUp"
-                    data-unfold-animation-out="fadeOut">
-                <span class="u-sidebar--account__toggle-text">Andres cuervo</span>
-                <img class="u-sidebar--account__toggle-img" src="{% static '/img/100x100/img9.jpg' %}" alt="Image Description">
-                </a>
-                <!-- End Account Dropdown -->
-
-                <div id="account-dropdown" class="u-unfold mt-2" aria-labelledby="account-dropdown-invoker">
-                <a class="u-list__link" href="#">
-                    <i class="fa fa-user-circle u-list__link-icon mr-1"></i>
-                    Perfil
-                </a>
-                <a class="u-list__link" href="#">
-                    <i class="fa fa-cog u-list__link-icon mr-1"></i>
-                    Cuenta
-                </a>
-                <a class="u-list__link" href="javascript:;">
-                    <i class="fa fa-sign-out-alt u-list__link-icon mr-1"></i>
-                    Salir
-                </a>
-                </div>
-            </li>
-            <!-- End Account Login -->
-            </ul>
-        </div>
         </div>
         <!-- End Topbar -->
-
         <div id="logoAndNav" class="container">
         <!-- Nav -->
-        <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
+        <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
             <!-- Logo -->
-            <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space" href="../../html/home/index.html" aria-label="Front">
-            <img src="{% static '/svg/logos/ingenialo/logo.svg' %}" alt="Logo">
+            <a class="navbar-brand u-header__navbar-brand" href="#" aria-label="Front">
+                <img class="u-header__navbar-brand-default" src="{% static '/svg/logos/ingenialo/logo.png' %}" alt="Logo">
             </a>
             <!-- End Logo -->
 
@@ -144,375 +104,131 @@
             <!-- End Responsive Toggle Button -->
 
             <!-- Navigation -->
-            <div id="navBar" class="collapse navbar-collapse py-0">
-            <ul class="navbar-nav u-header__navbar-nav ml-lg-auto">
-                <!-- Home -->
+            <div id="navBar" class="collapse navbar-collapse">
+            <ul class="navbar-nav u-header__navbar-nav">
+                <!-- Store -->
                 <li class="nav-item hs-has-mega-menu u-header__nav-item"
                     data-event="hover"
                     data-animation-in="slideInUp"
                     data-animation-out="fadeOut"
                     data-position="left">
-                <a id="homeMegaMenu" class="nav-link u-header__nav-link pl-0" href="javascript:;"
-                    aria-haspopup="true"
-                    aria-expanded="false">
-                    Tienda
-                    <span class="fa fa-angle-down u-header__nav-link-icon"></span>
-                </a>
+                    <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                            Tienda
+                    </a>
 
-                <!-- Home - Mega Menu -->
-                <div class="hs-mega-menu u-header__sub-menu w-100 u-header__mega-menu-wrapper-v2" aria-labelledby="homeMegaMenu">
-                    <div class="row p-0 mr-0">
-                    <div class="col-lg-6 pr-0">
-                        <!-- Banner Image -->
-                        <div class="d-none d-lg-block u-header__banner-v1" data-bg-img-src="{% static '/img/750x750/img1.jpg">
-                        <div class="w-100 text-center u-header__banner-v1-content u-content-centered-y p-4">
-                            <div class="mb-4">
-                            <strong class="d-block u-header__banner-v1-title mb-2">Branding Works</strong>
-                            <span class="u-header__banner-v1-text">Experience a level of our quality in both design &amp; customization works.</span>
+                    <!-- Home - Mega Menu -->
+                    <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="homeMegaMenu">
+                        <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <!-- Banner Image -->
+                            <div class="u-header__banner" style="background-image: url({% static '/img/750x750/img1.jpg' %});">
+                            <div class="u-header__banner-content">
+                                <div class="mb-4">
+                                <span class="u-header__banner-title">Branding Works</span>
+                                <p class="u-header__banner-text">Experience a level of our quality in both design & customization works.</p>
+                                </div>
+                                <a class="btn btn-primary btn-sm transition-3d-hover" href="#">Learn More <span class="fas fa-angle-right ml-2"></span></a>
                             </div>
-                            <a class="btn btn-primary u-btn-primary btn-sm transition-3d-hover" href="#">Learn More <span class="fa fa-angle-right ml-2"></span></a>
+                            </div>
+                            <!-- End Banner Image -->
                         </div>
-                        </div>
-                        <!-- End Banner Image -->
-                    </div>
-
-                    <div class="col-lg-6 u-header__mega-menu-wrapper-v3">
-                        <div class="row u-header__mega-menu-wrapper-v1">
-                        <div class="col-sm-6">
-                            <strong class="d-block mb-2">Classic</strong>
-
-                            <!-- Links -->
-                            <ul class="list-unstyled mb-4">
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/index.html">Classic Agency</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/classic-crypto.html">Classic Crypto</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/classic-business.html">Classic Business</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/classic-marketing.html">Classic Marketing</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/classic-consulting.html">Classic Consulting</a></li>
-                            </ul>
-                            <!-- End Links -->
-
-                            <strong class="d-block mb-2">Corporate</strong>
-
-                            <!-- Links -->
-                            <ul class="list-unstyled mb-4">
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/corporate-agency.html">Corporate Agency</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/corporate-start-up.html">Corporate Start-Up</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/corporate-business.html">Corporate Business <span class="badge badge-success ml-1">New</span></a></li>
-                            </ul>
-                            <!-- End Links -->
-                        </div>
-
-                        <div class="col-sm-6">
-                            <strong class="d-block mb-2">Landing</strong>
-
-                            <!-- Links -->
-                            <ul class="list-unstyled mb-4">
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/landing-house.html">Landing House <span class="badge badge-success ml-1">New</span></a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/landing-job.html">Landing Job <span class="badge badge-success ml-1">New</span></a></li>
-                            </ul>
-                            <!-- End Links -->
-
-                            <strong class="d-block mb-2">Blog</strong>
-
-                            <!-- Links -->
-                            <ul class="list-unstyled mb-4">
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/blog-agency.html">Blog Agency</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/blog-start-up.html">Blog Start-Up</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/blog-business.html">Blog Business</a></li>
-                            </ul>
-                            <!-- End Links -->
-
-                            <strong class="d-block mb-2">Portfolio</strong>
-
-                            <!-- Links -->
-                            <ul class="list-unstyled u-list">
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/portfolio-agency.html">Portfolio Agency</a></li>
-                            <li><a class="nav-link u-list__link py-2 px-0" href="../../html/home/portfolio-profile.html">Portfolio Profile</a></li>
-                            </ul>
-                            <!-- End Links -->
+        
+                        <div class="col-lg-6">
+                            <div class="row u-header__mega-menu-wrapper">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <span class="u-header__sub-menu-title">Classic</span>
+                                <ul class="u-header__sub-menu-nav-group mb-3">
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="index.html">Classic Agency</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-business.html">Classic Business</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-marketing.html">Classic Marketing</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-consulting.html">Classic Consulting</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-start-up.html">Classic Start-up <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="classic-studio.html">Classic Studio <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                                </ul>
+        
+                                <span class="u-header__sub-menu-title">Corporate</span>
+                                <ul class="u-header__sub-menu-nav-group">
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-agency.html">Corporate Agency</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-start-up.html">Corporate Start-Up</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="corporate-business.html">Corporate Business</a></li>
+                                </ul>
+        
+                                <span class="u-header__sub-menu-title">Portfolio</span>
+                                <ul class="u-header__sub-menu-nav-group">
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-agency.html">Portfolio Agency</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="portfolio-profile.html">Portfolio Profile</a></li>
+                                </ul>
+                            </div>
+        
+                            <div class="col-sm-6">
+                                <span class="u-header__sub-menu-title">App</span>
+                                <ul class="u-header__sub-menu-nav-group mb-3">
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="app-ui-kit.html">App SaaS <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="app-saas.html">App SaaS <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="app-workflow.html">App Workflow <span class="badge badge-success badge-primary ml-1">New</span></a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="app-payment.html">App payment</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="app-software.html">App software</a></li>
+                                </ul>
+        
+                                <span class="u-header__sub-menu-title">Onepages</span>
+                                <ul class="u-header__sub-menu-nav-group mb-3">
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-creative.html">Creative</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="onepage-saas.html">SaaS</a></li>
+                                </ul>
+        
+                                <span class="u-header__sub-menu-title">Blog</span>
+                                <ul class="u-header__sub-menu-nav-group">
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-agency.html">Blog Agency</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-start-up.html">Blog Start-Up</a></li>
+                                <li><a class="nav-link u-header__sub-menu-nav-link" href="blog-business.html">Blog Business</a></li>
+                                </ul>
+                            </div>
+                            </div>
                         </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-                <!-- End Home - Mega Menu -->
+                    <!-- End Home - Mega Menu -->
                 </li>
-                <!-- End Home -->
+                <!-- End Store -->
 
-
-
-                <!-- Works -->
-                <li class="nav-item hs-has-mega-menu u-header__nav-item"
-                    data-event="hover"
-                    data-animation-in="slideInUp"
-                    data-animation-out="fadeOut"
-                    data-position="right">
-                <a id="worksMegaMenu" class="nav-link u-header__nav-link" href="javascript:;"
-                    aria-haspopup="true"
-                    aria-expanded="false">
-                    Tutoriales
-                    <span class="fa fa-angle-down u-header__nav-link-icon"></span>
-                </a>
-
-                <!-- Works - Mega Menu -->
-                <div class="hs-mega-menu w-100 u-header__sub-menu u-header__mega-menu-wrapper-v1" aria-labelledby="worksMegaMenu">
-                    <div class="row">
-                    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0">
-                        <strong class="d-block mb-2">Boxed Layouts</strong>
-
-                        <!-- Links -->
-                        <ul class="list-unstyled u-list">
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/boxed-classic.html">Portfolio Classic</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/boxed-grid.html">Portfolio Grid</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/boxed-masonry.html">Portfolio Masonry</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/boxed-modern.html">Portfolio Modern</a></li>
-                        </ul>
-                        <!-- End Links -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0">
-                        <strong class="d-block mb-2">Full Width Layouts</strong>
-
-                        <!-- Links -->
-                        <ul class="list-unstyled u-list">
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/fullwidth-classic.html">Portfolio Classic</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/fullwidth-grid.html">Portfolio Grid</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/fullwidth-masonry.html">Portfolio Masonry</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/fullwidth-modern.html">Portfolio Modern</a></li>
-                        </ul>
-                        <!-- End Links -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3 mb-3 mb-sm-0">
-                        <strong class="d-block mb-2">Single Pages</strong>
-
-                        <!-- Links -->
-                        <ul class="list-unstyled u-list">
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/single-page-simple.html">Single Page Simple</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/single-page-grid.html">Single Page Grid</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/single-page-masonry.html">Single Page Masonry</a></li>
-                        </ul>
-                        <!-- End Links -->
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <strong class="d-block mb-2">Case Studies</strong>
-
-                        <!-- Links -->
-                        <ul class="list-unstyled u-list">
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/case-studies-simple.html">Case Studies Simple</a></li>
-                        <li><a class="nav-link u-list__link py-2 px-0" href="../../html/portfolio/case-studies-modern.html">Case Studies Modern</a></li>
-                        </ul>
-                        <!-- End Links -->
-                    </div>
-                    </div>
-                </div>
-                <!-- End Works - Mega Menu -->
+                <!-- Tutorials -->
+                <li class="nav-item hs-has-mega-menu u-header__nav-item">
+                    <a class="nav-link u-header__nav-link" href="#">
+                        Tutoriales
+                    </a>
                 </li>
-                <!-- End Works -->
+                <!-- End Tutorials -->
 
                 <!-- Blog -->
-                <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                    data-event="hover"
-                    data-animation-in="slideInUp"
-                    data-animation-out="fadeOut">
-                <a id="blogMegaMenu" class="nav-link u-header__nav-link" href="javascript:;"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    aria-labelledby="blogSubMenu">
-                    Blog
-                    <span class="fa fa-angle-down u-header__nav-link-icon"></span>
-                </a>
-
-                <!-- Blog - Submenu -->
-                <ul id="blogSubMenu" class="list-inline hs-sub-menu u-header__sub-menu py-3 mb-0" style="min-width: 220px;"
-                    aria-labelledby="blogMegaMenu">
-                    <!-- Classic -->
-                    <li class="dropdown-item hs-has-sub-menu">
-                    <a id="navLinkBlogClassic" class="nav-link u-header__sub-menu-nav-link u-list__link py-2" href="javascript:;"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-controls="navSubmenuBlogClassic">
-                        Classic
-                        <span class="fa fa-angle-right u-header__sub-menu-nav-link-icon"></span>
+                <li class="nav-item hs-has-mega-menu u-header__nav-item">
+                    <a class="nav-link u-header__nav-link" href="#">
+                        Blog
                     </a>
-
-                    <!-- Submenu (level 2) -->
-                    <ul id="navSubmenuBlogClassic" class="hs-sub-menu list-unstyled u-header__sub-menu u-header__sub-menu-menu-gutter--y u-header__sub-menu-offset" style="min-width: 220px;"
-                        aria-labelledby="navLinkBlogClassic">
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/classic-left-sidebar.html">Left Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/classic-right-sidebar.html">Right Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/classic-full-width.html">Full Width</a>
-                        </li>
-                    </ul>
-                    <!-- End Submenu (level 2) -->
-                    </li>
-                    <!-- Classic -->
-
-                    <!-- Grid -->
-                    <li class="dropdown-item hs-has-sub-menu">
-                    <a id="navLinkBlogGrid" class="nav-link u-header__sub-menu-nav-link u-list__link py-2" href="javascript:;"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-controls="navSubmenuBlogGrid">
-                        Grid
-                        <span class="fa fa-angle-right u-header__sub-menu-nav-link-icon"></span>
-                    </a>
-
-                    <!-- Submenu (level 2) -->
-                    <ul id="navSubmenuBlogGrid" class="hs-sub-menu list-unstyled u-header__sub-menu u-header__sub-menu-menu-gutter--y u-header__sub-menu-offset" style="min-width: 220px;"
-                        aria-labelledby="navLinkBlogGrid">
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/grid-left-sidebar.html">Left Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/grid-right-sidebar.html">Right Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/grid-full-width.html">Full Width</a>
-                        </li>
-                    </ul>
-                    <!-- End Submenu (level 2) -->
-                    </li>
-                    <!-- Grid -->
-
-                    <!-- List -->
-                    <li class="dropdown-item hs-has-sub-menu">
-                    <a id="navLinkBlogList" class="nav-link u-header__sub-menu-nav-link u-list__link py-2" href="javascript:;"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-controls="navSubmenuBlogList">
-                        List
-                        <span class="fa fa-angle-right u-header__sub-menu-nav-link-icon"></span>
-                    </a>
-
-                    <!-- Submenu (level 2) -->
-                    <ul id="navSubmenuBlogList" class="hs-sub-menu list-unstyled u-header__sub-menu u-header__sub-menu-menu-gutter--y u-header__sub-menu-offset" style="min-width: 220px;"
-                        aria-labelledby="navLinkBlogList">
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/list-left-sidebar.html">Left Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/list-right-sidebar.html">Right Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/list-full-width.html">Full Width</a>
-                        </li>
-                    </ul>
-                    <!-- End Submenu (level 2) -->
-                    </li>
-                    <!-- List -->
-
-                    <!-- Modern -->
-                    <li class="dropdown-item hs-has-sub-menu">
-                    <a id="navLinkBlogCard" class="nav-link u-header__sub-menu-nav-link u-list__link py-2" href="javascript:;"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-controls="navSubmenuBlogCard">
-                        Modern
-                        <span class="fa fa-angle-right u-header__sub-menu-nav-link-icon"></span>
-                    </a>
-
-                    <!-- Submenu (level 2) -->
-                    <ul id="navSubmenuBlogCard" class="hs-sub-menu list-unstyled u-header__sub-menu u-header__sub-menu-menu-gutter--y u-header__sub-menu-offset" style="min-width: 220px;"
-                        aria-labelledby="navLinkBlogCard">
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/modern-left-sidebar.html">Left Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/modern-right-sidebar.html">Right Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/modern-full-width.html">Full Width</a>
-                        </li>
-                    </ul>
-                    <!-- End Submenu (level 2) -->
-                    </li>
-                    <!-- Grid Modern -->
-
-                    <!-- Masonry -->
-                    <li class="dropdown-item hs-has-sub-menu">
-                    <a id="navLinkBlogGridMinimal" class="nav-link u-header__sub-menu-nav-link u-list__link py-2" href="javascript:;"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-controls="navSubmenuBlogGridMinimal">
-                        Masonry
-                        <span class="fa fa-angle-right u-header__sub-menu-nav-link-icon"></span>
-                    </a>
-
-                    <!-- Submenu (level 2) -->
-                    <ul id="navSubmenuBlogGridMinimal" class="hs-sub-menu list-unstyled u-header__sub-menu u-header__sub-menu-menu-gutter--y u-header__sub-menu-offset" style="min-width: 220px;"
-                        aria-labelledby="navLinkBlogGridMinimal">
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/masonry-left-sidebar.html">Left Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/masonry-right-sidebar.html">Right Sidebar</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/masonry-full-width.html">Full Width</a>
-                        </li>
-                    </ul>
-                    <!-- End Submenu (level 2) -->
-                    </li>
-                    <!-- Masonry -->
-
-                    <!-- Single Article -->
-                    <li class="dropdown-item hs-has-sub-menu">
-                    <a id="navLinkBlogGridMasonry" class="nav-link u-header__sub-menu-nav-link u-list__link py-2" href="javascript:;"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-controls="navSubmenuBlogGridMasonry">
-                        Single Article
-                        <span class="fa fa-angle-right u-header__sub-menu-nav-link-icon"></span>
-                    </a>
-
-                    <!-- Submenu (level 2) -->
-                    <ul id="navSubmenuBlogGridMasonry" class="hs-sub-menu list-unstyled u-header__sub-menu u-header__sub-menu-menu-gutter--y u-header__sub-menu-offset" style="min-width: 220px;"
-                        aria-labelledby="navLinkBlogGridMasonry">
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/single-article-classic.html">Classic</a>
-                        </li>
-                        <li class="dropdown-item px-0">
-                        <a class="nav-link u-list__link px-4" href="../../html/blog/single-article-simple.html">Simple</a>
-                        </li>
-                    </ul>
-                    <!-- End Submenu (level 2) -->
-                    </li>
-                    <!-- Single Article -->
-                </ul>
-                <!-- End Submenu -->
                 </li>
                 <!-- End Blog -->
 
-
                 <!-- Starter - Link -->
                 <li class="nav-item">
-                <a class="nav-link u-header__nav-link" href="https://www.youtube.com/channel/UC6Ca0BNpl68DjojpG9JnufQ">
-                    Videos
-                </a>
+                    <a class="nav-link u-header__nav-link" href="https://www.youtube.com/channel/UC6Ca0BNpl68DjojpG9JnufQ">
+                        Videos
+                    </a>
                 </li>
                 <!-- End Starter - Link -->
 
-
-
-            <!-- Input -->
-            <li class="nav-item d-none d-md-inline-block pl-3 pr-0">
-            <form class="js-focus-state input-group u-form">         
-                <div class="input-group-prepend u-form__prepend">
-                    <span class="input-group-text u-form__text">
-                        <span class="fa fa-search"></span>
-                    </span>
-                </div>
-                <input type="search" class="form-control u-form__input" placeholder="Buscar" aria-label="Search Front">
-            </form>
-        </li>
-            <!-- End Input -->
+                {% comment %} <!-- Input -->
+                <li class="nav-item d-none d-md-inline-block pl-3 pr-0">
+                    <form class="js-focus-state input-group u-form">         
+                        <div class="input-group-prepend u-form__prepend">
+                            <span class="input-group-text u-form__text">
+                                <span class="fa fa-search"></span>
+                            </span>
+                        </div>
+                        <input type="search" class="form-control u-form__input" placeholder="Buscar" aria-label="Search Front">
+                    </form>
+                </li>
+                <!-- End Input --> {% endcomment %}
 
             </ul>
             </div>
@@ -523,4 +239,3 @@
     </div>
 </header>
 <!-- ========== END HEADER ========== -->
-    

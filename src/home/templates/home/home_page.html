@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block base_head %}
+  <!-- carrousel -->
   <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
+
   <link rel="stylesheet" href="{% static 'vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
 
   <style>
@@ -21,160 +23,172 @@
       <div class="js-slick-carousel u-slick"
           data-autoplay="true"
           data-speed="5000"
-          data-pagi-classes="text-center u-slick__pagination u-slick__pagination--white position-absolute-bottom-0">
-        <div class="js-slide rounded u-bg-img-hero-center u-space-3-top min-height-600 slide-1" >
-          <div class="container">
-            <div class="w-lg-30">
-              <h4 class="display-4 text-white font-weight-bold mb-3"
-                  data-scs-animation-in="fadeInUp">High<br>quality</h4>
-              <p class="lead text-white"
-                data-scs-animation-in="fadeInUp">We aim high at being focused on hight quality materials.</p>
-            </div>
-          </div>
-        </div>
-        <div class="js-slide rounded u-bg-img-hero-center u-space-3-top min-height-600 slide-2" >
-          <div class="container">
-            <div class="w-lg-30">
-              <h4 class="display-4 text-white font-weight-bold mb-3"
-                  data-scs-animation-in="fadeInUp">Soft<br>papers</h4>
-              <p class="lead text-white"
-                data-scs-animation-in="fadeInUp">Using our creative gifts drives this foundation.</p>
-            </div>
-          </div>
-        </div>
-        <div class="js-slide rounded u-bg-img-hero-center u-space-3-top min-height-600 slide-3" >
-          <div class="container">
-            <div class="w-lg-30">
-              <h4 class="display-4 text-white font-weight-bold mb-3"
-                  data-scs-animation-in="fadeInUp">Long<br>lasting</h4>
-              <p class="lead text-white"
-                data-scs-animation-in="fadeInUp">This a powerful outlet that constantly gets overlooked.</p>
-            </div>
-          </div>
-        </div>
+          data-pagi-classes="text-center u-slick__pagination u-slick__pagination--white position-absolute right-0 bottom-0 left-0">
+            
+          {% for hero in heros %}
+              <div class="js-slide rounded bg-img-hero-center space-4" style="background-image: url({{hero.image.url}});">
+                <div class="container">
+                  <div class="w-lg-30">
+                    <h4 class="display-4 text-white font-weight-semi-bold mb-3"
+                        data-scs-animation-in="fadeInUp">{{ hero.tittle }}</h4>
+                    <p class="lead text-white"
+                      data-scs-animation-in="fadeInUp">{{ hero.legend }}</p>
+                  </div>
+                </div>
+              </div>
+          {% endfor %}
+
       </div>
     </div>
     <!-- End Images Carousel Section -->
 
+    <div class="container space-2">
+      
+    </div>
+
+
+
+
+
+
     <!-- Blog Masonry Section -->
     <div class="container u-space-2-top u-space-3-top--md u-space-2-top--lg u-space-2-bottom">
-        <!-- Content -->
-        <div class="cbp mb-7"
-        data-layout="mosaic"
-        data-animation="quicksand"
-        data-x-gap="16"
-        data-y-gap="16"
-        data-load-more-selector="#cubeLoadMore"
-        data-load-more-action="click"
-        data-load-items-amount="4"
-        data-media-queries='[
-          {"width": 1500, "cols": 3},
-          {"width": 1100, "cols": 3},
-          {"width": 800, "cols": 3},
-          {"width": 480, "cols": 2},
-          {"width": 300, "cols": 1}
-        ]'>
+      <!-- Content -->
+      <div class="cbp mb-7"
+      data-layout="mosaic"
+      data-animation="quicksand"
+      data-x-gap="16"
+      data-y-gap="16"
+      data-load-more-selector="#cubeLoadMore"
+      data-load-more-action="click"
+      data-load-items-amount="4"
+      data-media-queries='[
+        {"width": 1500, "cols": 3},
+        {"width": 1100, "cols": 3},
+        {"width": 800, "cols": 3},
+        {"width": 480, "cols": 2},
+        {"width": 300, "cols": 1}
+      ]'>
 
-          <!-- Item -->
-          <div class="cbp-item">
-            <article>
-              <img class="rounded" src="{% static '/img/900x450/img10.jpg' %}" alt="Image Description">
-              <div class="bg-white rounded-bottom p-5">
-                <small class="d-block text-secondary mb-1">March 20, 2018</small>
-                <h2 class="h5 mb-0">
-                  <a href="single-article-classic.html">Remote workers, here's how to dodge distractions</a>
-                </h2>
-              </div>
-            </article>
-          </div>
-          <!-- End Item -->
+        <!-- Item -->
+        <div class="cbp-item">
+          <article>
+            <img class="rounded" src="{% static '/img/900x450/img10.jpg' %}" alt="Image Description">
+            <div class="bg-white rounded-bottom p-5">
+              <small class="d-block text-secondary mb-1">March 20, 2018</small>
+              <h2 class="h5 mb-0">
+                <a href="single-article-classic.html">Remote workers, here's how to dodge distractions</a>
+              </h2>
+            </div>
+          </article>
+        </div>
+        <!-- End Item -->
 
-          <!-- Item -->
-          <div class="cbp-item">
-            <article>
-              <img class="rounded" src="{% static '/img/480x320/img13.jpg' %}" alt="Image Description">
-              <div class="bg-white rounded-bottom p-5">
-                <small class="d-block text-secondary mb-1">March 20, 2018</small>
-                <h3 class="h6 mb-0">
-                  <a href="single-article-classic.html">How to change careers or start a home-based business?</a>
-                </h3>
-              </div>
-            </article>
-          </div>
-          <!-- End Item -->
-  
-          <!-- Item -->
-          <div class="cbp-item">
-            <article>
-              <img class="rounded" src="{% static '/img/500x550/img2.jpg' %}" alt="Image Description">
-              <div class="bg-white rounded-bottom p-5">
-                <small class="d-block text-secondary mb-1">April 1, 2018</small>
-                <h3 class="h6 mb-0">
-                  <a href="single-article-classic.html">Create your adventure</a>
-                </h3>
-              </div>
-            </article>
-          </div>
-          <!-- End Item -->
-  
-          <!-- Item -->
-          <div class="cbp-item rounded">
-            <article class="bg-primary rounded p-5">
-              <small class="d-block u-text-light mb-1">April 22, 2018</small>
-              <h3 class="h6 text-white mb-0">
-                <a href="single-article-classic.html">Ideas to stay happy and productive all day for 365 days</a>
+        <!-- Item -->
+        <div class="cbp-item">
+          <article>
+            <img class="rounded" src="{% static '/img/480x320/img13.jpg' %}" alt="Image Description">
+            <div class="bg-white rounded-bottom p-5">
+              <small class="d-block text-secondary mb-1">March 20, 2018</small>
+              <h3 class="h6 mb-0">
+                <a href="single-article-classic.html">How to change careers or start a home-based business?</a>
               </h3>
-            </article>
-          </div>
-          <!-- End Item -->
-  
-          <!-- Item -->
-          <div class="cbp-item">
-            <article>
-              <img class="rounded" src="{% static '/img/380x360/img5.jpg' %}" alt="Image Description">
-              <div class="bg-white rounded-bottom p-5">
-                <small class="d-block text-secondary mb-1">March 18, 2018</small>
-                <h3 class="h6 mb-0">
-                  <a href="single-article-classic.html">Announcing a free plan for small teams</a>
-                </h3>
-              </div>
-            </article>
-          </div>
-          <!-- End Item -->
-  
-          <!-- Item -->
-          <div class="cbp-item">
-            <article>
-              <img class="rounded" src="{% static '/img/480x320/img16.jpg' %}" alt="Image Description">
-              <div class="bg-white rounded-bottom p-5">
-                <small class="d-block text-secondary mb-1">March 18, 2018</small>
-                <h3 class="h6 mb-0">
-                  <a href="single-article-classic.html">How to make trust your competitive advantage</a>
-                </h3>
-              </div>
-            </article>
-          </div>
-          <!-- End Item -->
-  
-          <!-- Item -->
-          <div class="cbp-item">
-            <article>
-              <img class="rounded" src="{% static '/img/380x250/img8.jpg' %}" alt="Image Description">
-              <div class="bg-white rounded-bottom p-5">
-                <small class="d-block text-secondary mb-1">April 29, 2018</small>
-                <h3 class="h6 mb-0">
-                  <a href="single-article-classic.html">Classic design principles</a>
-                </h3>
-              </div>
-            </article>
-          </div>
-          <!-- End Item -->
+            </div>
+          </article>
+        </div>
+        <!-- End Item -->
 
-      </div>
-       <!-- End Content -->  
+        <!-- Item -->
+        <div class="cbp-item">
+          <article>
+            <img class="rounded" src="{% static '/img/500x550/img2.jpg' %}" alt="Image Description">
+            <div class="bg-white rounded-bottom p-5">
+              <small class="d-block text-secondary mb-1">April 1, 2018</small>
+              <h3 class="h6 mb-0">
+                <a href="single-article-classic.html">Create your adventure</a>
+              </h3>
+            </div>
+          </article>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item rounded">
+          <article class="bg-primary rounded p-5">
+            <small class="d-block u-text-light mb-1">April 22, 2018</small>
+            <h3 class="h6 text-white mb-0">
+              <a href="single-article-classic.html">Ideas to stay happy and productive all day for 365 days</a>
+            </h3>
+          </article>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item">
+          <article>
+            <img class="rounded" src="{% static '/img/380x360/img5.jpg' %}" alt="Image Description">
+            <div class="bg-white rounded-bottom p-5">
+              <small class="d-block text-secondary mb-1">March 18, 2018</small>
+              <h3 class="h6 mb-0">
+                <a href="single-article-classic.html">Announcing a free plan for small teams</a>
+              </h3>
+            </div>
+          </article>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item">
+          <article>
+            <img class="rounded" src="{% static '/img/480x320/img16.jpg' %}" alt="Image Description">
+            <div class="bg-white rounded-bottom p-5">
+              <small class="d-block text-secondary mb-1">March 18, 2018</small>
+              <h3 class="h6 mb-0">
+                <a href="single-article-classic.html">How to make trust your competitive advantage</a>
+              </h3>
+            </div>
+          </article>
+        </div>
+        <!-- End Item -->
+
+        <!-- Item -->
+        <div class="cbp-item">
+          <article>
+            <img class="rounded" src="{% static '/img/380x250/img8.jpg' %}" alt="Image Description">
+            <div class="bg-white rounded-bottom p-5">
+              <small class="d-block text-secondary mb-1">April 29, 2018</small>
+              <h3 class="h6 mb-0">
+                <a href="single-article-classic.html">Classic design principles</a>
+              </h3>
+            </div>
+          </article>
+        </div>
+        <!-- End Item -->
 
     </div>
-    <!-- End Blog Masonry Section -->
+     <!-- End Content -->  
+
+  </div>
+  <!-- End Blog Masonry Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
@@ -184,13 +198,15 @@
 
   <!-- JS Implementing Plugins -->
   <script src="{% static 'vendor/slick-carousel/slick/slick.js' %}"></script>
-  <script src="{% static 'vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
   <script src="{% static 'js/components/hs.slick-carousel.js' %}"></script>
+
+  <script src="{% static 'vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
   <script src="{% static 'js/components/hs.cubeportfolio.js' %}"></script>
 
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
+      // initialization of slick carousel
       $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
       $.HSCore.components.HSCubeportfolio.init('.cbp');
     });
