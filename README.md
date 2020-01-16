@@ -1,13 +1,14 @@
 # ingenialo
 
-this repo is the ingeialo ecommerce project. 
+This repo is the ingeialo ecommerce project. 
 
-We are using django an probably react js.
+We are using django, jquery and gulp for assets.
 
-for more information please visit [http://www.ingenialo.com/]
+for more information please visit http://www.ingenialo.com/
+
 # installation 
 
-1.  clone this repository, type:
+1.  clone this repository:
         git clone https://ingenialo@bitbucket.org/ingenialo/ingenialo.git
 2.  you have to create enviroment variables. maybe un bash files as show:
        
