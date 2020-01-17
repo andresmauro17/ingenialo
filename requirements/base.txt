@@ -12,6 +12,9 @@ djangorestframework==3.9.0
 # Sql
 sqlparse==0.3.0
 
+# dotenv
+python-dotenv
+
 
 
 
