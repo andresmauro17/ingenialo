@@ -31,8 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'ingenialo.home',
-    'products',
-    'categories',
+    'ingenialo.products',
+    'ingenialo.categories',
 ]
 
 MIDDLEWARE = [

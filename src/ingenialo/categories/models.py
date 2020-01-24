@@ -1,5 +1,5 @@
 from django.db import models
-from products.models import Product
+from ingenialo.products.models import Product
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
