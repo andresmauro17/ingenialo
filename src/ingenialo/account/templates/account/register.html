@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+
+{% block base_head %}
+{% endblock base_head%}
+
+
+{% block content %}
+
+    <!-- ========== MAIN ========== -->
+    <main id="content" role="main">
+        <!-- Login Form -->
+        <div class="container space-2">
+          <form method="POST" action="" class="js-validate w-md-75 w-lg-50 mx-md-auto">
+            {% csrf_token %}
+
+            
+
+            <!-- Title -->
+            <div class="mb-7">
+              <h1 class="h3 text-primary font-weight-normal mb-0">Bienvenido a <span class="font-weight-semi-bold">Ingenialo</span></h1>
+              <p>Registrese para empezar</p>
+            </div>
+            <!-- End Title -->
+
+            {% for field in form %}
+                <div class="js-form-message form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+
+                    {% if field.errors%}
+                        <div  class="invalid-feedback" style="display: block;"> <b>{{ field.errors }}</b></div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+    
+            {% comment %} <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label for="signinSrEmail">Email addresssss</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email address" aria-label="Email address" required=""
+                     data-msg="Please enter a valid email address."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group -->
+    
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label class="form-label" for="signinSrPassword">Password</label>
+              <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
+                     data-msg="Your password is invalid. Please try again."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group -->
+    
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label class="form-label" for="signinSrConfirmPassword">Confirm password</label>
+              <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
+                     data-msg="Password does not match the confirm password."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group --> {% endcomment %}
+{% comment %}     
+            <!-- Checkbox -->
+            <div class="js-form-message mb-5">
+              <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required
+                       data-msg="Por favor acepta los terminos y condiciones"
+                       data-error-class="u-has-error"
+                       data-success-class="u-has-success">
+                <label class="custom-control-label" for="termsCheckbox">
+                  <small>
+                    Acepto los 
+                    <a class="link-muted" href="#">terminos y condiciones</a>
+                  </small>
+                </label>
+              </div>
+            </div>
+            <!-- End Checkbox -->
+     {% endcomment %}
+            <!-- Button -->
+            <div class="row align-items-center mb-5">
+              <div class="col-5 col-sm-6">
+                <span class="small text-muted">Ya tienes una cuenta?</span>
+                <a class="small" href="{% url 'account:login' %}" > <b>Ingresa aqui!</b> </a>
+              </div>
+    
+              <div class="col-7 col-sm-6 text-right">
+                <button type="submit" class="btn btn-primary transition-3d-hover">Registrase</button>
+              </div>
+            </div>
+            <!-- End Button -->
+          </form>
+        </div>
+        <!-- End Login Form -->
+    </main>
+    <!-- ========== END MAIN ========== -->
+
+{% endblock content%}
+
+
+{% block javascript %}
+
+
+{% endblock javascript%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+
+{% block base_head %}
+{% endblock base_head%}
+
+
+{% block content %}
+
+    <!-- ========== MAIN ========== -->
+    <main id="content" role="main">
+        <!-- Login Form -->
+        <div class="container space-2">
+          <form method="POST" action="" class="js-validate w-md-75 w-lg-50 mx-md-auto">
+            {% csrf_token %}
+            <!-- Title -->
+            <div class="mb-7">
+              <h2 class="h3 text-primary font-weight-normal mb-0">Estas de <span class="font-weight-semi-bold">Regreso!</span></h2>
+              <p>Ingresa a tu cuenta</p>
+            </div>
+            <!-- End Title -->
+    
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label class="form-label" for="username">Nombre de usuario</label>
+              <input type="text" class="form-control" name="username" id="username" placeholder="escriba su nombre de usuario" required
+                     data-msg="ingrese el nombre de usuario"
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group -->
+    
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label class="form-label" for="signinSrPassword">
+                <span class="d-flex justify-content-between align-items-center">
+                  Contraseña
+                  <a class="link-muted text-capitalize font-weight-normal" href="recover-account-simple.html">Olvido su contraseña?</a>
+                </span>
+              </label>
+              <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
+                     data-msg="su contraseña es invalida. por favor intente de nuevo."
+                     data-error-class="u-has-error"
+                     data-success-class="u-has-success">
+            </div>
+            <!-- End Form Group -->
+    
+            <!-- Button -->
+            <div class="row align-items-center mb-5">
+              <div class="col-6">
+                <span class="small text-muted">No tienes una cuenta aun?</span>
+                <a class="small" href="{% url 'account:register' %}"> <b>Registrate aqui!</b></a>
+              </div>
+    
+              <div class="col-6 text-right">
+                <button type="submit" class="btn btn-primary transition-3d-hover">Iniciar sesion</button>
+              </div>
+            </div>
+            <!-- End Button -->
+          </form>
+        </div>
+        <!-- End Login Form -->
+    </main>
+    <!-- ========== END MAIN ========== -->
+
+{% endblock content%}
+
+
+{% block javascript %}
+
+
+{% endblock javascript%}

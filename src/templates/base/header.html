@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <!-- End Search -->
-    
+
                         <!-- Shopping Cart -->
                         <li class="list-inline-item position-relative">
                             <a id="shoppingCartDropdownInvoker" class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
@@ -76,6 +76,53 @@
                             </div>
                         </li>
                         <!-- End Shopping Cart -->
+
+                        <!-- Account options -->
+                        {% if user.is_authenticated %}
+                            <!-- Account Login -->
+                            <li class="list-inline-item position-relative">
+                                <!-- Account Dropdown -->
+                                <a id="account-dropdown-invoker" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg" href="javascript:;" role="button"
+                                aria-controls="account-dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                data-unfold-event="hover"
+                                data-unfold-target="#account-dropdown"
+                                data-unfold-type="css-animation"
+                                data-unfold-duration="300"
+                                data-unfold-delay="300"
+                                data-unfold-hide-on-scroll="true"
+                                data-unfold-animation-in="slideInUp"
+                                data-unfold-animation-out="fadeOut">
+                                <span class="u-sidebar--account__toggle-text">{{ user.username }}</span>
+                                <img class="u-sidebar--account__toggle-img" src="{% static 'avatar.jpg' %}" alt="Image Description">
+                                </a>
+                                <!-- End Account Dropdown -->
+                
+                                <div id="account-dropdown" class="dropdown-menu dropdown-unfold dropdown-menu-sm-right" aria-labelledby="account-dropdown-invoker">
+                                    {% comment %} <a class="dropdown-item" href="#">
+                                        <span class="fas fa-user-circle dropdown-item-icon"></span>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="fas fa-cog dropdown-item-icon"></span>
+                                        Settings
+                                    </a> {% endcomment %}
+                                    <a class="dropdown-item" href="{% url 'account:logout' %}">
+                                        <span class="fas fa-sign-out-alt dropdown-item-icon"></span>
+                                        salir
+                                    </a>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="list-inline-item">
+                                <a href="{% url 'account:login' %}" class="u-header__navbar-link" href="#">
+                                    <span class="fas fa-user-circle mr-1"></span>
+                                    Ingresar
+                                </a>
+                            </li>
+                        {% endif %}
+
                     </ul>
                 </div>
             </div>
@@ -85,7 +132,7 @@
         <!-- Nav -->
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
             <!-- Logo -->
-            <a class="navbar-brand u-header__navbar-brand" href="#" aria-label="Front">
+            <a class="navbar-brand u-header__navbar-brand" href="{% url 'home' %}" aria-label="Front">
                 <img class="u-header__navbar-brand-default" src="{% static '/svg/logos/ingenialo/logo.png' %}" alt="Logo">
             </a>
             <!-- End Logo -->

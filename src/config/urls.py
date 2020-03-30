@@ -26,6 +26,7 @@ urlpatterns = [
     path('testing_react/', TemplateView.as_view(template_name='react/react.html')),
 
     path('', include('ingenialo.home.urls'),name='home'),
+    path('', include('ingenialo.account.urls'),name='account'),
     path('producto/', include('ingenialo.products.urls'),name='products'),
     path('admin/', admin.site.urls),   
 ]

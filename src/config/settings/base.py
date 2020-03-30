@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'ingenialo.home',
+    'ingenialo.account',
     'ingenialo.products',
     'ingenialo.categories',
 ]
@@ -46,6 +47,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+AUTH_USER_MODEL = 'account.User'
 
 TEMPLATES = [
     {
