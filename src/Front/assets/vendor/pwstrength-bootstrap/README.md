@@ -303,7 +303,7 @@ npm install -d
 grunt test
 ```
 
-It will check all the source files with [JSLint](http://jslint.com) and run the
+It will check all the source files with [ESLint](https://eslint.org/) and run the
 tests, which are written with [Jasmine](http://jasmine.github.io/). You'll find
 the tests source code in the `spec` directory.
 

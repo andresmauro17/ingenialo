@@ -37,3 +37,6 @@ Roland Häder <https://github.com/Quix0r>
 Tzipora Ziegler <https://github.com/tziporaziegler>
 Ishmael Doss๛ <nukboon@gmail.com>
 Pascal Gentemann <https://github.com/PascalGentemann>
+Lukáš Kovařík <lkovarik11@gmail.com>
+Khalid Moharrum <khalid.moharram@gmail.com>
+Codecamv <https://github.com/Codecamv>

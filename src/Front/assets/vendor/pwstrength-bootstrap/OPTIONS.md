@@ -186,6 +186,13 @@ Let's see the options of each section.
   The value used to modify the final score, based on the password length,
   allows you to tailor your results.
 
+* __specialCharClass__:
+
+  Default: `"[!,@,#,$,%,^,&,*,?,_,~]"` (String)
+
+  This is the regular expression class used to match special chars whitin
+  the rules engine.
+
 * __commonPasswords__:
 
   Default: `['123456', 'password', ...]` (Array of Strings)
@@ -257,6 +264,15 @@ Let's see the options of each section.
 
   Minimum percentage filled in the progress bar that depicts the strength of
   the password. An empty password will show the progress bar filled this much.
+
+* __progressBarMinWidth__:
+
+  Default: `1` (Integer)
+
+  Minimum width in pixels filled in the progress bar that depicts the
+  strength of the password. A terrible but not empty password will show the
+  progress bar filled this many pixels. Makes use of the `min-width` CSS
+  property.
 
 * __progressBarMinPercentage__:
 

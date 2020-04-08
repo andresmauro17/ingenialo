@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## 3.0.5
+
+- Apply Prettier code formatter.
+- Replace JSLint with ESLint.
+- Add new rules.specialCharClass option to personalize special chars
+  detection.
+- Separate progress bar and popover widgets to their own files.
+
+## 3.0.4
+
+- Fix ruleIsMet method, include added custom validation rules.
+- Fix conflict between progressBarMinWidth and progressBarEmptyPercentage
+  options.
+
+## 3.0.3
+
+- Add Arabic localization.
+- Add Norwegian localization.
+- Add new ui.progressBarMinWidth option to control the minimum width of the
+  progress bar.
+
+## 3.0.2
+
+- Add Czech localization.
+- Bugfix with popovers in Bootstrap 4.2.X versions.
+
 ## 3.0.1
 
 - Bugfix in progress bar colors in Bootstrap 3.

@@ -1,27 +1,26 @@
 {
-  "_from": "bootstrap-select@1.13.2",
-  "_id": "bootstrap-select@1.13.2",
+  "_from": "bootstrap-select@^1.13.10",
+  "_id": "bootstrap-select@1.13.10",
   "_inBundle": false,
-  "_integrity": "sha512-7WMnL+OVgTEMvJEoufEqbKup+BOwvPDB/qyt/CI0Co1HNluRaMZAJSb0b42OQeD7rtC3uz3NW9dUyychADdPKg==",
+  "_integrity": "sha512-mwfyd+VWHY8wDN4je4Y8PPEaOAzDPUz95z5F5zxzlIqebqxtbrujclFWLrhkVOyETpsgZCL1rsfyEnHpAugtGg==",
   "_location": "/bootstrap-select",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "bootstrap-select@1.13.2",
+    "raw": "bootstrap-select@^1.13.10",
     "name": "bootstrap-select",
     "escapedName": "bootstrap-select",
-    "rawSpec": "1.13.2",
+    "rawSpec": "^1.13.10",
     "saveSpec": null,
-    "fetchSpec": "1.13.2"
+    "fetchSpec": "^1.13.10"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/bootstrap-select/-/bootstrap-select-1.13.2.tgz",
-  "_shasum": "b22dd116e6fdced73189202fcc963ae849e47594",
-  "_spec": "bootstrap-select@1.13.2",
+  "_resolved": "https://registry.npmjs.org/bootstrap-select/-/bootstrap-select-1.13.10.tgz",
+  "_shasum": "b0cf57f8d448bc0488faba04ecaa2f4c5216e144",
+  "_spec": "bootstrap-select@^1.13.10",
   "_where": "D:\\wamp\\www\\front-v1.0",
   "author": {
     "name": "Casey Holzer",
@@ -54,11 +53,10 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-csslint": "^2.0.0",
     "grunt-contrib-cssmin": "^2.2.1",
-    "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-less": "^2.0.0",
-    "grunt-contrib-uglify": "^3.4.0",
+    "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-umd": "^3.0.0",
+    "grunt-eslint": "^21.0.0",
     "grunt-version": "^1.1.1",
     "load-grunt-tasks": "^4.0.0"
   },
@@ -84,5 +82,5 @@
     "url": "git://github.com/snapappointments/bootstrap-select.git"
   },
   "title": "bootstrap-select",
-  "version": "1.13.2"
+  "version": "1.13.10"
 }

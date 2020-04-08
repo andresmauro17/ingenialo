@@ -1,20 +1,20 @@
-/*jslint browser: true, unparam: true */
-/*global jQuery, i18n */
+/*global i18n */
 
 /*
-* jQuery Password Strength plugin for Twitter Bootstrap
-*
-* Copyright (c) 2008-2013 Tane Piper
-* Copyright (c) 2013 Alejandro Blanco
-* Dual licensed under the MIT and GPL licenses.
-*/
+ * jQuery Password Strength plugin for Twitter Bootstrap
+ *
+ * Copyright (c) 2008-2013 Tane Piper
+ * Copyright (c) 2013 Alejandro Blanco
+ * Dual licensed under the MIT and GPL licenses.
+ */
 
+// eslint-disable-next-line no-implicit-globals
 var defaultOptions = {};
 
 defaultOptions.common = {};
 defaultOptions.common.minChar = 6;
 defaultOptions.common.maxChar = 20;
-defaultOptions.common.usernameField = "#username";
+defaultOptions.common.usernameField = '#username';
 defaultOptions.common.invalidCharsRegExp = new RegExp(/[\s,'"]/);
 defaultOptions.common.userInputs = [
     // Selectors for input fields with user input
@@ -26,7 +26,7 @@ defaultOptions.common.zxcvbn = false;
 defaultOptions.common.zxcvbnTerms = [
     // List of disrecommended words
 ];
-defaultOptions.common.events = ["keyup", "change", "paste"];
+defaultOptions.common.events = ['keyup', 'change', 'paste'];
 defaultOptions.common.debug = false;
 
 defaultOptions.rules = {};
@@ -72,6 +72,7 @@ defaultOptions.rules.activated = {
     wordIsACommonPassword: true
 };
 defaultOptions.rules.raisePower = 1.4;
+defaultOptions.rules.specialCharClass = '[!,@,#,$,%,^,&,*,?,_,~]';
 // List taken from https://github.com/danielmiessler/SecLists (MIT License)
 defaultOptions.rules.commonPasswords = [
     '123456',
@@ -180,32 +181,43 @@ defaultOptions.ui = {};
 defaultOptions.ui.bootstrap2 = false;
 defaultOptions.ui.bootstrap3 = false;
 defaultOptions.ui.colorClasses = [
-    "danger", "danger", "danger", "warning", "warning", "success"
+    'danger',
+    'danger',
+    'danger',
+    'warning',
+    'warning',
+    'success'
 ];
 defaultOptions.ui.showProgressBar = true;
 defaultOptions.ui.progressBarEmptyPercentage = 1;
+defaultOptions.ui.progressBarMinWidth = 1;
 defaultOptions.ui.progressBarMinPercentage = 1;
 defaultOptions.ui.progressExtraCssClasses = '';
 defaultOptions.ui.progressBarExtraCssClasses = '';
 defaultOptions.ui.showPopover = false;
-defaultOptions.ui.popoverPlacement = "bottom";
+defaultOptions.ui.popoverPlacement = 'bottom';
 defaultOptions.ui.showStatus = false;
-defaultOptions.ui.spanError = function (options, key) {
-    "use strict";
+defaultOptions.ui.spanError = function(options, key) {
+    'use strict';
     var text = options.i18n.t(key);
-    if (!text) { return ''; }
+    if (!text) {
+        return '';
+    }
     return '<span style="color: #d52929">' + text + '</span>';
 };
-defaultOptions.ui.popoverError = function (options) {
-    "use strict";
+defaultOptions.ui.popoverError = function(options) {
+    'use strict';
     var errors = options.instances.errors,
-        errorsTitle = options.i18n.t("errorList"),
-        message = "<div>" + errorsTitle + "<ul class='error-list' style='margin-bottom: 0;'>";
+        errorsTitle = options.i18n.t('errorList'),
+        message =
+            '<div>' +
+            errorsTitle +
+            '<ul class="error-list" style="margin-bottom: 0;">';
 
-    jQuery.each(errors, function (idx, err) {
-        message += "<li>" + err + "</li>";
+    jQuery.each(errors, function(idx, err) {
+        message += '<li>' + err + '</li>';
     });
-    message += "</ul></div>";
+    message += '</ul></div>';
     return message;
 };
 defaultOptions.ui.showVerdicts = true;
