@@ -2,6 +2,12 @@
   Tables
 ------------------------------------*/
 
+.table {
+  .btn {
+    white-space: nowrap;
+  }
+}
+
 .table-heighlighted {
   thead th {
     border-bottom-color: $table-border-highlighted-color;
@@ -9,7 +15,7 @@
   }
 
   tfoot td {
-    border-top: (2 * $table-border-width) solid $table-border-highlighted-color;
+    border-top: ($table-border-width * 2) solid $table-border-highlighted-color;
   }
 }
 

@@ -2,27 +2,29 @@
   Avatar
 ------------------------------------*/
 
-.u-avatar {
-	width: $avatar;
-	height: $avatar;
-}
+.avatar {
+  position: relative;
+  display: inline-block;
+  width: $avatar-width;
+  height: $avatar-height;
+  @include border-radius($avatar-img-border-radius);
 
-.u-xs-avatar {
-  width: $avatar-xs;
-  height: $avatar-xs;
-}
+  &-img {
+    max-width: 100%;
+    height: auto;
+    @include border-radius($avatar-img-border-radius);
+  }
 
-.u-sm-avatar {
-	width: $avatar-sm;
-	height: $avatar-sm;
-}
+  &-initials {
+    font-size: $avatar-font-size;
+    font-weight: $avatar-font-weight;
+  }
 
-.u-lg-avatar {
-  width: $avatar-lg;
-  height: $avatar-lg;
-}
+  &-circle {
+    @include border-radius($avatar-circle-border-radius);
 
-.u-xl-avatar {
-  width: $avatar-xl;
-  height: $avatar-xl;
+    .avatar-img {
+      @include border-radius($avatar-circle-border-radius);
+    }
+  }
 }

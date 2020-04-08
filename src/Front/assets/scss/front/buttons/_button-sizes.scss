@@ -4,37 +4,33 @@
 
 /* Wide */
 .btn-wide {
-  min-width: $input-btn-min-width;
-}
-
-.btn-sm-wide {
-  min-width: $input-btn-min-width-sm;
+  min-width: $btn-wide;
 }
 
 /* Extra Small */
 .btn-xs {
   font-size: $btn-font-size-xs;
   font-weight: $font-weight-normal;
-  padding: $input-btn-paddingY-xs $input-btn-paddingX-xs;
+  padding: $input-btn-padding-y-xs $input-btn-padding-x-xs;
 }
 
 /* Icons */
 .btn-icon {
-	&.btn-xs {
-  	font-size: $btn-icon-font-size-xs;
-		width: $btn-width-xs;
-		height: $btn-height-xs;
-	}
+  &.btn-xs {
+    font-size: $btn-icon-font-size-xs;
+    width: $btn-icon-width-xs;
+    height: $btn-icon-height-xs;
+  }
 
   &.btn-sm {
     font-size: $btn-icon-font-size-sm;
-    width: $btn-width-sm;
-    height: $btn-height-sm;
+    width: $btn-icon-width-sm;
+    height: $btn-icon-height-sm;
   }
 
   &.btn-lg {
     font-size: $btn-icon-font-size-lg;
-    width: $btn-width-lg;
-    height: $btn-height-lg;
+    width: $btn-icon-width-lg;
+    height: $btn-icon-height-lg;
   }
 }

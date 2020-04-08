@@ -2,50 +2,68 @@
 // Buttons
 //
 
-// Air Buttons
+// Soft Buttons
 @mixin button-soft($hs-color, $hs-background, $hs-hover-background, $hs-active-background, $hs-box-shadow) {
   color: ($hs-color);
-  background: rgba($hs-background, .1);
+  background-color: rgba($hs-background, .1);
   border-color: transparent;
 
-  &[href],
-  &[type] {
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      color: color-yiq($hs-hover-background);
-      background: ($hs-hover-background);
-      box-shadow: $btn-box-shadow-value rgba($hs-background, 0.35);
-    }
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: color-yiq($hs-hover-background);
+    background-color: ($hs-hover-background);
+    box-shadow: $btn-box-shadow-value rgba($hs-background, 0.1);
+  }
 
-    &.disabled,
-    &:disabled {
-      color: $hs-background;
-      background-color: rgba($hs-background, .1);
-      box-shadow: none;
-    }
+  &.disabled,
+  &:disabled {
+    color: $hs-background;
+    background-color: rgba($hs-background, .1);
+    box-shadow: none;
+  }
 
-    &:not(:disabled):not(.disabled):active,
-    &:not(:disabled):not(.disabled).active,
-    .show > &.dropdown-toggle {
-      color: color-yiq($hs-active-background);
-      background-color: $hs-active-background;
-    }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($hs-active-background);
+    background-color: $hs-active-background;
   }
 }
 
-// Icon Buttons
-@mixin button-text($hs-color, $hs-hover-color) {
+// Ghost Buttons
+@mixin button-ghost($hs-color, $hs-hover-background) {
   color: ($hs-color);
-  background: transparent;
+  background-color: $btn-ghost-bg-color;
 
-  &[href],
-  &[type] {
-    &:hover,
-    &:focus,
-    &:active {
-      color: ($hs-hover-color);
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: ($hs-color);
+    background-color: rgba($hs-hover-background, .1);
+  }
+}
+
+// Custom Toggle
+@mixin button-custom-toggle($hs-hover-background-color, $hs-hover-border-color, $hs-active-background-color, $hs-active-border-color) {
+  color: $btn-custom-color;
+  border-color: $btn-custom-border-color;
+
+  &:hover {
+    color: ($hs-hover-background-color);
+    background-color: transparent;
+    border-color: ($hs-hover-border-color);
+  }
+
+  &:not(:disabled):not(.disabled),
+  &:not(:disabled):not(.disabled) {
+    &:active,
+    &.active {
+      color: color-yiq($hs-active-background-color);
+      background-color: ($hs-active-background-color);
+      border-color: ($hs-active-border-color);
     }
   }
 }

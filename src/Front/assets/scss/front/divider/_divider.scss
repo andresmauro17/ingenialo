@@ -2,7 +2,7 @@
   Divider
 ------------------------------------*/
 
-.u-divider {
+.divider {
   position: relative;
   display: inline-block;
   font-size: $divider-font-size;
@@ -16,11 +16,11 @@
 
   &::before {
     right: 100%;
-    @include gradient-x($hs-start-color: transparent, $hs-end-color: rgba($gray-400, 1), $deg: 45deg);
+    @include gradient-directional($start-color: transparent, $end-color: rgba($gray-400, 1));
   }
 
   &::after {
     left: 100%;
-    @include gradient-x($hs-start-color: rgba($gray-400, 1), $hs-end-color: transparent, $deg: 45deg);
+    @include gradient-directional($start-color: rgba($gray-400, 1), $end-color: transparent);
   }
 }

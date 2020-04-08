@@ -2,7 +2,7 @@
   Header Floating
 ------------------------------------*/
 
-.u-header--floating {
+.header-floating {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
@@ -11,57 +11,125 @@
         position: absolute;
         right: 0;
         left: 0;
-        margin-top: $header-floating-margin-top;
+        margin-top: $header-floating-margin-y;
 
         &.js-header-fix-moment {
           position: fixed;
-          background-color: $white;
-          box-shadow: $header-box-shadow;
+          background-color: $header-floating-section-bg-color;
+          box-shadow: $header-section-box-shadow;
           margin-top: 0;
 
-          .u-header--floating__inner {
+          .header-floating-inner {
             box-shadow: none;
           }
         }
-
-        // Long list of links, can lead to a bug, since the header can not calculate the height when.
-        // For this reason, max-height is given to avoid header disappearing issues on collapse.
-        .u-header--floating__scrollbar {
-          max-height: $header-floating-height;
-
-          &.mCS_destroyed {
-            position: static !important;
-          }
-        }
-
-        .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-          margin: 0 24px;
-        }
       }
 
-      &__inner {
+      &-inner {
         @include border-radius($header-floating-border-radius);
-        padding-left: $header-floating-inner-paddingX;
-        padding-right: $header-floating-inner-paddingX;
+        padding-left: $header-floating-inner-padding-x;
+        padding-right: $header-floating-inner-padding-x;
       }
     }
   }
 }
 
-.u-header--floating {
+.header-floating {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
     $infix: breakpoint-infix($next, $grid-breakpoints);
 
     &#{$infix} {
       @include media-breakpoint-down($breakpoint) {
-        .u-header__section {
+        background-color: $header-floating-section-bg-color;
+        box-shadow: $header-section-box-shadow;
+
+        &.header-box-shadow .header-section,
+        &.header-box-shadow-on-scroll.scrolled .header-section {
           box-shadow: none;
         }
+      }
+    }
+  }
+}
 
-        .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-          display: none;
-        }
+// Medium Devices
+@include media-breakpoint-down(md) {
+  .header-floating-inner {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Medium Devices
+@include media-breakpoint-down(sm) {
+  .header-floating-md .header-floating-inner {
+    max-height: $header-floating-height;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: $scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scrollbar-bg-color;
+      visibility: hidden;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// Extra Large Devices
+@include media-breakpoint-down(md) {
+  .header-floating .header-floating-inner,
+  .header-floating-sm .header-floating-inner,
+  .header-floating-lg .header-floating-inner {
+    max-height: $header-floating-height;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: $scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scrollbar-bg-color;
+      visibility: hidden;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// Extra Large Devices
+@include media-breakpoint-down(lg) {
+  .header-floating-xl .header-floating-inner {
+    max-height: $header-floating-height;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: $scrollbar-width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scrollbar-bg-color;
+      visibility: hidden;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        visibility: visible;
       }
     }
   }

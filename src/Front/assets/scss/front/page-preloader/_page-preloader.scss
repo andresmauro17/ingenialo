@@ -13,7 +13,7 @@
   z-index: $page-preloader-z-index;
   background-color: $page-preloader-bg-color;
 
-  &__content-centered {
+  &-content-centered {
     display: flex;
     justify-content: center;
     align-items: center;

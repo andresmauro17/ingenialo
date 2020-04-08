@@ -2,38 +2,18 @@
   Custom Button Toggle
 ------------------------------------*/
 
-.btn-custom-toggle-primary {
-  color: $btn-custom-toggle-primary-color;
-  border-color: $btn-custom-toggle-primary-border-color;
-
-  &:hover {
-    color: $btn-custom-toggle-primary-hover-color;
-    background-color: $btn-custom-toggle-primary-hover-bg-color;
-    border-color: $btn-custom-toggle-primary-hover-border-color;
-  }
-
-  &:not(:disabled):not(.disabled),
-  &:not(:disabled):not(.disabled) {
-    &:active,
-    &.active {
-      color: $btn-custom-toggle-primary-active-color;
-      background-color: $btn-custom-toggle-primary-active-bg-color;
-      border-color: $btn-custom-toggle-primary-active-border-color;
+@each $color, $value in $theme-colors {
+  /* #{$color} custom toggle button */
+  .btn-custom-toggle-#{$color} {
+    @if $color == "light" {
+      @include button-custom-toggle($white, $value, $value, $value);
+    } @else {
+      @include button-custom-toggle($value, $value, $value, $value);
     }
   }
 }
 
-.btn-custom-toggle-white {
-  &:hover {
-    color: $btn-custom-toggle-white-hover-color;
-    background-color: $btn-custom-toggle-white-hover-bg-color;
-  }
-
-  &:not(:disabled):not(.disabled),
-  &:not(:disabled):not(.disabled) {
-    &:active,
-    &.active {
-      color: $btn-custom-toggle-white-active-color;
-    }
-  }
+.btn-custom-toggle-light {
+  color: $white-color-70;
+  border-color: $white-color-70;
 }

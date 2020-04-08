@@ -30,6 +30,17 @@
   }
 }
 
+.card {
+  border-width: 0;
+  box-shadow: $card-box-shadow;
+}
+
+@include media-breakpoint-up(sm) {
+  .card-group > .card + .card {
+    border-left: 1px solid $card-border-color;
+  }
+}
+
 /* Background Color */
 .card-bg-light {
   background-color: $card-bg-light;
@@ -40,24 +51,23 @@
 }
 
 /* Frame */
-.card {
-  &-frame {
-    border: $card-frame-border-width $card-frame-border-style $card-frame-border-color;
-    transition: $card-frame-transition;
+.card-frame {
+  border: $card-frame-border-width $card-frame-border-type $card-frame-border-color;
+  box-shadow: none;
+  transition: $card-frame-transition;
 
-    &-highlighted,
-    &:hover {
-      border-color: $card-frame-hover-border-color;
-      box-shadow: $card-frame-hover-box-shadow;
-    }
+  &-highlighted,
+  &:hover {
+    border-color: $card-frame-hover-border-color;
   }
+}
 
-  &-text-dark {
-    color: $card-text-dark-color;
+/* Shadow On Hover */
+.card-hover-shadow {
+  box-shadow: none;
 
-    &:hover {
-      color: $card-text-dark-hover-color;
-    }
+  &:hover {
+    box-shadow: $card-hover-shadow-box-shadow;
   }
 }
 
@@ -76,19 +86,32 @@
     }
   }
 
+  // Collapsed active option
   &-btn {
     color: $card-btn-color;
     text-align: left;
     white-space: inherit;
 
-    &-arrow {
+    &-toggle {
       display: inline-block;
       color: $card-btn-arrow-color;
-      margin-left: 1rem;
-      transition: $card-btn-arrow-transition;
 
-      .collapsed & {
-        transform: $card-btn-arrow-collapsed-rotation;
+      &-default {
+        display: none;
+      }
+
+      &-active {
+        display: block;
+      }
+    }
+
+    &.collapsed {
+      .card-btn-toggle-default {
+        display: block;
+      }
+
+      .card-btn-toggle-active {
+        display: none;
       }
     }
   }

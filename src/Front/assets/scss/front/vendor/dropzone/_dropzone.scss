@@ -2,15 +2,18 @@
   Dropzone
 ------------------------------------*/
 
-.u-dropzone {
-  width: 100%;
-  background-color: $dropzone-bg-color;
-  border: $dropzone-border-width $dropzone-border-style $dropzone-border-color;
-  border-radius: $dropzone-border-radius;
+.dz-dropzone {
   cursor: pointer;
-  padding: $dropzone-padding;
-  display: flex;
-  flex-wrap: wrap;
+
+  &-boxed {
+    width: 100%;
+    background-color: $dropzone-boxed-bg-color;
+    border: $dropzone-boxed-border-width $dropzone-boxed-border-type $dropzone-boxed-border-color;
+    border-radius: $dropzone-boxed-border-radius;
+    padding: $dropzone-boxed-padding-y $dropzone-boxed-padding-x;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .dz-message {
     width: 100%;
@@ -18,13 +21,13 @@
   }
 
   .dz-details {
-    margin-bottom: 1rem;
+    margin-bottom: $dropzone-details-margin-y;
   }
 
   .dz-file-preview {
     background-color: $dropzone-filepreview-bg-color;
     @include border-radius($dropzone-filepreview-border-radius);
-    padding: $dropzone-filepreview-padding;
+    padding: $dropzone-filepreview-padding-y $dropzone-filepreview-padding-x;
     box-shadow: $dropzone-filepreview-shadow;
   }
 
@@ -35,15 +38,17 @@
   }
 
   .dz-filename {
-    margin-bottom: .25rem;
+    margin-bottom: $dropzone-filename-margin-y;
   }
 
   .dz-img {
     max-width: $dropzone-img-max-width;
-    border: $dropzone-img-border-width $dropzone-img-border-style $dropzone-img-border-color;
     @include border-radius($dropzone-img-border-radius);
-    padding: $dropzone-img-padding;
-    margin-right: .75rem;
+    margin-right: $dropzone-img-margin-x;
+
+    &-inner {
+      @include border-radius($dropzone-img-border-radius);
+    }
   }
 
   .dz-close-icon,
@@ -60,18 +65,18 @@
     font-size: $dropzone-size-font-size;
   }
 
-  .dz-file-abbr {
+  .dz-file-initials {
     display: inline-block;
-    width: $dropzone-abbr-width;
-    height: $dropzone-abbr-height;
-    line-height: $dropzone-abbr-line-height;
-    font-weight: $dropzone-abbr-font-weight;
-    font-size: $dropzone-abbr-font-size;
-    color: $dropzone-abbr-color;
+    width: $dropzone-initials-width;
+    height: $dropzone-initials-height;
+    line-height: $dropzone-initials-line-height;
+    font-weight: $dropzone-initials-font-weight;
+    font-size: $dropzone-initials-font-size;
+    color: $dropzone-initials-color;
     text-align: center;
-    background-color: $dropzone-abbr-bg-color;
-    border-radius: $dropzone-abbr-border-radius;
-    margin-right: .75rem;
+    background-color: $dropzone-initials-bg-color;
+    border-radius: $dropzone-initials-border-radius;
+    margin-right: $dropzone-initials-margin-x;
   }
 
   [data-dz-thumbnail]:not([src]) {
@@ -80,10 +85,9 @@
   }
 
   .dz-progress {
-    margin-bottom: 1rem;
+    margin-bottom: $dropzone-progress-margin-y;
   }
 
-  &.dz-started .u-dropzone__message,
   .dz-processing .dz-error-mark,
   .dz-processing .dz-success-mark {
     display: none;

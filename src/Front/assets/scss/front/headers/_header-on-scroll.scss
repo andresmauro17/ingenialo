@@ -2,11 +2,10 @@
   Header On Scroll
 ------------------------------------*/
 
-.u-header--white-bg-on-scroll {
-  &.u-scrolled {
-    .u-header__section {
-      background-color: $white;
-      box-shadow: $header-box-shadow;
+.header-white-bg-on-scroll {
+  &.scrolled {
+    .header-section {
+      background-color: $header-section-bg-color;
     }
   }
 }

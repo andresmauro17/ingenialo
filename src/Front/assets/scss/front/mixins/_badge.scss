@@ -2,8 +2,14 @@
 // Badges
 //
 
-@mixin badge-outline($hs-color, $hs-background, $hs-border) {
-  color: color-yiq($hs-color);
-  background: $hs-background;
-  border-color: color-yiq($hs-border);
+@mixin badge-soft($hs-soft-bg) {
+  color: ($hs-soft-bg);
+  background-color: rgba($hs-soft-bg, .1);
+
+  @at-root a#{&} {
+    @include hover-focus() {
+      color: color-yiq($hs-soft-bg);
+      background-color: $hs-soft-bg;
+    }
+  }
 }

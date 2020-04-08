@@ -1,8 +1,8 @@
 /*------------------------------------
   Stats Progress
-------------------------------------*/
+-------------------------------------*/
 
-.u-stats-progress {
+.stats-progress {
   position: relative;
   width: $stats-progress-width;
   height: $stats-progress-height;
@@ -11,11 +11,13 @@
   margin-left: auto;
   margin-right: auto;
 
-  &__info {
-    @include content-centered(false, true);
+  &-info {
+    position: absolute;
+    top: 50%;
     left: 0;
     right: 0;
-    padding: 2rem;
     text-align: center;
+    padding: $stats-progress-info-padding-y $stats-progress-info-padding-x;
+    transform: translate(0, -50%);
   }
 }

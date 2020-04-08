@@ -2,195 +2,175 @@
   Width
 ------------------------------------*/
 
-.min-width-3 {
-  min-width: 1rem !important;
+.min-w-3rem {
+  min-width: 1rem;
 }
 
-.min-width-4 {
-  min-width: 1.5rem !important;
+.min-w-4rem {
+  min-width: 1.5rem;
 }
 
-.min-width-15 {
-  min-width: 7rem !important;
+.min-w-8rem {
+  min-width: 3.5rem;
 }
 
-.min-width-21 {
-  min-width: 10rem !important;
+.min-w-21rem {
+  min-width: 10rem;
 }
 
-.max-width-3 {
-  max-width: 1rem !important;
+.max-w-3rem {
+  max-width: 1rem;
 }
 
-.max-width-4 {
-  max-width: 1.5rem !important;
+.max-w-4rem {
+  max-width: 1.5rem;
 }
 
-.max-width-5 {
-  max-width: 2rem !important;
+.max-w-5rem {
+  max-width: 2rem;
 }
 
-.max-width-6 {
-  max-width: 2.5rem !important;
+.max-w-6rem {
+  max-width: 2.5rem;
 }
 
-.max-width-8 {
+.max-w-7rem {
+  max-width: 3rem;
+}
+
+.max-w-8rem {
   max-width: 3.5rem;
 }
 
-.max-width-9 {
+.max-w-9rem {
   max-width: 4rem;
 }
 
-.max-width-10 {
+.max-w-10rem {
   max-width: 4.5rem;
 }
 
-.max-width-11 {
+.max-w-11rem {
   max-width: 5rem;
 }
 
-.max-width-15 {
+.max-w-13rem {
+  max-width: 6rem;
+}
+
+.max-w-15rem {
   max-width: 7rem;
 }
 
-.max-width-19 {
+.max-w-19rem {
   max-width: 9rem;
 }
 
-.max-width-23 {
+.max-w-23rem {
   max-width: 11rem;
 }
 
-.max-width-27 {
+.max-w-27rem {
   max-width: 13rem;
 }
 
-.max-width-35 {
+.max-w-33rem {
+  max-width: 16rem;
+}
+
+.max-w-35rem {
   max-width: 17rem;
 }
 
-.max-width-40 {
+.max-w-40rem {
   max-width: 19.5rem;
 }
 
-.max-width-50 {
+.max-w-50rem {
   max-width: 24.5rem;
 }
-
-.max-width-60 {
-  max-width: 29.5rem;
-}
-
 
 /*------------------------------------
   Height
 ------------------------------------*/
 
-.height-40vh {
-  height: 40vh;
-}
-
-.height-60vh {
-  height: 60vh;
-}
-
-.height-100vh {
-  height: 100vh;
-}
-
-.height-4 {
+.h-4rem {
   height: .25rem;
 }
 
-.height-250 {
+.h-250rem {
   height: 15.625rem;
 }
 
-.height-380 {
+.h-380rem {
   height: 23.75rem;
 }
 
-.height-400 {
-  height: 25rem;
+.min-h-270rem {
+  min-height: 16.875rem;
 }
 
-.height-450 {
-  height: 28.125rem;
-}
-
-.min-height-100vh {
-  min-height: 100vh;
-}
-
-.min-height-155 {
-  min-height: 9.6875rem;
-}
-
-.min-height-300 {
+.min-h-300rem {
   min-height: 18.75rem;
 }
 
-.min-height-380 {
+.min-h-380rem {
   min-height: 23.75rem;
 }
 
-.min-height-450 {
+.min-h-450rem {
   min-height: 28.125rem;
 }
 
-.min-height-550 {
-  min-height: 34.375rem;
+.min-h-500rem {
+  min-height: 31.25rem;
 }
 
-.min-height-600 {
-  min-height: 37.5rem;
-}
-
-.min-height-620 {
+.min-h-620rem {
   min-height: 38.75rem;
 }
 
 // Small Devices
 @include media-breakpoint-up(sm) {
-  .height-sm-100vh {
-    height: 100vh;
+  .max-w-sm-15rem {
+    max-width: 7rem;
+  }
+
+  .max-w-sm-40rem {
+    max-width: 19.5rem;
   }
 }
 
 // Medium Devices
 @include media-breakpoint-up(md) {
-  .height-md-60vh {
-    height: 60vh;
+  .vh-md-30 {
+    height: 30vh;
   }
 
-  .height-md-100vh {
-    height: 100vh;
+  .vh-md-70 {
+    height: 70vh;
   }
 
-  .min-height-md-100vh {
+  .min-vh-md-100 {
     min-height: 100vh;
+  }
+
+  .max-w-md-13rem {
+    max-width: 6rem;
   }
 }
 
 // Large Devices
 @include media-breakpoint-up(lg) {
-  .height-lg-100vh {
+  .vh-lg-100 {
     height: 100vh;
   }
 
-  .min-height-lg-auto {
-    min-height: auto;
-  }
-
-  .min-height-lg-100vh {
+  .min-vh-lg-100 {
     min-height: 100vh;
   }
-}
 
-// Extra Large Devices
-@include media-breakpoint-up(xl) {
-  .min-height-xl-100vh {
-    min-height: 100vh;
+  .min-h-lg-600rem {
+    min-height: 37.5rem;
   }
 }

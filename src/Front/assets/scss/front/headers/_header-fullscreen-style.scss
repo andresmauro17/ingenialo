@@ -2,9 +2,9 @@
   Header Fullscreen Style
 ------------------------------------*/
 
-.u-fullscreen {
+.fullscreen {
 	// Nav
-	&__nav {
+	&-nav {
 		padding-left: 0;
 	  list-style: none;
 	  margin-bottom: 0;
@@ -17,55 +17,68 @@
 
 	  &-link {
 	  	display: inline-block;
-  		color: $white;
-	  	font-size: ($font-size-base * 1.375);
-			padding-top: .5rem;
-			padding-bottom: .5rem;
+	  	font-size: $fullscreen-nav-link-font-size;
+  		color: $fullscreen-nav-link-color;
+			padding-top: $fullscreen-nav-link-padding-y;
+			padding-bottom: $fullscreen-nav-link-padding-y;
 
 			// Large Devices
 			@include media-breakpoint-up(lg) {
-	  		font-size: ($font-size-base * 1.75);
+	  		font-size: $fullscreen-nav-link-md-up-font-size;
 			}
 
 	  	&:hover {
-	  		color: $white-color-70;
+	  		color: $fullscreen-nav-link-hover-color;
 	  	}
 	  }
 	}
 
 	// Sub Menu
-	&__submenu {
+	&-submenu {
 	  position: relative;
-		transition: $transition-timing $transition-function;
+		transition: $fullscreen-submenu-transition;
 
-		.u-fullscreen__nav-list {
-			border-left: 2px solid rgba($white, .6);
-			padding-left: 1rem;
+		.fullscreen-submenu {
+			.fullscreen-submenu-list {
+				margin-left: $fullscreen-submenu-list-margin-x;
+			}
+		}
+
+		.fullscreen-nav-list {
+			border-left: $fullscreen-submenu-nav-list-border-left-width $fullscreen-submenu-nav-list-border-left-type $fullscreen-submenu-nav-list-border-left-color;
+			padding-left: 0;
 		}
 
 		&-nav-link {
 			display: inline-block;
-  		color: $white;
-		  padding-top: .5rem;
-			padding-bottom: .5rem;
+  		color: $fullscreen-nav-link-color;
+			padding-top: $fullscreen-nav-link-padding-y;
+			padding-bottom: $fullscreen-nav-link-padding-y;
+			padding-right: $fullscreen-nav-link-padding-x;
+			padding-left: $fullscreen-nav-link-padding-x;
+
+			&.disabled {
+				color: $fullscreen-nav-link-disabled-color;
+				pointer-events: none;
+			}
 
 	  	&:hover {
-	  		color: $white-color-70;
+	  		color: $fullscreen-nav-link-hover-color;
 	  	}
 	  }
 
 		&-list {
 		  list-style: none;
-			border-left: 2px solid rgba($white, .6);
-			padding-left: 1rem;
+			border-left: $fullscreen-submenu-nav-list-border-left-width $fullscreen-submenu-nav-list-border-left-type $fullscreen-submenu-nav-list-border-left-color;
+			padding-left: 0;
 		  margin-bottom: 0;
 
 			&-link {
 		  	display: inline-block;
-	  		color: $white-color-70;
+	  		color: $fullscreen-submenu-list-link-color;
 
 		  	&:hover {
-	  			color: $white;
+	  			color: $fullscreen-submenu-list-link-hover-color;
 		  	}
 		  }
 		}

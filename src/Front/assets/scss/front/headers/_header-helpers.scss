@@ -2,29 +2,33 @@
   Header Helpers
 ------------------------------------*/
 
-.u-header {
-  &--invisible {
+.header {
+  &-invisible {
     display: none;
   }
 
-  &--moved-up {
+  &-moved-up {
     transform: translate3d(0, -100%, 0);
+
+    &.header-hide-topbar {
+      transform: translate3d(0, -36px, 0);
+    }
   }
 
-  &--faded {
+  &-faded {
     opacity: 0;
     visibility: hidden;
   }
 
-  &__section--hidden {
+  &-section-hidden {
     position: relative;
   }
 
-  &[data-header-fix-effect] {
+  &[data-hs-header-options*="fixMoment"] {
     transition: $header-fix-effect-transition;
   }
 
-  &.u-header--untransitioned {
+  &.header-untransitioned {
     transition: none;
   }
 
@@ -32,13 +36,17 @@
     position: fixed;
     top: 0;
     bottom: auto;
+
+    .header-hide-content {
+      display: none;
+    }
   }
 
-  &--fix-top {
+  &-fix-top {
     position: fixed;
   }
 
-  &.u-header--fix-top[data-effect-compensation] {
+  &.header-fix-top[data-hs-header-options*="effectCompensation"] {
     transition: none;
   }
 }

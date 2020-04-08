@@ -2,10 +2,11 @@
   Slick Pagination
 ------------------------------------*/
 
-.u-slick__pagination {
+.slick-pagination {
   padding-left: 0;
+  margin-bottom: 0;
 
-  &:not(.u-slick__pagination--block) {
+  &:not(.slick-pagination-vertical) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +25,7 @@
 	  	height: $slick-pagination-dot-height;
       box-sizing: border-box;
 	    background-color: $slick-pagination-dot-bg-color;
-	    border: $slick-pagination-dot-border-width $slick-pagination-dot-border-style $slick-pagination-dot-border-color;
+	    border: $slick-pagination-dot-border-width $slick-pagination-dot-border-type $slick-pagination-dot-border-color;
 	    @include border-radius($slick-pagination-dot-border-radius);
 	    transform: $slick-pagination-dot-transform;
 	    transition: $slick-pagination-dot-transition;
@@ -41,7 +42,7 @@
 }
 
 /* White Version */
-.u-slick__pagination--white {
+.slick-pagination-white {
   li {
     span {
       background-color: $slick-pagination-white-dot-bg-color;
@@ -55,33 +56,8 @@
   }
 }
 
-/* Block */
-.u-slick__pagination--block {
+.slick-pagination-vertical {
   li {
     display: block;
-  }
-}
-
-/* Vertical Center Alignment */
-.u-slick__pagination-centered--y {
-  @include content-centered(false, true);
-}
-
-// Large Devices
-@include media-breakpoint-up(lg) {
-  /* Vertical Option */
-  .u-slick__pagination--vertical-lg {
-    li {
-      display: block;
-      margin: .25rem 0;
-    }
-  }
-
-  /* Vertical Option Positions */
-  .u-slick__pagination--vertical-pos-v1-lg {
-  	position: absolute;
-  	top: 50%;
-  	left: -15.7%;
-  	transform: translateY(-50%);
   }
 }

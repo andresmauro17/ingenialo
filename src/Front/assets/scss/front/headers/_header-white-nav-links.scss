@@ -2,36 +2,35 @@
   Header White Nav Links
 ------------------------------------*/
 
-.u-header--white-nav-links {
+.header-white-nav-links {
 	@each $breakpoint in map-keys($grid-breakpoints) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     &#{$infix} {
 			&:not(.bg-white):not(.js-header-fix-moment) {
 				@include media-breakpoint-up($breakpoint) {
-					.u-header__nav-item {
+					.navbar-nav-item {
 					  &:hover {
-					    .u-header__nav-link {
-								color: rgba($white, 1);
+					    .nav-link {
+								color: $header-white-nav-links-nav-item-hover-link-color;
 					    }
 					  }
 					}
 
-					.u-header__nav-link {
-						color: rgba($white, .7);
+					.nav-link {
+						color: $header-white-nav-links-link-color;
 
 					  &:hover {
-							color: rgba($white, 1);
+							color: $header-white-nav-links-link-hover-color;
 					  }
 					}
 
-					.u-header__navbar-link,
 					.dropdown-nav-link,
 					.btn-text-secondary {
-						color: rgba($white, .6);
+						color: $header-white-nav-links-link-color;
 
 						&:hover {
-							color: rgba($white, 1);
+							color: $header-white-nav-links-link-hover-color;
 						}
 					}
 				}

@@ -2,25 +2,28 @@
   Media Viewer
 ------------------------------------*/
 
-.u-media-viewer {
+.media-viewer {
 	position: relative;
 	display: block;
 
 	&:hover {
-		.u-media-viewer {
-			&__icon {
+		.media-viewer {
+			&-icon {
 				opacity: 1;
 				transform: scale(1);
 			}
 		}
 	}
 
-	&__container {
+	&-container {
 		@include content-centered;
 	}
 
-	&__icon {
-		display: inline-block;
+	&-icon {
+		display: inline-flex;
+	  flex-shrink: 0;
+	  justify-content: center;
+	  align-items: center;
 	  vertical-align: middle;
 	  text-align: center;
 	  width: $media-viewer-icon-width;
@@ -35,16 +38,12 @@
 
 	  &:hover,
 	  &:focus {
-	  	color: $white;
+	  	color: $media-viewer-icon-hover-color;
 	  }
 
-	  &--active {
+	  &-active {
 	  	opacity: 1;
 			transform: scale(1);
 	  }
-
-		&-inner {
-  		@include content-centered;
-  	}
 	}
 }

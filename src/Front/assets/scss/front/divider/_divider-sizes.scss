@@ -2,37 +2,37 @@
   Divider Sizes
 ------------------------------------*/
 
-.u-divider {
+.divider {
   &::before,
   &::after {
-    width: ($font-size-base * 10);
-    height: ($font-size-base * .0625);
+    width: $divider-width;
+    height: $divider-height;
     transform: translateY(-50%);
   }
 
   &::before {
-    margin-right: .625rem;
+    margin-right: $divider-margin-x;
   }
 
   &::after {
-    margin-left: .625rem;
+    margin-left: $divider-margin-x;
   }
 
   // Small Devices
   @include media-breakpoint-down(sm) {
     &::before,
     &::after {
-      width: ($font-size-base * 4);
+      width: $divider-width / 2.5;
     }
   }
 
-  &--xs {
-    font-size: ($font-size-base * .75);
+  &-xs {
+    font-size: $divider-font-size-xs;
 
     &::before,
     &::after {
-      width: ($font-size-base * 2);
-      height: ($font-size-base * .0625);
+      width: $divider-width / 4;
+      height: $divider-height;
       transform: translateY(-50%);
     }
   }

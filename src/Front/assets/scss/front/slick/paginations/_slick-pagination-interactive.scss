@@ -2,35 +2,39 @@
   Slick Pagination Interactive
 ------------------------------------*/
 
-.u-slick--pagination-interactive {
-  &__text {
-    color: $white-color-70;
+.slick-pagination-interactive {
+  &-title {
+    color: $slick-pagination-interactive-title-color;
+  }
+
+  &-text {
+    color: $slick-pagination-interactive-text-color;
   }
 
   .slick-slide {
     cursor: pointer;
-    color: $white;
-    background: rgba($white, .1);
-    transition: $transition-timing;
+    color: $slick-pagination-interactive-slide-color;
+    background-color: $slick-pagination-interactive-slide-bg-color;
+    transition: $slick-pagination-interactive-slide-transition;
 
     &:hover {
-      background: rgba($white, .15);
+      background-color: $slick-pagination-interactive-slide-hover-bg-color;
 
       &.slick-center {
-        background: $white;
+        background-color: $slick-pagination-interactive-active-bg-color;
       }
     }
   }
 
   .slick-center {
-    background: $white;
+    background-color: $slick-pagination-interactive-active-bg-color;
 
-    .u-slick--pagination-interactive__title {
-      color: $primary;
+    .slick-pagination-interactive-title {
+      color: $slick-pagination-interactive-active-title-color;
     }
 
-    .u-slick--pagination-interactive__text {
-      color: $secondary;
+    .slick-pagination-interactive-text {
+      color: $slick-pagination-interactive-active-text-color;
     }
   }
 }

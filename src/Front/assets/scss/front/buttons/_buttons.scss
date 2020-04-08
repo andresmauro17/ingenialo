@@ -3,18 +3,8 @@
 ------------------------------------*/
 
 .btn {
-  &[href] {
-    cursor: pointer;
-  }
-
-  &:not([href]):not([type]):not(:disabled):not(.disabled) {
-    cursor: default;
-  }
-}
-
-a[href] {
-  .btn:not([href]):not([type]):not(:disabled):not(.disabled) {
-    cursor: pointer;
+  svg {
+    margin-bottom: 0;
   }
 }
 
@@ -22,37 +12,30 @@ label.btn {
   cursor: pointer !important;
 }
 
-/* Pill */
 .btn-pill {
   @include border-radius($border-radius-pill);
 }
 
-/* Icon */
-.btn-icon {
-  position: relative;
-  line-height: 0;
-  font-size: $btn-icon-font-size;
-  width: $btn-width;
-  height: $btn-height;
-  padding: 0;
-
-  &__inner {
-    @include content-centered;
-
-    &-bottom-minus {
-      top: 80%;
-    }
-  }
+.btn-link {
+  font-weight: $btn-link-font-weight;
 }
 
-/* Background Transparent */
-[class*="btn-soft-"].btn-bg-transparent {
-  background-color: transparent;
+.btn-icon {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: $btn-icon-font-size;
+  font-weight: $btn-icon-font-weight;
+  width: $btn-icon-width;
+  height: $btn-icon-height;
+  padding: 0;
 }
 
 /* Toggle */
 .btn {
-  &__toggle {
+  &-toggle {
     &-default {
       display: inline-block;
     }
@@ -63,11 +46,11 @@ label.btn {
   }
 
   &.toggled {
-    .btn__toggle-default {
+    .btn-toggle-default {
       display: none;
     }
 
-    .btn__toggle-toggled {
+    .btn-toggle-toggled {
       display: inline-block;
     }
   }

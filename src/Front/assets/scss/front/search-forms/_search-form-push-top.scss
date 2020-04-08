@@ -2,20 +2,20 @@
   Search Form - Push Top
 ------------------------------------*/
 
-.u-search-push-top {
+.search-push-top {
 	display: none;
-	background-color: $search-push-top-bg;
-	padding-top: $search-push-top-padding-paddingY;
-	padding-bottom: $search-push-top-padding-paddingY;
+	background-color: $search-push-top-bg-color;
+	padding-top: $search-push-top-padding-padding-y;
+	padding-bottom: $search-push-top-padding-padding-y;
 	box-shadow: $search-push-top-box-shadow;
 
-	&__content {
+	&-content {
 		max-width: $search-push-top-inner-max-width;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	&__close-btn {
+	&-close-btn {
 		position: absolute;
 		top: -1.5625rem;
 		right: .4375rem;
@@ -23,14 +23,14 @@
 
 	// Small Devices
 	@include media-breakpoint-down(xs) {
-		padding-top: $search-push-top-padding-paddingY-sm;
-		padding-bottom: $search-push-top-padding-paddingY-sm;
+		padding-top: $search-push-top-padding-padding-y-sm;
+		padding-bottom: $search-push-top-padding-padding-y-sm;
 	}
 }
 
 /* Banner */
-.u-search-push-top__banner {
-	background-color: $search-push-top-banner-bg;
+.search-push-top-banner {
+	background-color: $search-push-top-banner-bg-color;
 	box-shadow: $search-push-top-banner-box-shadow;
 	padding-right: $search-push-top-banner-padding-right;
 	padding-top: $search-push-top-banner-padding-top;
@@ -39,18 +39,18 @@
 	&-container {
 		position: relative;
 		width: 75%;
-		min-height: 11.5625rem;
+		min-height: $search-push-top-container-min-height;
 	}
 
 	&-img {
 		position: absolute;
 		bottom: -.625rem;
 		left: -.625rem;
-		transition: all .3s ease-in-out;
+		transition: all $search-push-top-banner-img-transition;;
 	}
 
 	&:hover {
-		.u-search-push-top__banner-img {
+		.search-push-top-banner-img {
 			&:first-child {
 				bottom: 0;
 				left: 0;

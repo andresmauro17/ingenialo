@@ -5,7 +5,7 @@
 .dropdown-card {
 	padding-top: 0;
 	padding-bottom: 0;
-	margin-bottom: $dropdown-card-margin-bottom;
+	margin-bottom: $dropdown-card-margin-y;
 
 	@include media-breakpoint-up(md) {
 		min-width: $dropdown-card-min-width;

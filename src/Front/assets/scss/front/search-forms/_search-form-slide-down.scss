@@ -2,18 +2,25 @@
   Search Form - Slide Down
 ------------------------------------*/
 
-.u-search-slide-down {
-  position: absolute;
-  z-index: 1003;
-  top: 5rem;
+.search-slide-down {
+  position: fixed;
+  z-index: $search-slide-down-z-index;
+  top: $search-slide-down-top-offset;
   left: calc(50% - 18rem) !important;
-  width: 36rem;
+  width: $search-slide-down-width;
+
+  // Small Devices
+  @include media-breakpoint-down(sm) {
+    left: 5% !important;
+    right: 5% !important;
+    width: 90%;
+  }
 
   &-trigger {
     &.active {
-      .u-search-slide-down-trigger__icon {
+      .search-slide-down-trigger-icon {
         &::before {
-          content: "\f00d";
+          content: $search-slide-down-trigger-icon-pseudo-content;
         }
       }
     }
@@ -23,31 +30,31 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1002;
+    z-index: $search-slide-down-bg-overlay;
     display: none;
     width: 100%;
     height: 100%;
   }
 
-  .u-search-slide-down__input {
+  .search-slide-down-input {
     opacity: 0;
-    transform: translateY(-2rem);
-    transition: transform $transition-timing cubic-bezier(.37,.41,.55,.98), opacity $transition-timing-sm;
+    transform: $search-slide-down-input-transform;
+    transition: $search-slide-down-input-transition;
   }
 
-  .u-search-slide-down__suggestions {
+  .search-slide-down-suggestions {
     opacity: 0;
-    transform: translateY(-3rem);
-    transition: transform $transition-timing-md cubic-bezier(.37,.41,.55,.98), opacity $transition-timing-sm;
+    transform: $search-slide-down-suggestions-transform;
+    transition: $search-slide-down-suggestions-transition;
   }
 
-  &.active .u-search-slide-down__input,
-  &.active .u-search-slide-down__suggestions {
+  &-show .search-slide-down-input,
+  &-show .search-slide-down-suggestions {
     opacity: 1;
     transform: none;
   }
 
-  &.active .u-search-slide-down__suggestions {
-    transition-delay: $transition-timing-sm;
+  &-show .search-slide-down-suggestions {
+    transition-delay: $search-slide-down-show-suggestions-transition;
   }
 }

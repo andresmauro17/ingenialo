@@ -5,16 +5,16 @@
 .file-attachment-input {
   position: relative;
   display: block;
-  background-color: $file-attachment-bg-color;
-  border: $file-attachment-border-width $file-attachment-border-type $file-attachment-border-color;
+  background-color: $file-attachment-input-bg-color;
+  border: $file-attachment-input-border-width $file-attachment-input-border-type $file-attachment-input-border-color;
   text-align: center;
   overflow: hidden;
   cursor: pointer;
-  @include border-radius($file-attachment-border-radius);
-  padding: 4rem;
+  @include border-radius($file-attachment-input-border-radius);
+  padding: $file-attachment-input-padding-y $file-attachment-input-padding-x;
   margin-bottom: 0;
 
-  &__label {
+  &-label {
     position: absolute;
     top: 0;
     right: 0;
@@ -26,6 +26,6 @@
   }
 
   &:hover {
-    background-color: $file-attachment-bg-hover-color;
+    background-color: $file-attachment-input-bg-hover-color;
   }
 }

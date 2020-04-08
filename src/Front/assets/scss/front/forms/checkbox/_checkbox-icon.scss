@@ -3,19 +3,19 @@
 ------------------------------------*/
 
 .checkbox-icon {
-  &__label::after {
+  &-label::after {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: $checkbox-icon-label-psuedo-top-offset;
+    right: $checkbox-icon-label-psuedo-right-offset;
     display: none;
-    font-family: $font-family-font-awesome-icon;
-    content: "\f058";
+    color: $checkbox-icon-label-psuedo-color;
+    font-family: $checkbox-icon-label-psuedo-font-family;
     font-weight: 900;
-    color: $primary;
-    font-size: 1.5rem;
+    line-height: normal;
+    content: $checkbox-icon-label-psuedo-content;
   }
 
-  &__input:checked ~ &__label {
+  &-input:checked ~ &-label {
     &::after {
       display: block;
       border-color: $checkbox-outline-input-checked-border-color;

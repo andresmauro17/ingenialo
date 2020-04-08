@@ -7,13 +7,3 @@
     background-color: rgba($value, .1);
   }
 }
-
-@each $color, $value in $secondary-colors {
-  .bg-soft-#{$color} {
-    background-color: rgba($value, .1);
-  }
-}
-
-.bg-soft-light {
-  background-color: $gray-100;
-}

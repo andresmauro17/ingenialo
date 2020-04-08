@@ -1,25 +1,14 @@
 /*------------------------------------
-  Air Button Styles
+  Soft Button Styles
 ------------------------------------*/
 
 @each $color, $value in $theme-colors {
-  /* #{$color} air */
+  /* #{$color} soft */
   .btn-soft-#{$color} {
     @include button-soft($value, $value, $value, $value, $value);
-  }
-
-  .btn.btn-soft-#{$color} {
-    color: $value;
   }
 }
 
-@each $color, $value in $secondary-colors {
-  /* #{$color} air */
-  .btn-soft-#{$color} {
-    @include button-soft($value, $value, $value, $value, $value);
-  }
-
-  .btn.btn-soft-#{$color} {
-    color: $value;
-  }
+.btn-outline-secondary {
+  border-color: $btn-outline-secondary-color;
 }

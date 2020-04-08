@@ -2,7 +2,7 @@
   Slick Arrows
 ------------------------------------*/
 
-.u-slick__arrow {
+.slick-arrow {
 	z-index: 1;
 	line-height: 0;
 	display: inline-block;
@@ -19,54 +19,54 @@
 		background-color: $slick-arrow-hover-bg-color;
 	}
 
-	&-inner {
-		&:before {
-			@include content-centered;
-		}
+	&::before {
+		display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 100%;
+	  height: 100%;
+	}
 
-		&--left {
-			left: 0;
-		}
+	&-left {
+		left: 0;
+	}
 
-		&--right {
-			right: 0;
-		}
+	&-right {
+		right: 0;
 	}
 }
 
-/* Flat */
-.u-slick__arrow--flat {
-	color: $slick-arrow-flat-color;
-	background-color: $slick-arrow-flat-bg-color;
+/* Primary */
+.slick-arrow-primary {
+	color: $slick-arrow-primary-color;
+	background-color: $slick-arrow-primary-bg-color;
 }
 
-/* Flat White */
-.u-slick__arrow--flat-white {
-	color: $slick-arrow-flat-white-color;
-	background-color: $slick-arrow-flat-white-bg-color;
+/* Soft White */
+.slick-arrow-soft-white {
+	color: $slick-arrow-soft-white-color;
+	background-color: $slick-arrow-soft-white-bg-color;
 
 	&:hover {
-		color: $slick-arrow-flat-white-hover-color;
-		background-color: $slick-arrow-flat-white-bg-hover-color;
+		color: $slick-arrow-soft-white-hover-color;
+		background-color: $slick-arrow-soft-white-hover-bg-color;
 	}
 }
 
 /* Offset */
-.u-slick__arrow--offset {
-	@include media-breakpoint-up(lg) {
-		&.u-slick__arrow-inner {
-			&--left {
-				left: -2.5rem;
-			}
+@include media-breakpoint-up(lg) {
+	.slick-arrow-offset {
+		&.slick-arrow-left {
+			left: -$slick-arrow-width;
+		}
 
-			&--right {
-				right: -2.5rem;
-			}
+		&.slick-arrow-right {
+			right: -$slick-arrow-width;
 		}
 	}
 }
 
 /* Vertical Center Alignment */
-.u-slick__arrow-centered--y {
+.slick-arrow-centered-y {
 	@include content-centered(false, true);
 }

@@ -2,16 +2,14 @@
   Header Default
 ------------------------------------*/
 
-.u-header {
-	&__navbar-nav-scroll {
-	  max-width: 100%;
-	  height: 4.25rem;
-	  overflow: hidden;
+.navbar-nav-scroll {
+  max-width: 100%;
+  height: $header-navbar-nav-scroll-height;
+  overflow: hidden;
 
-		.u-header__navbar-nav {
-		  overflow-x: auto;
-		  white-space: nowrap;
-		  -webkit-overflow-scrolling: touch;
-		}
+	.navbar-nav {
+	  overflow-x: auto;
+	  white-space: nowrap;
+	  -webkit-overflow-scrolling: touch;
 	}
 }

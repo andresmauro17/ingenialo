@@ -2,45 +2,33 @@
   Fancybox
 ----------------------------------------------------*/
 
-.u-fancybox-theme .fancybox-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.u-fancybox-theme .fancybox-slide--iframe .fancybox-content {
-  position: static;
-}
-
-.u-fancybox-theme .fancybox-bg {
-  background-color: $dark;
-}
-
-.fancybox-controls--canzoomIn .fancybox-placeholder,
-.fancybox-controls--canzoomOut .fancybox-placeholder {
-  cursor: inherit;
-}
-
-.fancybox-slide.has-animation {
+.fancybox-theme .fancybox-slide.animated {
   display: block;
+  opacity: 0;
+  z-index: 0;
 }
 
-.fancybox-is-sliding .fancybox-slide.has-animation,
-.fancybox-slide--current.has-animation,
-.fancybox-slide--next.has-animation,
-.fancybox-slide--previous.has-animation {
-  display: none;
+.fancybox-theme .fancybox-slide.animated.fancybox-slide--current {
+  opacity: 1;
+  z-index: 1;
 }
 
-.fancybox-is-sliding .fancybox-slide.has-animation.animated,
-.fancybox-slide--current.has-animation.animated,
-.fancybox-slide--next.has-animation.animated,
-.fancybox-slide--previous.has-animation.animated {
-  display: block;
+.fancybox-theme .fancybox-content {
+  background-color: transparent;
 }
 
-.u-blur-30 {
-  filter: blur(30px);
+.fancybox-theme .fancybox-bg {
+  background-color: $fancybox-theme-bg-color;
+}
+
+.fancybox-theme .fancybox-button svg {
+  margin-bottom: 0;
+}
+
+.fancybox-theme .fancybox-progress {
+  background-color: $fancybox-theme-progress-bg-color;
+}
+
+.blur-30 {
+  filter: $fancybox-blur-30;
 }
