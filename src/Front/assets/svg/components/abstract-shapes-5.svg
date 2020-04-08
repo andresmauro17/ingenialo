@@ -1,75 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 385.3 279.2" style="enable-background:new 0 0 385.3 279.2;" xml:space="preserve">
+	 viewBox="0 0 2000 500" style="enable-background:new 0 0 2000 500;" xml:space="preserve">
 <style type="text/css">
-	.abstract-shapes-5-0{fill:#00DFFC;}
-	.abstract-shapes-5-2{fill:#FFFFFF;}
-	.abstract-shapes-5-3{fill:#FFC107;}
-	.abstract-shapes-5-4{fill:none;stroke:#00DFFC;}
+	.abstract-shapes-15-0{clip-path:url(#abstractShapes15ID);fill:#19A0FF;}
+	.abstract-shapes-15-1{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID3);}
+	.abstract-shapes-15-2{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID4);}
+	.abstract-shapes-15-3{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID5);}
+	.abstract-shapes-15-4{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID6);}
+	.abstract-shapes-15-5{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID7);}
+	.abstract-shapes-15-6{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID8);}
+	.abstract-shapes-15-7{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID9);}
+	.abstract-shapes-15-8{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID10);}
+	.abstract-shapes-15-9{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID11);}
+	.abstract-shapes-15-10{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID12);}
+	.abstract-shapes-15-11{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID13);}
+	.abstract-shapes-15-12{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID14);}
+	.abstract-shapes-15-13{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID15);}
+	.abstract-shapes-15-14{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID16);}
+	.abstract-shapes-15-15{clip-path:url(#abstractShapes15ID);fill:url(#abstractShapes15ID17);}
 </style>
 <g>
 	<defs>
-		<rect id="abstractShapesID5_1" width="385.3" height="279.2"/>
+		<rect id="abstractShapes15ID1" y="1.8" transform="matrix(-1 -4.489621e-11 4.489621e-11 -1 2000 504.4521)" width="2000" height="500.8"/>
 	</defs>
-	<clipPath id="abstractShapesID5_2">
-		<use xlink:href="#abstractShapesID5_1"  style="overflow:visible;"/>
+	<clipPath id="abstractShapes15ID">
+		<use xlink:href="#abstractShapes15ID1"  style="overflow:visible;"/>
 	</clipPath>
-	<path class="abstract-shapes-5-0 fill-info" clip-path="url(#abstractShapesID5_2)" d="M247.1,109.8c7.3,20.4,16.6,50.8,8,70.9c-6.6,15.6-19,38.4-34.6,35.3c-13.1-16.9-39.8-52.2-57-66
-		c-14.2-11.4-36-23.2-49.8-35.6C79.5,83.6,66.3,41.8,47.3,0C81.9,3.5,116.1,10,150,19.4c21.8,6.2,44.3,14.2,60.8,29.4
-		C229.1,64.5,239.5,87,247.1,109.8z"/>
-	<g clip-path="url(#abstractShapesID5_2)">
-		<g>
-			<path class="abstract-shapes-5-2 fill-white" d="M49.4,1.8C89.7,21,126.8,46,158.5,76.9c34.4,34,57.5,73.9,83.3,113.8c0.4,1.2,2.7,0,1.6-1.2
-				C199.2,107,137,37.4,49.4,0.6C49.4,0.7,48.6,1.1,49.4,1.8L49.4,1.8z"/>
-		</g>
-		<g>
-			<path class="abstract-shapes-5-2 fill-white" d="M72.8,54.3c27.8-1.6,52-0.4,76.3,14.9c1.6,1.2,3.1-1.6,1.6-2.7c-21.5-14.1-52.8-22.7-78.2-14.1
-				C71.7,53.1,71.7,54.3,72.8,54.3L72.8,54.3z"/>
-		</g>
-		<g>
-			<path class="abstract-shapes-5-2 fill-white" d="M116.2,100.4c13.3,0,26.2-0.4,39.1,2.7c11.7,2.7,23.1,7,34.8,11.3c1.6,0.4,2-1.6,0.4-2.7
-				c-23.5-8.6-50.1-18.8-75.1-12.5C115.9,100,115.9,100.4,116.2,100.4L116.2,100.4z"/>
-		</g>
-		<g>
-			<path class="abstract-shapes-5-2 fill-white" d="M167.9,141.5c9,0.4,18.8,1.6,27.8,3.1c10.6,2,17.6,7.4,24.6,15.6c1.2,1.2,3.1-0.4,2-2
-				c-6.3-7.4-12.9-12.9-23.1-15.6c-10.2-2-21.1-2.7-31.7-2C167.5,140.3,167.5,141.5,167.9,141.5L167.9,141.5z"/>
-		</g>
-		<g>
-			<path class="abstract-shapes-5-2 fill-white" d="M129.9,22.2c0.4,10.2,5.9,20.3,9.8,29.7c2.7,5.9,4.7,16,12.5,17.2c0.4,0,1.2-0.4,0.4-1.2
-				c-12.9-10.6-13.3-31.7-21.9-45.8C130.7,21.4,129.9,21.4,129.9,22.2L129.9,22.2z"/>
-		</g>
-		<g>
-			<path class="abstract-shapes-5-2 fill-white" d="M171.8,34.3c2.7,27.8,11.3,55.1,21.1,81c0.4,1.2,2.7,0.4,2-0.4c-10.2-26.2-15.6-53.2-21.9-80.6
-				C172.6,33.9,171.8,33.9,171.8,34.3L171.8,34.3z"/>
-		</g>
-		<g>
-			<path class="abstract-shapes-5-2 fill-white" d="M216.8,93c0,23.5,5.9,47.7,9.8,70.8c0.4,1.6,3.1,1.2,2.7-0.4c-4.3-23.5-7.4-46.5-11.3-70.4
-				C217.9,91.8,216.8,91.8,216.8,93L216.8,93z"/>
-		</g>
-	</g>
-	<path class="abstract-shapes-5-3 fill-warning" clip-path="url(#abstractShapesID5_2)" d="M366.9,378.4c-33.4-4.4-66.3-9-94-31.6c-20-16.3-33.8-39.8-38.6-65.1c-6.4-33.3,3.8-73-17.3-102.3
-		c-11.3-15.7-29.2-24.8-48.6-24.6c-50.2,0.5-69.4,46.8-76.3,89.6c-8,50.3-5.9,105.4-51.5,138.9c-26.9,19.8-68.1,24.9-88.3,54
-		C-77.2,480-26.6,522,7,541.4c30.4,17.6,60.7,33.5,93.9,45.2c17.3,6.1,35.9,9.9,53.9,6.7c44.3-8.1,44.1-54.1,66.3-84.3
-		c11.8-16.1,28.7-26.7,48-31.4c35.2-8.6,72.4-3.4,107.9-0.7c34,2.6,79.4-19,67.5-60.6c-5.5-19.1-23.6-28.7-41.9-32.4
-		C390.8,381.6,378.8,380,366.9,378.4z"/>
 
-		<linearGradient id="abstractShapesID5_3" gradientUnits="userSpaceOnUse" x1="1924.1892" y1="147.9113" x2="2331.603" y2="147.9113" gradientTransform="matrix(-0.7976 0.6032 -0.6032 -0.7976 2013.4222 -797.0972)">
-		<stop class="stop-color-primary" offset="2.474398e-07" style="stop-color:#377DFF"/>
-		<stop class="stop-color-indigo" offset="1" style="stop-color:#2D1582"/>
+		<linearGradient id="abstractShapes15ID3" gradientUnits="userSpaceOnUse" x1="5220.9878" y1="8378.6572" x2="5191.7778" y2="8495.8174" gradientTransform="matrix(-1 2.364263e-05 -2.364263e-05 -1 5493.0742 8770.0088)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
 	</linearGradient>
-	<path class="abstract-shapes-5-4 fill-none stroke-info" fill="url(#abstractShapesID5_3)" clip-path="url(#abstractShapesID5_2)" d="M226.1,178.5c60.5-44.6,146.8-0.3,143.9,74.9c0,1-0.1,2-0.1,2.9c-5.7,95,128.3,111.4,51.9,156.6
-		s5.1,77-71.6,107.4c-76.8,30.4-120.3,93.2-214.1-12.1C50.7,412.3-13.8,450.3,2.5,368.6c3-15.2,4.9-30.7,4.9-46.2
-		c0.1-25.7,12.8-71.2,95.6-89.1C157.1,221.7,197.8,199.3,226.1,178.5z"/>
+	<polygon class="abstract-shapes-15-1" points="224.5,373.1 351.5,404 351.3,280.1 224.3,249.3 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="351.3,218.3 224.7,249.4 351.4,280.1 478,249 	"/>
 
-		<linearGradient id="abstractShapesID5_4" gradientUnits="userSpaceOnUse" x1="1924.1892" y1="147.9113" x2="2331.603" y2="147.9113" gradientTransform="matrix(-0.7976 0.6032 -0.6032 -0.7976 2013.4222 -797.0972)">
-		<stop class="stop-color-primary" offset="2.474398e-07" style="stop-color:#377DFF"/>
-		<stop class="stop-color-indigo" offset="1" style="stop-color:#2D1582"/>
+		<linearGradient id="abstractShapes15ID4" gradientUnits="userSpaceOnUse" x1="5472.5591" y1="8451.6836" x2="5443.3491" y2="8568.8438" gradientTransform="matrix(-1 0 0 -1 6124.8447 8737.96)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
 	</linearGradient>
-	<path fill="url(#abstractShapesID5_4)" clip-path="url(#abstractShapesID5_2)" d="M226.1,178.5c60.5-44.6,146.8-0.3,143.9,74.9c0,1-0.1,2-0.1,2.9c-5.7,95,128.3,111.4,51.9,156.6
-		s5.1,77-71.6,107.4c-76.8,30.4-120.3,93.2-214.1-12.1C50.7,412.3-13.8,450.3,2.5,368.6c3-15.2,4.9-30.7,4.9-46.2
-		c0.1-25.7,12.8-71.2,95.6-89.1C157.1,221.7,197.8,199.3,226.1,178.5z"/>
-	<path class="abstract-shapes-5-4 fill-none stroke-info" stroke-width="3" stroke-miterlimit="10" clip-path="url(#abstractShapesID5_2)" d="M340,48.2c-0.1-1.9-1-3.6-2.5-4.7c-2.3-1.7-6.1-2.2-11.4,5.5c-8.4,12.2-0.5,11.7,0.6,11.6c0.1,0,0.2,0,0.3,0
-		l7.3-0.5c3.5-0.2,6.2-3.3,6-6.8L340,48.2z"/>
+	<polygon class="abstract-shapes-15-2" points="605,268.1 732,298.9 731.8,175.1 604.8,144.3 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="731.8,113 605.2,144.1 731.9,174.9 858.5,143.7 	"/>
+
+		<linearGradient id="abstractShapes15ID5" gradientUnits="userSpaceOnUse" x1="-3932.0581" y1="115.2598" x2="-3961.2681" y2="232.4198" gradientTransform="matrix(-1 0 0 -1 -2000.8601 503.15)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-3" points="1883.9,369.7 2010.9,400.5 2010.7,276.7 1883.7,245.9 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="2010.7,214.9 1884.1,246 2010.8,276.7 2137.4,245.6 	"/>
+
+		<linearGradient id="abstractShapes15ID6" gradientUnits="userSpaceOnUse" x1="-2765.3894" y1="211.3053" x2="-2823.2065" y2="443.1856" gradientTransform="matrix(-1 0 0 -1 -2000.8601 503.15)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-4" points="731.3,278.4 858.3,309.2 857.9,63.7 731,32.9 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="858,1.8 731.4,33 858.1,63.7 984.7,32.6 	"/>
+
+		<linearGradient id="abstractShapes15ID7" gradientUnits="userSpaceOnUse" x1="5207.2622" y1="8379.4844" x2="5178.0522" y2="8496.6445" gradientTransform="matrix(-1 1.965122e-05 -1.965122e-05 -1 7138.6016 8828.8584)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-5" points="1884,431.5 2011,462.3 2010.8,338.5 1883.8,307.7 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="2010.8,276.7 1884.2,307.8 2010.9,338.5 2137.5,307.4 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="477.5,324.1 351,355.2 477.6,386 604.2,354.8 	"/>
+
+		<linearGradient id="abstractShapes15ID8" gradientUnits="userSpaceOnUse" x1="5726.4692" y1="8302.6074" x2="5697.2593" y2="8419.7676" gradientTransform="matrix(-1 1.931079e-05 -1.931079e-05 -1 6124.98 8799.4424)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-6" points="351.2,479 478.2,509.8 478,386 351,355.2 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="1758.2,277 1631.6,308.2 1758.3,338.9 1884.9,307.8 	"/>
+
+		<linearGradient id="abstractShapes15ID9" gradientUnits="userSpaceOnUse" x1="-3671.3455" y1="-15.0694" x2="-3717.1458" y2="168.6329" gradientTransform="matrix(-1 0 0 -1 -2000.8601 503.15)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-7" points="1631.5,502.5 1758.4,533.3 1758.1,338.9 1631.2,308.1 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="604.2,217.9 477.6,249 604.3,279.8 730.9,248.6 	"/>
+
+		<linearGradient id="abstractShapes15ID10" gradientUnits="userSpaceOnUse" x1="5346.563" y1="8343.6855" x2="5317.353" y2="8460.8457" gradientTransform="matrix(-1 1.940399e-05 -1.940399e-05 -1 5871.7246 8734.3203)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-8" points="477.9,372.8 604.8,403.6 604.6,279.8 477.7,249 	"/>
+
+		<linearGradient id="abstractShapes15ID11" gradientUnits="userSpaceOnUse" x1="5207.209" y1="8379.415" x2="5177.999" y2="8496.5742" gradientTransform="matrix(-1 4.326975e-05 -4.326975e-05 -1 5998.8047 8957.3574)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-9" points="744,560 870.9,590.8 870.8,467 743.8,436.2 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="870.9,466.9 744.3,498.1 871,528.8 997.6,497.7 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="870.8,405.1 744.2,436.3 870.9,467 997.5,435.9 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="997.5,436 870.9,467.1 997.6,497.8 1124.2,466.7 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="491.9,-16.6 365.3,14.5 492,45.3 618.6,14.1 	"/>
+
+		<linearGradient id="abstractShapes15ID12" gradientUnits="userSpaceOnUse" x1="-2407.2375" y1="294.7652" x2="-2449.6121" y2="464.6932" gradientTransform="matrix(-1 0 0 -1 -2000.8601 503.15)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-10" points="365.1,194.2 492.1,225 491.8,45.3 364.9,14.5 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="112.2,94.2 -14.4,125.4 112.3,156.1 238.9,125 	"/>
+
+		<linearGradient id="abstractShapes15ID13" gradientUnits="userSpaceOnUse" x1="-2026.6179" y1="175.4777" x2="-2071.158" y2="354.1176" gradientTransform="matrix(-1 0 0 -1 -2000.8601 503.15)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-11" points="-14.5,314.3 112.5,345.1 112.2,156.1 -14.8,125.3 	"/>
+
+		<linearGradient id="abstractShapes15ID14" gradientUnits="userSpaceOnUse" x1="5431.603" y1="8451.6836" x2="5402.3931" y2="8568.8438" gradientTransform="matrix(1 0 0 -1 -4124.8447 8737.96)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-12" points="1354.2,144.3 1227.2,175.1 1227,298.9 1354,268.1 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="1100.5,143.7 1227.1,174.9 1353.8,144.1 1227.2,113 	"/>
+
+		<linearGradient id="abstractShapes15ID15" gradientUnits="userSpaceOnUse" x1="-2806.3455" y1="211.3053" x2="-2864.1628" y2="443.1856" gradientTransform="matrix(1 0 0 -1 4000.8601 503.15)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-13" points="1228.1,32.9 1101.1,63.7 1100.7,309.2 1227.7,278.4 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="974.4,32.6 1101,63.7 1227.7,33 1101.1,1.8 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="1354.8,354.8 1481.4,386 1608.1,355.2 1481.5,324.1 	"/>
+
+		<linearGradient id="abstractShapes15ID16" gradientUnits="userSpaceOnUse" x1="5685.5117" y1="8302.6064" x2="5656.3018" y2="8419.7666" gradientTransform="matrix(1 1.931084e-05 1.931084e-05 -1 -4124.98 8799.4424)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-14" points="1608,355.2 1481,386 1480.8,509.8 1607.8,479 	"/>
+	<polygon class="abstract-shapes-15-0 fill-info" points="1228.2,248.6 1354.8,279.8 1481.4,249 1354.9,217.9 	"/>
+
+		<linearGradient id="abstractShapes15ID17" gradientUnits="userSpaceOnUse" x1="5305.606" y1="8343.6846" x2="5276.396" y2="8460.8447" gradientTransform="matrix(1 1.940404e-05 1.940404e-05 -1 -3871.7246 8734.3203)">
+		<stop class="stop-color-primary" offset="0" style="stop-color:#377DFF;stop-opacity:0"/>
+		<stop class="stop-color-primary-lighter" offset="1" style="stop-color:#196EFF"/>
+	</linearGradient>
+	<polygon class="abstract-shapes-15-15" points="1481.4,249 1354.4,279.8 1354.2,403.6 1481.2,372.8 	"/>
 </g>
 </svg>
