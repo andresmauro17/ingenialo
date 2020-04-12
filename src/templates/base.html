@@ -3,15 +3,18 @@
     <html lang="en">
     <head>
         <!-- Title -->
-        <title>ingenialo</title>
+        <title>Ingenialo</title>
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
-      
-        <!-- Required meta tags -->
+        <!-- Required Meta Tags Always Come First -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+
+         <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+        
         <!-- Css global Sources -->
         {% include 'base/css.html' %}
         <!-- Css view Sources -->
@@ -22,13 +25,37 @@
     <body>
         {% include 'base/header.html'%}
 
-        {% include 'base/message.html' %}
+        {% comment %} {% include 'base/message.html' %} {% endcomment %}
 
         {% block content %}{% endblock %}
         
-        {% include 'base/footer.html'%}
+        {% comment %} {% include 'base/footer.html'%} {% endcomment %}
 
-        <!-- Js global Sources -->
+
+        <!-- Go to Top -->
+        <a class="js-go-to go-to position-fixed" 
+            href="javascript:;" 
+            style="visibility: hidden;"
+            data-hs-go-to-options='{
+                "offsetTop": 700,
+                "position": {
+                "init": {
+                    "right": 15
+                },
+                "show": {
+                    "bottom": 15
+                },
+                "hide": {
+                    "bottom": -15
+                }
+                }
+            }'
+        >
+            <i class="las la-arrow-up go-to-inner"></i>
+        </a>
+        <!-- End Go to Top -->
+
+        <!-- Js global sources-->
         {% include 'base/js.html' %}
         <!-- Js view Sources -->
         {% block javascript %}{% endblock %}

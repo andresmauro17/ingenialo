@@ -2,16 +2,11 @@
 {% load static %}
 
 {% block base_head %}
-  <!-- carrousel -->
-  <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
 
-  <link rel="stylesheet" href="{% static 'vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
+   <!-- carrousel -->
+   <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
+ 
 
-  <style>
-      .slide-1{ background-image: url('https://cdn-shop.adafruit.com/heroes/feathernest.jpg'); }
-      .slide-2{ background-image: url('https://cdn-shop.adafruit.com/heroes/adafruit_microbit_hero.jpg'); }
-      .slide-3{ background-image: url('http://localhost:8000/static/img/1920x1080/img23.jpg');}  
-  </style>
 {% endblock base_head%}
 
 {% block content %}
@@ -20,21 +15,33 @@
   <main id="content" role="main">
     <!-- Images Carousel Section -->
     <div class="container-fluid">
-      <div class="js-slick-carousel u-slick"
-          data-autoplay="true"
-          data-speed="5000"
-          data-pagi-classes="text-center u-slick__pagination u-slick__pagination--white position-absolute right-0 bottom-0 left-0">
-            
+      <div 
+          class="js-slick-carousel slick"
+          data-hs-slick-carousel-options='{
+            "dots": true,
+            "dotsClass": "slick-pagination mt-3"
+          }'
+      >
           {% for hero in heros %}
-              <div class="js-slide rounded bg-img-hero-center space-4" style="background-image: url({{hero.image.url}});">
-                <div class="container">
-                  <div class="w-lg-30">
-                    <h4 class="display-4 text-white font-weight-semi-bold mb-3"
-                        data-scs-animation-in="fadeInUp">{{ hero.tittle }}</h4>
-                    <p class="lead text-white"
-                      data-scs-animation-in="fadeInUp">{{ hero.legend }}</p>
-                  </div>
-                </div>
+              <div class="js-slide bg-img-hero-center" style="background-image: url({{hero.image.url}});">
+                  <!-- News Block -->
+                    <div class="container d-flex align-items-center min-h-620rem">
+                      <div class="w-lg-40 mr-5">
+                        <div class="mb-5">
+                          <h3 class="h1 font-weight-bold text-white"
+                              data-hs-slick-carousel-animation="fadeInUp"
+                              data-hs-slick-carousel-animation-delay="150">{{ hero.tittle }}
+                          </h3>
+                          <p class="lead text-white" data-scs-animation-in="fadeInUp">
+                            {{ hero.legend }}
+                          </p>
+                        </div>
+                        <a class="btn btn-primary btn-wide transition-3d-hover" href="#"
+                          data-hs-slick-carousel-animation="fadeInUp"
+                          data-hs-slick-carousel-animation-delay="300">Leer mas <i class="fas fa-angle-right fa-sm ml-1"></i></a>
+                      </div>
+                    </div>
+                    <!-- End News Block -->
               </div>
           {% endfor %}
 
@@ -51,6 +58,15 @@
 
 
 
+
+
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+{% endblock content%}
+
+
+{% comment %} 
     <!-- Blog Masonry Section -->
     <div class="container u-space-2-top u-space-3-top--md u-space-2-top--lg u-space-2-bottom">
       <!-- Content -->
@@ -169,34 +185,13 @@
      <!-- End Content -->  
 
   </div>
-  <!-- End Blog Masonry Section -->
+  <!-- End Blog Masonry Section --> {% endcomment %}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </main>
-  <!-- ========== END MAIN CONTENT ========== -->
-
-{% endblock content%}
 
 {% block javascript %}
 
-  <!-- JS Implementing Plugins -->
+  {% comment %} <!-- JS Implementing Plugins -->
   <script src="{% static 'vendor/slick-carousel/slick/slick.js' %}"></script>
   <script src="{% static 'js/components/hs.slick-carousel.js' %}"></script>
 
@@ -210,6 +205,6 @@
       $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
       $.HSCore.components.HSCubeportfolio.init('.cbp');
     });
-  </script>
+  </script> {% endcomment %}
 
 {% endblock javascript%}
