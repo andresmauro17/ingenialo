@@ -29,7 +29,7 @@
 				hint: settings.mentions ? {
 					match: /\B@(\w*)$/,
 					search: function (keyword, callback) {
-						callback($.grep(this.mentions, function (item) {
+						callback($.grep(settings.mentions, function (item) {
 							return item.indexOf(keyword) === 0;
 						}));
 					},

@@ -255,7 +255,7 @@ $transition-timing-lg:                                      .4s !default;
 $transition-function:                                       ease-in-out !default;
 
 // Others
-$letter-spacing:                                            .03125rem !default
+$letter-spacing:                                            .03125rem !default;
 
 $hr-border-color:                                           $gray-300 !default;
 
@@ -349,7 +349,7 @@ $link-icon-transition:                                      $transition-timing !
 // =========================================================
 
 // Colors
-$input-color:                                               $dark !default;
+$input-color:                                               $headings-color !default;
 $input-placeholder-color:                                   $gray-500 !default;
 $input-group-addon-color:                                   $input-placeholder-color !default;
 $input-label-color:                                         $headings-color !default;
@@ -385,15 +385,15 @@ $input-btn-line-height-sm:                                  $line-height-sm !def
 $input-addon-z-index:                                       4 !default;
 
 // Paddings
-$input-btn-padding-y:                                       .75rem !default;
-$input-btn-padding-y-sm:                                    .625rem !default;
-$input-btn-padding-y-lg:                                    1.125rem !default;
-$input-btn-padding-y-xs:                                    .275rem !default;
+$input-btn-padding-y:                                       $font-size-base * .75 !default;
+$input-btn-padding-y-sm:                                    $font-size-base * .625 !default;
+$input-btn-padding-y-lg:                                    $font-size-base * 1.125 !default;
+$input-btn-padding-y-xs:                                    $font-size-base * .275 !default;
 
-$input-btn-padding-x:                                       1rem !default;
-$input-btn-padding-x-sm:                                    1.125rem !default;
-$input-btn-padding-x-lg:                                    1.125rem !default;
-$input-btn-padding-x-xs:                                    .75rem !default;
+$input-btn-padding-x:                                       $font-size-base * 1 !default;
+$input-btn-padding-x-sm:                                    $font-size-base * 1.125 !default;
+$input-btn-padding-x-lg:                                    $font-size-base * 1.125 !default;
+$input-btn-padding-x-xs:                                    $font-size-base * .75 !default;
 
 
 
@@ -583,9 +583,6 @@ $navbar-light-hover-color:                                  $link-hover-color !d
 $navbar-dark-color:                                         rgba($white, .7) !default;
 $navbar-dark-hover-color:                                   $white !default;
 
-// Type
-$navbar-sm-nav-link-font-size:                              $font-size-sm !default;
-
 
 
 // Header
@@ -665,8 +662,8 @@ $header-promo-banner-footer-border-radius:                  $header-border-radiu
 $header-navbar-link-toggle-pseudo-font-family:              $font-family-font-awesome-icon !default;
 $header-navbar-link-toggle-pseudo-font-size:                .75rem !default;
 $header-navbar-link-toggle-pseudo-content:                  "\f107" !default;
-$header-dropdown-item-toggle-pseudo-font-family:            $font-family-font-awesome-icon !default;
-$header-dropdown-item-toggle-pseudo-font-size:              .75rem !default;
+$header-dropdown-item-toggle-pseudo-font-family:            $header-navbar-link-toggle-pseudo-font-family !default;
+$header-dropdown-item-toggle-pseudo-font-size:              $header-navbar-link-toggle-pseudo-font-size !default;
 $header-dropdown-item-toggle-pseudo-font-content:           "\f105" !default;
 $header-promo-title-font-size:                              $font-size-base !default;
 $header-promo-title-font-weight:                            $font-weight-bold !default;
@@ -771,7 +768,7 @@ $fullscreen-container-transition-delay:                     .5s !default;
 $dropdown-item-hover-color:                                 $link-color !default;
 $dropdown-item-active-color:                                $active-color !default;
 $dropdown-link-color:                                       $gray-700 !default;
-$dropdown-link-hover-color:                                 $dark !default;
+$dropdown-link-hover-color:                                 $headings-color !default;
 $dropdown-link-light-color:                                 $gray-600 !default;
 
 // Backgrounds
@@ -814,7 +811,7 @@ $dropdown-icon-margin-x:                                    .25rem !default;
 $dropdown-toggle-pseudo-margin-x:                           .5rem !default;
 
 // Box Shadow
-$dropdown-box-shadow:                                       0 5px 9px rgba($primary, .075), 0 5px 9px rgba($gray-700, .075) !default;
+$dropdown-box-shadow:                                       $box-shadow-lg !default;
 
 // Transition
 $dropdown-toggle-arrow-transition:                          $transition-timing !default;
@@ -923,6 +920,7 @@ $page-preloader-z-index:                                    $header-z-index + 1;
 // Background
 $table-accent-bg:                                           $gray-200 !default;
 $table-hover-bg:                                            rgba($gray-300, .4) !default;
+$table-dark-bg:                                             $navy !default;
 
 // Border Colors
 $table-border-color:                                        $border-color !default;
@@ -933,12 +931,6 @@ $table-border-light-color:                                  rgba($white, .3) !de
 
 // Breadcrumbs
 // =========================================================
-
-// Colors
-$breadcrumb-active-color:                                   $gray-700 !default;
-$breadcrumb-item-color:                                     $white !default;
-$breadcrumb-item-pseudo-color:                              $white-color-70 !default;
-$breadcrumb-link-color:                                     $white-color-70 !default;
 
 // Backgrounds
 $breadcrumb-bg:                                             transparent !default;
@@ -1216,6 +1208,7 @@ $nav-pills-segment-border-radius:                           $border-radius-pill 
 $nav-pills-segment-link-border-radius:                      $nav-pills-segment-border-radius !default;
 
 // Type
+$nav-sm-link-font-size:                                     $font-size-sm !default;
 $nav-segment-font-size:                                     $font-size-sm !default;
 $nav-segment-link-font-weight:                              $btn-font-weight !default;
 
@@ -1331,27 +1324,45 @@ $step-border-color:                                         $border-color !defau
 $step-dashed-border-type:                                   dashed !default;
 $step-icon-border-radius:                                   $border-radius-rounded !default;
 $step-icon-pseudo-border-radius:                            $border-radius-rounded !default;
+$step-avatar-border-radius:                                 $step-icon-border-radius !default;
 
 // Width & Height
 $step-icon-width:                                           $btn-icon-width !default;
-$step-icon-height:                                          $icon-width !default;
-
+$step-icon-height:                                          $step-icon-width !default;
 $step-icon-xs-width:                                        $btn-icon-width-xs !default;
-$step-icon-xs-height:                                       $icon-width-xs !default;
+$step-icon-xs-height:                                       $step-icon-xs-width !default;
 $step-icon-sm-width:                                        $btn-icon-width-sm !default;
-$step-icon-sm-height:                                       $icon-width-sm !default;
+$step-icon-sm-height:                                       $step-icon-sm-width !default;
 $step-icon-lg-width:                                        $btn-icon-width-lg !default;
-$step-icon-lg-height:                                       $icon-width-lg !default;
+$step-icon-lg-height:                                       $step-icon-lg-width !default;
+
+$step-avatar-width:                                         $step-icon-width !default;
+$step-avatar-height:                                        $step-avatar-width !default;
+$step-avatar-xs-width:                                      $step-icon-xs-width !default;
+$step-avatar-xs-height:                                     $step-avatar-xs-width !default;
+$step-avatar-sm-width:                                      $step-icon-sm-width !default;
+$step-avatar-sm-height:                                     $step-avatar-sm-width !default;
+$step-avatar-lg-width:                                      $step-icon-lg-width !default;
+$step-avatar-lg-height:                                     $step-avatar-lg-width !default;
 
 $step-icon-pseudo-width:                                    .25rem !default;
 $step-icon-pseudo-height:                                   $step-icon-pseudo-width !default;
 
 // Type
 $step-icon-font-size:                                       $btn-icon-font-size !default;
+$step-icon-font-weight:                                     $font-weight-bold !default;
+
 $step-icon-xs-font-size:                                    $btn-icon-font-size-xs !default;
 $step-icon-sm-font-size:                                    $btn-icon-font-size-sm !default;
 $step-icon-lg-font-size:                                    $btn-icon-font-size-lg !default;
+
 $step-inline-title-font-weight:                             $headings-font-weight !default;
+
+$step-avatar-font-weight:                                   $step-icon-font-weight !default;
+$step-avatar-font-size:                                     $step-icon-font-size !default;
+$step-avatar-xs-font-size:                                  $step-icon-xs-font-size !default;
+$step-avatar-sm-font-size:                                  $step-icon-sm-font-size !default;
+$step-avatar-lg-font-size:                                  $step-icon-lg-font-size !default;
 
 // Paddings
 $step-padding-x:                                            .9375rem !default;
@@ -1359,9 +1370,10 @@ $step-padding-y:                                            $step-padding-x !def
 
 // Margins
 $step-margin-x:                                             $step-padding-x !default;
-$step-icon-margin-y:                                        1rem !default;
 $step-item-margin-y:                                        1.5rem !default;
+$step-icon-margin-y:                                        1rem !default;
 $step-icon-margin-x:                                        1rem !default;
+$step-avatar-margin-x:                                      $step-icon-margin-x !default;
 $step-timeline-content-margin-x:                            1.5rem !default;
 $step-timeline-icon-margin-x:                               $step-icon-width / 2 !default;
 $step-timeline-icon-xs-margin-x:                            $step-icon-xs-width / 2 !default;
@@ -1393,7 +1405,7 @@ $step-flow-padding-x:                                       2.5rem !default;
 
 
 
-// Indicator Dots
+// Step Dots
 // =========================================================
 
 // Width & Heights
@@ -1564,7 +1576,7 @@ $popover-body-padding-x:                                    $input-btn-padding-x
 // =========================================================
 
 // Colors
-$slick-arrow-color:                                         $dark !default;
+$slick-arrow-color:                                         $headings-color !default;
 $slick-arrow-hover-color:                                   $white !default;
 $slick-arrow-soft-white-color:                              $white !default;
 $slick-arrow-soft-white-hover-color:                        $white !default;
@@ -2014,7 +2026,7 @@ $bs-select-dropdown-form-control-margin-y:                  .5rem !default;
 
 
 
-// Bootstrap Select
+// Leaflet
 // =========================================================
 
 // Borders
@@ -2025,3 +2037,25 @@ $leaflet-popup-wrapper-box-shadow:                          $box-shadow-soft !de
 
 // Margins
 $leaflet-popup-margin-y:                                    3rem !default;
+
+
+
+// Datatables
+// =========================================================
+
+// Colors
+$datatable-thead-icon-hover-color:                          $link-color !default;
+$datatable-thead-icon-color:                                $gray-400 !default;
+
+// Backgrounds
+$datatable-striped-odd-bg-color:                            $gray-200 !default;
+
+// Type
+$datatable-thead-icon-line-height:                          .7 !default;
+$datatable-trigger-icon-pseudo-font-family:                 $font-family-font-awesome-icon !default;
+$datatable-trigger-icon-pseudo-font-weight:                 900 !default;
+$datatable-trigger-icon-pseudo-content:                     "\f107" !default;
+$datatable-trigger-icon-pseudo-opened-content:              "\f106" !default;
+
+// Margins
+$datatable-trigger-icon-pseudo-margin-x:                    .75rem !default;

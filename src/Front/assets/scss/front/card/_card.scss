@@ -37,7 +37,7 @@
 
 @include media-breakpoint-up(sm) {
   .card-group > .card + .card {
-    border-left: 1px solid $card-border-color;
+    border-left: $card-border-width solid $card-border-color;
   }
 }
 

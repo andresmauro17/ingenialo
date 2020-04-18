@@ -12,7 +12,7 @@
 
   &-striped {
     .odd {
-      background-color: $gray-200;
+      background-color: $datatable-striped-odd-bg-color;
     }
   }
 
@@ -29,10 +29,10 @@
     &-icon {
       &::before {
         display: inline-block;
-        font-family: $font-family-font-awesome-icon;
-        font-weight: 900;
-        content: "\f107";
-        margin-right: .75rem;
+        font-family: $datatable-trigger-icon-pseudo-font-family;
+        font-weight: $datatable-trigger-icon-pseudo-font-weight;
+        content: $datatable-trigger-icon-pseudo-content;
+        margin-right: $datatable-trigger-icon-pseudo-margin-x;
         transform: rotate(-180deg);
       }
     }
@@ -41,20 +41,20 @@
   .opened {
     .datatable-trigger-icon {
       &::before {
-        content: "\f106";
+        content: $datatable-trigger-icon-pseudo-opened-content;
       }
     }
   }
 
   &-thead-icon {
     display: block;
-    line-height: .7;
+    line-height: $datatable-thead-icon-line-height;
     cursor: pointer;
-    color: $gray-400;
+    color: $datatable-thead-icon-color;
 
     &:hover,
     &:active {
-      color: $primary;
+      color: $datatable-thead-icon-hover-color;
     }
   }
 }

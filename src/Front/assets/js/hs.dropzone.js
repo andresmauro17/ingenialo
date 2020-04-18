@@ -14,11 +14,11 @@
 	$.HSCore.components.HSDropzone = {
 		defaults: {
 			// Default variables
-			url: "../../assets/include/upload.html",
+			url: "../../assets/include/dropzone-upload.html",
 			thumbnailWidth: 300,
 			thumbnailHeight: 300,
 			previewTemplate: $('<div>' +
-				'  <div class="col h-100 px-1 mb-2">' +
+				'  <div class="col test h-100 px-1 mb-2">' +
 				'    <div class="dz-preview dz-file-preview">' +
 				'      <div class="d-flex justify-content-end dz-close-icon">' +
 				'        <small class="fa fa-times" data-dz-remove></small>' +
@@ -80,7 +80,15 @@
 						});
 					}
 				};
-			settings = $.extend(true, defaults, settings, dataSettings, options);
+			settings = Object.assign({}, defaults, settings, dataSettings, options);
+
+			/* Start : object preparation */
+
+			if (settings.previewTemplate[0] === '#') {
+				settings.previewTemplate = $(settings.previewTemplate).html();
+			}
+
+			/* End : object preparation */
 
 			/* Start : Init */
 
