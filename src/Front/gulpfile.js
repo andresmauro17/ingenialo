@@ -14,6 +14,7 @@ const concat                 = require('gulp-concat');
 const cleanCSS               = require('gulp-clean-css');
 const uglify                 = require('gulp-uglify-es').default;
 const cache                  = require('gulp-cache');
+const fileinclude            = require('gulp-file-include');
 const browsersync            = require('browser-sync').create();
 
 
@@ -95,14 +96,17 @@ function watch() {
   gulp.watch(
     [
       './html/**/*.html',
-      './snippets/**/*.html',
-      './documentation/**/*.html'
+      // './snippets/**/*.html',
+      // './documentation/**/*.html'
     ],
     gulp.series(browserSyncReload)
   );
+  gulp.watch('./snippets/partials/**/*.html', fileInclude);
+  // gulp.watch('./documentation/partials/**/*.html', fileIncludeDocs);
 }
 
 // Gulp Tasks
+// gulp.task('default', gulp.parallel(watch, scss, browserSync, fileInclude, fileIncludeDocs));
 gulp.task('default', gulp.parallel(watch, scss, browserSync));
 
 
@@ -189,7 +193,39 @@ function copyVendors() {
 
 
 
+//
+// File Include
+//
+
+function fileInclude() {
+  return gulp
+    .src(['./snippets/partials/src/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file',
+      indent: true
+    }))
+    .pipe(gulp.dest('./snippets/'))
+    .pipe(browsersync.stream());
+};
+
+// function fileIncludeDocs() {
+//   return gulp
+//     .src(['./documentation/partials/src/**/*.html'])
+//     .pipe(fileinclude({
+//       prefix: '@@',
+//       basepath: '@file',
+//       indent: true
+//     }))
+//     .pipe(gulp.dest('./documentation/'))
+//     .pipe(browsersync.stream());
+// };
+
+
+
 gulp.task('minCSS', minCSS);
 gulp.task('minJS', minJS);
 gulp.task('copyVendors', copyVendors);
+// gulp.task('fileInclude', fileInclude);
+// gulp.task('fileIncludeDocs', fileIncludeDocs);
 gulp.task('dist', gulp.series(copyVendors, minCSS, minJS));

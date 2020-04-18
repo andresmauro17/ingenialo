@@ -44,7 +44,7 @@
     > div {
       color: $tagify-tag-color;
       line-height: $tagify-tag-line-height;
-      padding: $tagify-tag-padding-y ($tagify-tag-padding-x * 2) $tagify-tag-padding-y $tagify-tag-padding-x;
+      padding: $tagify-tag-padding-y $tagify-tag-padding-x;
       @include border-radius($tagify-tag-border-radius);
 
       * {
@@ -61,7 +61,7 @@
 
     .tagify__tag {
       > div {
-        padding: $tagify-tag-padding-y ($tagify-tag-padding-x * 2) $tagify-tag-padding-y $tagify-tag-padding-x;
+        padding: $tagify-tag-padding-y $tagify-tag-padding-x;
         line-height: $tagify-input-tag-line-height;
       }
     }

@@ -2033,8 +2033,8 @@ pre code {
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #71869d;
-  border-color: #8899ad;
+  background-color: #21325b;
+  border-color: #2b4177;
 }
 
 .table .thead-light th {
@@ -2045,13 +2045,13 @@ pre code {
 
 .table-dark {
   color: #fff;
-  background-color: #71869d;
+  background-color: #21325b;
 }
 
 .table-dark th,
 .table-dark td,
 .table-dark thead th {
-  border-color: #8899ad;
+  border-color: #2b4177;
 }
 
 .table-dark.table-bordered {
@@ -5152,7 +5152,7 @@ input[type="button"].btn-block {
 }
 
 .breadcrumb-item.active {
-  color: #677788;
+  color: #8c98a4;
 }
 
 .pagination {
@@ -17036,6 +17036,9 @@ a.badge-soft-navy:hover, a.badge-soft-navy:focus {
   background-color: #21325b;
 }
 
+/*------------------------------------
+  Outline Button Styles
+------------------------------------*/
 .btn-outline-secondary {
   border-color: #e7eaf3;
 }
@@ -17338,22 +17341,6 @@ label.btn {
 /*------------------------------------
   Breadcrumb
 ------------------------------------*/
-.breadcrumb-white {
-  background-color: transparent;
-}
-
-.breadcrumb-white .breadcrumb-item {
-  color: #fff;
-}
-
-.breadcrumb-white .breadcrumb-item + .breadcrumb-item::before {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.breadcrumb-white .breadcrumb-link {
-  color: rgba(255, 255, 255, 0.7);
-}
-
 .breadcrumb-no-gutter {
   padding: 0;
 }
@@ -17630,7 +17617,7 @@ label.btn {
 
 @media (min-width: 576px) {
   .card-group > .card + .card {
-    border-left: 1px solid #e7eaf3;
+    border-left: 0.0625rem solid #e7eaf3;
   }
 }
 
@@ -18142,8 +18129,7 @@ label.btn {
 ------------------------------------*/
 /* Menu */
 .dropdown-menu {
-  box-shadow: 0 5px 9px rgba(55, 125, 255, 0.075), 0 5px 9px rgba(103, 119, 136, 0.075);
-  font-size: 0.875rem;
+  box-shadow: 0px 10px 40px 10px rgba(140, 152, 164, 0.175);
 }
 
 /* Nav Link */
@@ -18372,14 +18358,14 @@ label.btn {
 
 .input-group-merge .custom-select:not(:first-child),
 .input-group-merge .form-control:not(:first-child) {
-  padding-left: 2.5rem;
+  padding-left: 3rem;
   border-top-left-radius: 0.3125rem;
   border-bottom-left-radius: 0.3125rem;
 }
 
 .input-group-merge .custom-select:not(:last-child),
 .input-group-merge .form-control:not(:last-child) {
-  padding-right: 2.5rem;
+  padding-right: 3rem;
   border-top-right-radius: 0.3125rem;
   border-bottom-right-radius: 0.3125rem;
 }
@@ -18503,6 +18489,16 @@ label.btn {
 .input-group-flush.input-group-merge .input-group-append .input-group-text,
 .input-group-flush.input-group-merge .input-group-prepend .input-group-text {
   padding: 0;
+}
+
+.input-group-flush.input-group-merge .custom-select:not(:first-child),
+.input-group-flush.input-group-merge .form-control:not(:first-child) {
+  padding-left: 2rem;
+}
+
+.input-group-flush.input-group-merge .custom-select:not(:last-child),
+.input-group-flush.input-group-merge .form-control:not(:last-child) {
+  padding-right: 2rem;
 }
 
 .input-group-flush.input-group .form-control:not(:first-child),
@@ -19359,7 +19355,9 @@ label.btn {
 
 .nav-classic .nav-link {
   color: #677788;
-  border-bottom: 0.1875rem solid transparent;
+  border-width: 0 0 0.1875rem 0;
+  border-style: solid;
+  border-color: transparent;
   padding: 1rem 1.5rem;
   margin-bottom: -0.125rem;
   border-radius: 0;
@@ -20110,6 +20108,10 @@ label.btn {
   border-left-style: dashed;
 }
 
+.step-border-last-0 .step-item:last-child .step-icon::after {
+  display: none;
+}
+
 .step .step-item {
   display: -ms-flexbox;
   display: flex;
@@ -20138,6 +20140,83 @@ label.btn {
 }
 
 /*------------------------------------
+  Step Avatar
+------------------------------------*/
+.step .step-avatar {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.step .step-avatar-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.step .step-avatar::after {
+  position: absolute;
+  top: 3.59375rem;
+  left: 1.5625rem;
+  height: calc(100% - 2.65625rem);
+  border-left: 0.125rem solid #e7eaf3;
+  content: "";
+}
+
+/*------------------------------------
+  Step Avatar
+------------------------------------*/
+.step-avatar-xs.step-avatar {
+  font-size: 0.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.step-avatar-xs.step-avatar::after {
+  top: 2.21875rem;
+  left: 0.8125rem;
+  width: 1.0625rem;
+  height: calc(100% - 1.28125rem);
+}
+
+.step-avatar-sm.step-avatar {
+  font-size: 0.8125rem;
+  width: 2.6875rem;
+  height: 2.6875rem;
+}
+
+.step-avatar-sm.step-avatar::after {
+  top: 3.15625rem;
+  left: 1.28125rem;
+  width: 1.0625rem;
+  height: calc(100% - 2.21875rem);
+}
+
+.step-avatar-lg.step-avatar {
+  font-size: 1.25rem;
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
+.step-avatar-lg.step-avatar::after {
+  top: 4.71875rem;
+  left: 2.0625rem;
+  width: 1.0625rem;
+  height: calc(100% - 3.78125rem);
+}
+
+/*------------------------------------
   Step Icon
 ------------------------------------*/
 .step .step-icon {
@@ -20150,7 +20229,7 @@ label.btn {
   -ms-flex-align: center;
       align-items: center;
   font-size: 1rem;
-  font-weight: bolder;
+  font-weight: 600;
   width: 3.125rem;
   height: 3.125rem;
   border-radius: 50%;
@@ -22076,19 +22155,19 @@ a:hover .text-hover-primary {
   display: inline-block;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f107";
-  margin-right: .75rem;
+  content: "";
+  margin-right: 0.75rem;
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 
 .datatable .opened .datatable-trigger-icon::before {
-  content: "\f106";
+  content: "";
 }
 
 .datatable-thead-icon {
   display: block;
-  line-height: .7;
+  line-height: 0.7;
   cursor: pointer;
   color: #bdc5d1;
 }
@@ -22270,7 +22349,7 @@ a:hover .text-hover-primary {
   left: 0 !important;
   width: auto;
   padding: 1rem 1rem;
-  box-shadow: 0 5px 9px rgba(55, 125, 255, 0.075), 0 5px 9px rgba(103, 119, 136, 0.075);
+  box-shadow: 0px 10px 40px 10px rgba(140, 152, 164, 0.175);
 }
 
 .flatpickr .flatpickr-calendar::before, .flatpickr .flatpickr-calendar::after {
@@ -22704,7 +22783,7 @@ a:hover .text-hover-primary {
 .summernote-editor .note-toolbar .note-dropdown-menu {
   min-width: 12.5rem;
   border-color: transparent;
-  box-shadow: 0 5px 9px rgba(55, 125, 255, 0.075), 0 5px 9px rgba(103, 119, 136, 0.075);
+  box-shadow: 0px 10px 40px 10px rgba(140, 152, 164, 0.175);
   border-radius: 0.3125rem;
   padding: 1rem 0;
 }
@@ -22777,7 +22856,7 @@ a:hover .text-hover-primary {
 .tagify__tag > div {
   color: #1e2022;
   line-height: normal;
-  padding: 0.3125rem 2rem 0.3125rem 1rem;
+  padding: 0.3125rem 1rem;
   border-radius: 0.25rem;
 }
 
@@ -22792,7 +22871,7 @@ a:hover .text-hover-primary {
 }
 
 .tagify__input .tagify__tag > div {
-  padding: 0.3125rem 2rem 0.3125rem 1rem;
+  padding: 0.3125rem 1rem;
   line-height: normal;
 }
 

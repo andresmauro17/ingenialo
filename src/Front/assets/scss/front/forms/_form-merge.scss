@@ -46,12 +46,12 @@
   .custom-select,
   .form-control {
     &:not(:first-child) {
-      padding-left: $input-padding-x * 2.5;
+      padding-left: $input-padding-x * 3;
       @include border-left-radius($input-group-merge-border-radius);
     }
 
     &:not(:last-child) {
-      padding-right: $input-padding-x * 2.5;
+      padding-right: $input-padding-x * 3;
       @include border-right-radius($input-group-merge-border-radius);
     }
   }

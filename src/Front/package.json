@@ -1,6 +1,6 @@
 {
   "name": "Front",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Front - Responsive Website Template",
   "main": "gulpfile.js",
   "author": "htmlstream",
@@ -16,6 +16,7 @@
     "gulp-changed": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.1.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify-es": "^2.0.0"

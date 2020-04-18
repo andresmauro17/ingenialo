@@ -25,7 +25,7 @@
 /* Small Size */
 .nav-sm {
   .nav-link {
-    font-size: $navbar-sm-nav-link-font-size;
+    font-size: $nav-sm-link-font-size;
   }
 }
 
@@ -62,7 +62,9 @@
 
 	.nav-link {
 		color: $nav-classic-nav-link-color;
-		border-bottom: $nav-classic-nav-link-border-width $nav-classic-nav-link-border-type $nav-classic-nav-link-border-color;
+		border-width: 0 0 $nav-classic-nav-link-border-width 0;
+    border-style: $nav-classic-nav-link-border-type;
+    border-color: $nav-classic-nav-link-border-color;
 		padding: $nav-classic-nav-link-padding-y $nav-classic-nav-link-padding-x;
 		margin-bottom: -$nav-classic-nav-link-margin-y;
 		@include border-radius(0);
