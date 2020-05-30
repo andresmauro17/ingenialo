@@ -1,11 +1,14 @@
 var path = require('path')
 var webpack = require('webpack')
 
+var BundleTracker = require('webpack-bundle-tracker')
+var WriteFilePlugin = require('write-file-webpack-plugin')
+
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: 'http://localhost:8000/static/dist/',
     filename: 'build.js'
   },
   module: {
@@ -69,6 +72,12 @@ module.exports = {
       }
     ]
   },
+  plugins:[
+    new BundleTracker({
+      filename:'webpack-stats.json'
+    }),
+    new WriteFilePlugin()
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
