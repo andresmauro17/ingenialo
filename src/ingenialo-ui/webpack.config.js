@@ -1,14 +1,12 @@
 var path = require('path')
 var webpack = require('webpack')
-
 var BundleTracker = require('webpack-bundle-tracker')
-var WriteFilePlugin = require('write-file-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: 'http://localhost:8000/static/dist/',
+    publicPath: 'http://localhost:8080/dist/',
     filename: 'build.js'
   },
   module: {
@@ -73,10 +71,7 @@ module.exports = {
     ]
   },
   plugins:[
-    new BundleTracker({
-      filename:'webpack-stats.json'
-    }),
-    new WriteFilePlugin()
+    new BundleTracker({filename:'webpack-stats.json'})
   ],
   resolve: {
     alias: {
@@ -87,7 +82,10 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    headers:{
+      'Access-Control-Allow-Origin':'*'
+    }
   },
   performance: {
     hints: false
