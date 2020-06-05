@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Hero
+from django.conf import settings
 
 def home_page(request):
     heros = Hero.objects.filter(is_active=True).order_by('-position')
@@ -24,4 +25,4 @@ def vue(request):
         "title":"Ingenialo Industrias, explora tu instinto MAKER!",
         "content":"welcome to home page"
     }
-    return render(request, "vue/template-vue.html", context)
+    return render(request, "vue/base.html", context)

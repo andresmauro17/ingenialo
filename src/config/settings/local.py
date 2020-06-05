@@ -37,11 +37,11 @@ DATABASES = {
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"ingenialo-ui"),
+    os.path.join(BASE_DIR,"ingenialo-ui","src","assets"),
+    # os.path.join(BASE_DIR,"Front","assets"),
 ]
 
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
-STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
 
 
 MEDIA_URL = '/media/'

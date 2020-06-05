@@ -1,0 +1,52 @@
+{% load render_bundle from webpack_loader %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>ingenialo-ui</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" href="../../favicon.ico"> -->
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/all.min.css' %}">
+
+  <!-- Mega menu -->
+  <link rel="stylesheet" href="{% static 'vendor/hs-mega-menu/dist/hs-mega-menu.min.css' %}">
+
+  <!-- CSS Front Template -->
+  <!-- <link rel="stylesheet" href="../../assets/css/theme.css"> -->
+</head>
+<body>
+  
+  <div id="app">
+        {% include 'base/header.html'%}
+
+        {% comment %} {% include 'base/message.html' %} {% endcomment %}
+
+        {% block content %}{% endblock %}
+        
+        {% comment %} {% include 'base/footer.html'%} {% endcomment %}
+  </div>
+  {% render_bundle 'main' %}
+
+  <!-- JS Global Compulsory -->
+  <!-- <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <!-- JS Front -->
+  <!-- <script src="../../assets/js/hs.core.js"></script> -->
+</body>
+</html>
