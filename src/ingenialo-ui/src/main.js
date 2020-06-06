@@ -1,18 +1,12 @@
-// entry for scss assets
-import './assets/scss/theme.scss'
-
-import Vue from 'vue'
-import App from './App.vue'
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and django.
- */
-
+// other js dependencies
 require('./bootstrap');
 
+import Vue from 'vue'
+import GlobalComponents from './globalComponents'
+import App from './App'
+
 new Vue({
-  el: '#app',
-  // render: h => h(App)
+  mixins: [App],
 })
+
+Vue.use(GlobalComponents);
