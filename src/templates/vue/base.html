@@ -28,6 +28,12 @@
         
         {% include 'vue/footer-component.html'%}
   </div>
+
+  <!-- JS Global Compulsory -->
+  <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery-migrate/dist/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
   {% render_bundle 'main' %}
 
 </body>

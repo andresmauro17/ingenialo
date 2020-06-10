@@ -10,6 +10,7 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
+    noParse: /node_modules\/json-schema\/lib\/validate\.js/,
     rules: [
       {
         test: /\.css$/,
@@ -67,15 +68,44 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      }
+      },
+     
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      },
+      // {
+      //   test: require.resolve('jquery'),
+      //   use: [{
+      //       loader: 'expose-loader',
+      //       options: 'jQuery'
+      //   },{
+      //       loader: 'expose-loader',
+      //       options: '$'
+      //   }]
+      // }
+      
     ]
   },
   plugins:[
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery'
+    // }),
     new BundleTracker({filename:'webpack-stats.json'})
   ],
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@':path.resolve(__dirname,'./src')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -90,7 +120,12 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  
+  externals: {
+    jquery: 'jQuery'
+  }
+ 
 }
 
 if (process.env.NODE_ENV === 'production') {

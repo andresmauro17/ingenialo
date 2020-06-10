@@ -1,4 +1,3 @@
-// other js dependencies
 require('./bootstrap');
 
 import Vue from 'vue'

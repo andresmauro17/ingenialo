@@ -1,9 +1,216 @@
 {% load static %}
 
 <header-component inline-template>
-    <div>
-        {% verbatim %}
-            <h1>{{msg}}</h1>
-        {% endverbatim %}
-    </div>
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="header">
+        <!-- Search -->
+        <div id="searchPushTop" class="search-push-top">
+            <div class="container position-relative">
+                <div class="search-push-top-content pt-3">
+                <!-- Close Button -->
+                <div class="search-push-top-close-btn">
+                        <div class="hs-unfold">
+                            <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-soft-secondary mt-2 mr-2" href="javascript:;"
+                                data-hs-unfold-options='{
+                                "target": "#searchPushTop",
+                                "type": "jquery-slide",
+                                "contentSelector": ".search-push-top"
+                                }'>
+                                <svg width="10" height="10" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Close Button -->
+                    <!-- Input -->
+                    <form class="input-group">
+                        <input type="search" class="form-control" placeholder="Search Front" aria-label="Search Front">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
+                    <!-- End Input -->
+                </div>
+            </div>
+        </div>
+        <!-- End Search -->
+        <div class="header-section">
+            <!-- Topbar -->
+            <div class="container header-hide-content pt-2">
+                <div class="d-flex align-items-center">
+                    <div class="ml-auto">
+                        <!-- <div class="ml-auto">
+                        </div> -->
+                    </div>
+                    <ul class="list-inline ml-2 mb-0">
+                        <!-- Search -->
+                        <li class="list-inline-item">
+                            <div class="hs-unfold">
+                                <a 
+                                    class="js-hs-unfold-invoker btn btn-xs btn-icon btn-ghost-secondary" 
+                                    href="javascript:;"
+                                    data-hs-unfold-options='{
+                                    "target": "#searchPushTop",
+                                    "type": "jquery-slide",
+                                    "contentSelector": ".search-push-top"}'
+                                >
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- End Search -->
+
+                        <!-- Shopping Cart -->
+                        <li class="list-inline-item">
+                            <div class="hs-unfold">
+                                <a 
+                                    class="js-hs-unfold-invoker btn btn-xs btn-icon btn-ghost-secondary" 
+                                    href="javascript:;"
+                                    data-hs-unfold-options='{
+                                    "target": "#shoppingCartDropdown",
+                                    "type": "css-animation",
+                                    "event": "hover",
+                                    "hideOnScroll": "true"}'
+                                >
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+            
+                                <div id="shoppingCartDropdown" class="hs-unfold-content dropdown-menu dropdown-menu-right text-center p-7" style="min-width: 250px;">
+                                    <span class="icon icon-lg icon-soft-primary icon-circle mx-auto mb-3">
+                                    <i class="fas fa-shopping-basket"></i>
+                                    </span>
+                                    <span class="d-block">Your Cart is Empty</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- End Shopping Cart -->
+
+                        <!-- Account options -->
+                        {% if user.is_authenticated %}
+                            <!-- Account Login -->
+                            <li class="list-inline-item position-relative">
+                                <!-- Account Dropdown -->
+                                <a id="account-dropdown-invoker" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg" href="javascript:;" role="button"
+                                aria-controls="account-dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                data-unfold-event="hover"
+                                data-unfold-target="#account-dropdown"
+                                data-unfold-type="css-animation"
+                                data-unfold-duration="300"
+                                data-unfold-delay="300"
+                                data-unfold-hide-on-scroll="true"
+                                data-unfold-animation-in="slideInUp"
+                                data-unfold-animation-out="fadeOut">
+                                <span class="u-sidebar--account__toggle-text">{{ user.username }}</span>
+                                <img class="u-sidebar--account__toggle-img" src="{% static 'avatar.jpg' %}" alt="Image Description">
+                                </a>
+                                <!-- End Account Dropdown -->
+                
+                                <div id="account-dropdown" class="dropdown-menu dropdown-unfold dropdown-menu-sm-right" aria-labelledby="account-dropdown-invoker">
+                                    <!-- <a class="dropdown-item" href="#">
+                                        <span class="fas fa-user-circle dropdown-item-icon"></span>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="fas fa-cog dropdown-item-icon"></span>
+                                        Settings
+                                    </a>  -->
+                                    <a class="dropdown-item" href="{% url 'account:logout' %}">
+                                        <span class="fas fa-sign-out-alt dropdown-item-icon"></span>
+                                        salir
+                                    </a>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="list-inline-item">
+                                <a href="{% url 'account:login' %}" class="u-header__navbar-link" href="#">
+                                    <span class="fas fa-user-circle mr-1"></span>
+                                    Ingresar
+                                </a>
+                            </li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+            <!-- End Topbar -->
+
+            <div id="logoAndNav" class="container">
+                <!-- Nav -->
+                <nav class="js-mega-menu navbar navbar-expand-lg">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="{% url 'home' %}" aria-label="Front">
+                        <img src="{% static '/svg/logos/ingenialo/logo.png' %}" alt="Logo">
+                    </a>
+                    <!-- End Logo -->
+
+                    <!-- Responsive Toggle Button -->
+                    <button type="button" class="navbar-toggler btn btn-icon btn-sm rounded-circle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="navBar"
+                    data-toggle="collapse"
+                    data-target="#navBar">
+                        <span class="navbar-toggler-default">
+                            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z"/>
+                            </svg>
+                        </span>
+                        <span class="navbar-toggler-toggled">
+                            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+
+                    <!-- Navigation -->
+                    <div id="navBar" class="collapse navbar-collapse">
+                        <div class="navbar-body header-abs-top-inner">
+                            <ul class="navbar-nav">
+                                <!-- Store -->
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link" href="#">
+                                        Tienda
+                                    </a>
+                                </li>
+                                <!-- End Store -->
+
+                                <!-- Tutorials -->
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link" href="#">
+                                        Tutoriales
+                                    </a>
+                                </li>
+                                <!-- End Tutorials -->
+
+                                <!-- Blog -->
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link" href="#">
+                                        Blog
+                                    </a>
+                                </li>
+                                <!-- End Blog -->
+
+                                <!-- Videos -->
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link"href="https://www.youtube.com/channel/UC6Ca0BNpl68DjojpG9JnufQ">
+                                        Videos
+                                    </a>
+                                </li>
+                                <!-- End Videos -->
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Navigation -->
+                </nav>
+                <!-- End Nav -->
+            </div>
+
+        </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
 </header-component>
