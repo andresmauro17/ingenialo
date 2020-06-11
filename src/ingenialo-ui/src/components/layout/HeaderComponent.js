@@ -1,4 +1,8 @@
+
 import Vue from 'vue'
+
+// <!-- Mega menu -->
+import '@/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css'
 
 // <!-- JS Implementing Plugins -->
 import HSHeader from '@/assets/vendor/hs-header/dist/hs-header.min.js'

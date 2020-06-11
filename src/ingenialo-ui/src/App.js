@@ -2,6 +2,8 @@
 import './assets/scss/theme.scss'
 import './assets/vendor/font-awesome/css/all.min.css'
 
+
+
 import HeaderComponent from './components/layout/HeaderComponent'
 import FooterComponent from './components/layout/FooterComponent'
 

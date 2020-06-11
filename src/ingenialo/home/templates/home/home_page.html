@@ -1,16 +1,16 @@
-{% extends "base.html" %}
+{% extends "layout.html" %}
 {% load static %}
 
 {% block base_head %}
 
-   <!-- carrousel -->
+   {% comment %} <!-- carrousel -->
    <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
- 
+  {% endcomment %}
 
 {% endblock base_head%}
 
 {% block content %}
-
+{% comment %} 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
     <!-- Images Carousel Section -->
@@ -61,7 +61,8 @@
 
 
   </main>
-  <!-- ========== END MAIN CONTENT ========== -->
+  <!-- ========== END MAIN CONTENT ========== --> 
+  {% endcomment %}
 
 {% endblock content%}
 
