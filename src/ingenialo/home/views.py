@@ -18,11 +18,3 @@ def front(request):
         "content":"welcome to home page"
     }
     return render(request, "base_temp.html", context)
-
-def vue(request):
-
-    context = {
-        "title":"Ingenialo Industrias, explora tu instinto MAKER!",
-        "content":"welcome to home page"
-    }
-    return render(request, "vue/base.html", context)
