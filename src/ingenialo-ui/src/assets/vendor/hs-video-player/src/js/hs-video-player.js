@@ -115,7 +115,7 @@ export default class HSVideoPlayer {
 			vimeoPlayer = new Vimeo.Player(vimeoIframe, {
 				id: options.videoId,
 				autoplay: options.isAutoplay === true ? 1 : 0,
-				muted: options.isAutoplay === true ? 1 : 0
+				muted: options.isMuted === true ? 1 : 0
 			});
 	}
 	

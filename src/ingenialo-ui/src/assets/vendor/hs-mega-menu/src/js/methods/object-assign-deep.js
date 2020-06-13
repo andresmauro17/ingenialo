@@ -62,7 +62,7 @@ function quickCloneObject (input) {
 	var output = {};
 	
 	for (var key in input) {
-		if (!input.hasOwnProperty(key)) { continue; }
+		if (!Object.prototype.hasOwnProperty.call(input, key)) { continue; }
 		
 		output[key] = cloneValue(input[key]);
 	}

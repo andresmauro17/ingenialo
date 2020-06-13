@@ -416,7 +416,7 @@ export default class HSMegaMenu {
 			$el = el,
 			$menu = menu;
 		let itemSettings = {
-			eventType: 'hover',
+			eventType: itemDataSettings.eventType ? itemDataSettings.eventType : settings.eventType,
 			megaMenuTimeOut: null,
 			desktop: {
 				animation: 'animated',

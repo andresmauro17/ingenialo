@@ -28,13 +28,13 @@ export default class HSGoTo {
 		const context = this,
 			$el = context.elem,
 			dataSettings = $el.attr('data-hs-go-to-options') ? JSON.parse($el.attr('data-hs-go-to-options')) : {},
-			options = $.extend(true, context.defaults, dataSettings, context.settings);
+			options = Object.assign({}, context.defaults, dataSettings, context.settings);
 
 		options.targetOffsetTop = function() {
 			if ($(options.compensationSelector).length) {
 				return $(options.targetSelector) ? $(options.targetSelector).offset().top - $(options.compensationSelector).outerHeight() : 0;
 			} else {
-				return $(options.targetSelector) ? $(options.targetSelector).offset().top : 0;
+				return $(options.targetSelector).length ? $(options.targetSelector).offset().top : 0;
 			}
 		};
 

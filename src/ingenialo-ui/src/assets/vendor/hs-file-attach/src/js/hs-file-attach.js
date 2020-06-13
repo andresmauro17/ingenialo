@@ -14,7 +14,9 @@ export default class HSFileAttach {
 		this.defaults = {
 			textTarget: null,
 			maxFileSize: 1024, // Infinity - off file size detection
-			errorMessage: 'File is too big!'
+			errorMessage: 'File is too big!',
+			mode: 'simple',
+			targetAttr: null
 		};
 		this.settings = settings;
 	}
@@ -23,7 +25,7 @@ export default class HSFileAttach {
 		const context = this,
 			$el = context.elem,
 			dataSettings = $el.attr('data-hs-file-attach-options') ? JSON.parse($el.attr('data-hs-file-attach-options')) : {},
-			options = $.extend(true, context.defaults, dataSettings, context.settings);
+			options = Object.assign({}, context.defaults, dataSettings, context.settings);
 		
 		let $target = $(options.textTarget);
 		
@@ -38,7 +40,29 @@ export default class HSFileAttach {
 				return;
 			}
 			
-			$target.text($el.val().replace(/.+[\\\/]/, ''));
+			if (options.mode === 'image') {
+				context._image($el, $target, options);
+			} else {
+				context._simple($el, $target);
+			}
 		});
+	}
+	
+	_simple(el, target) {
+		target.text(el.val().replace(/.+[\\\/]/, ''));
+	}
+	
+	_image(el, target, settings) {
+		let reader;
+		
+		if (el[0].files && el[0].files[0]) {
+			reader = new FileReader();
+			
+			reader.onload = function (e) {
+				target.attr(settings.targetAttr, e.target.result);
+			};
+			
+			reader.readAsDataURL(el[0].files[0]);
+		}
 	}
 }

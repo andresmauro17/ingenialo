@@ -95,9 +95,24 @@ export default class HSUnfold {
 		
 		let $items,
 			index,
-			itemSettings;
+			itemSettings,
+      ingnore = [
+        "INPUT"
+      ]
 		
 		$(document).on('keyup', '[data-hs-unfold-invoker], [data-hs-unfold-content]', function (e) {
+			if (
+				e.which !== ESC_KEYCODE &&
+				e.which !== TAB_KEYCODE &&
+				e.which !== ENTER_KEYCODE &&
+				e.which !== SPACE_KEYCODE &&
+				e.which !== ARROW_UP_KEYCODE &&
+				e.which !== ARROW_DOWN_KEYCODE ||
+        ingnore.includes(e.target.tagName.toUpperCase())
+			) {
+				return;
+			}
+
 			//
 			// Start: PREVENT SCROLL
 			//

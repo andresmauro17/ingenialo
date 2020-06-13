@@ -72,6 +72,7 @@
 				         "parentSelector": "#vimeoVideoPlayerExample1",
 				         "targetSelector": "#vimeoVideoIframeExample1",
 				         "isAutoplay": true,
+				         "isMuted": true,
 				         "classMap": {
 				           "toggle": "video-player-played"
 				         }
@@ -85,6 +86,41 @@
 						<!-- Video Iframe -->
 						<div class="embed-responsive embed-responsive-16by9">
 							<div id="vimeoVideoIframeExample1"></div>
+						</div>
+						<!-- End Video Iframe -->
+					</div>
+					<!-- End Video Block -->
+				</div>
+				
+				<div class="col-lg-6 mb-4">
+					<!-- Video Block -->
+					<div id="vimeoVideoPlayerExample3" class="video-player bg-dark">
+						<!-- Cover Image -->
+						<img class="img-fluid video-player-preview" src="../../../assets/img/900x450/img1.jpg" alt="Image">
+						<!-- End Cover Image -->
+						
+						<!-- Play Button -->
+						<a class="js-inline-video-player video-player-btn video-player-centered" href="javascript:;"
+						   data-hs-video-player-options='{
+						     "videoType": "vimeo",
+				         "videoId": "259411563",
+				         "parentSelector": "#vimeoVideoPlayerExample3",
+				         "targetSelector": "#vimeoVideoIframeExample3",
+				         "isAutoplay": true,
+				         "isMuted": false,
+				         "classMap": {
+				           "toggle": "video-player-played"
+				         }
+				       }'>
+				      <span class="video-player-icon">
+				        <i class="fas fa-play"></i>
+				      </span>
+						</a>
+						<!-- End Play Button -->
+						
+						<!-- Video Iframe -->
+						<div class="embed-responsive embed-responsive-16by9">
+							<div id="vimeoVideoIframeExample3"></div>
 						</div>
 						<!-- End Video Iframe -->
 					</div>
