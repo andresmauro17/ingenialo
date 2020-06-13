@@ -1,13 +1,13 @@
 /**
  * Global Components
  */
-import Vue from 'vue'
 
+import HomeComponent from './components/home/HomeComponent.vue'
 //  import myComponent from "./myComponent";
 
 const GlobalComponents = {
    install(Vue) {
-    //   Vue.component('myComponent', MyComponent);
+      Vue.component('home-component', HomeComponent);
    }
 }
 

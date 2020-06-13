@@ -14,6 +14,12 @@ const App  = {
           msg: 'Welcome to Your Vue.js App'
         }
     },
+    mounted(){
+      
+    },
+    methods:{
+      
+    },
     components:{
       HeaderComponent,
       FooterComponent

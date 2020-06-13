@@ -14,7 +14,7 @@
 // require('./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js');
 
 //-------JS Front--------
-require('./assets/js/hs.core.js');
+// require('./assets/js/hs.core.js');
 require('@/assets/js/hs.validation.js')
 
 

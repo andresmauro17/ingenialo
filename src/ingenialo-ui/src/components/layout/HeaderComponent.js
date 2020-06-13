@@ -14,47 +14,39 @@ import HSShowAnimation from '@/assets/vendor/hs-show-animation/dist/hs-show-anim
 
 const HeaderComponent = Vue.component('header-component', {
     mounted(){
-        console.log("hello header")
         this.frontReady()
     },
     data () {
         return {
-          msg: 'Welcome header'
         }
     },
     methods:{
         frontReady:function(){
             console.log("hello front")
-            jQuery('#buscar').click(function(){
-                alert("clickeddddddddeee!")
+            // initialization of header
+            var header = new HSHeader($('#header')).init();
+        
+            // initialization of HSMegaMenu component
+            var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+        
+            // initialization of unfold
+            var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+        
+            // initialization of form validation
+            $('.js-validate').each(function() {
+              $.HSCore.components.HSValidation.init($(this), {
+                rules: {
+                  confirmPassword: {
+                    equalTo: '#signupPassword'
+                  }
+                }
+              });
             });
-
-                // initialization of header
-                var header = new HSHeader($('#header')).init();
-            
-                // initialization of HSMegaMenu component
-                var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
-            
-                // initialization of unfold
-                var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
-            
-                // initialization of form validation
-                $('.js-validate').each(function() {
-                  $.HSCore.components.HSValidation.init($(this), {
-                    rules: {
-                      confirmPassword: {
-                        equalTo: '#signupPassword'
-                      }
-                    }
-                  });
-                });
-            
-                // initialization of show animations
-                $('.js-animation-link').each(function () {
-                  var showAnimation = new HSShowAnimation($(this)).init();
-                });
-           
-
+        
+            // initialization of show animations
+            $('.js-animation-link').each(function () {
+              var showAnimation = new HSShowAnimation($(this)).init();
+            });
         }
     }
 });

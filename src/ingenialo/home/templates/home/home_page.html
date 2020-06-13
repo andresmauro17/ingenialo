@@ -1,66 +1,11 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block base_head %}
-
-   {% comment %} <!-- carrousel -->
-   <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
-  {% endcomment %}
-
-{% endblock base_head%}
-
 {% block content %}
-  <!-- ========== MAIN CONTENT ========== -->
-  <main id="content" role="main">
-    <!-- Images Carousel Section -->
-    <div class="container-fluid">
-      <div 
-          class="js-slick-carousel slick"
-          data-hs-slick-carousel-options='{
-            "dots": true,
-            "dotsClass": "slick-pagination mt-3"
-          }'
-      >
-          {% for hero in heros %}
-              <div class="js-slide bg-img-hero-center" style="background-image: url({{hero.image.url}});">
-                  <!-- News Block -->
-                    <div class="container d-flex align-items-center min-h-620rem">
-                      <div class="w-lg-40 mr-5">
-                        <div class="mb-5">
-                          <h3 class="h1 font-weight-bold text-white"
-                              data-hs-slick-carousel-animation="fadeInUp"
-                              data-hs-slick-carousel-animation-delay="150">{{ hero.tittle }}
-                          </h3>
-                          <p class="lead text-white" data-scs-animation-in="fadeInUp">
-                            {{ hero.legend }}
-                          </p>
-                        </div>
-                        <a class="btn btn-primary btn-wide transition-3d-hover" href="#"
-                          data-hs-slick-carousel-animation="fadeInUp"
-                          data-hs-slick-carousel-animation-delay="300">Leer mas <i class="fas fa-angle-right fa-sm ml-1"></i></a>
-                      </div>
-                    </div>
-                    <!-- End News Block -->
-              </div>
-          {% endfor %}
+  <home-component>
+    
 
-      </div>
-    </div>
-    <!-- End Images Carousel Section -->
-
-    <div class="container space-2">
-      
-    </div>
-
-
-
-
-
-
-
-
-  </main>
-  <!-- ========== END MAIN CONTENT ========== --> 
+  </home-component>
 
 {% endblock content%}
 

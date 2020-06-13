@@ -37,7 +37,7 @@
         <!-- End Search -->
         <div class="header-section">
             <!-- Topbar -->
-            <div class="container header-hide-content pt-2">
+            <div class="container-fluid header-hide-content pt-2">
                 <div class="d-flex align-items-center">
                     <div class="ml-auto">
                         <!-- <div class="ml-auto">
@@ -48,7 +48,7 @@
                         <li class="list-inline-item">
                             <div class="hs-unfold">
                                 <a 
-                                    class="js-hs-unfold-invoker btn btn-xs btn-icon btn-ghost-secondary" 
+                                    class="js-hs-unfold-invoker btn btn-xs btn-i btn-ghost-secondary" 
                                     href="javascript:;"
                                     data-hs-unfold-options='{
                                     "target": "#searchPushTop",
@@ -89,22 +89,17 @@
                         <!-- Account options -->
                         {% if user.is_authenticated %}
                             <!-- Account Login -->
-                            <li class="list-inline-item position-relative">
+                            <li class="list-inline-item">
                                 <!-- Account Dropdown -->
-                                <a id="account-dropdown-invoker" class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg" href="javascript:;" role="button"
-                                aria-controls="account-dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-unfold-event="hover"
-                                data-unfold-target="#account-dropdown"
-                                data-unfold-type="css-animation"
-                                data-unfold-duration="300"
-                                data-unfold-delay="300"
-                                data-unfold-hide-on-scroll="true"
-                                data-unfold-animation-in="slideInUp"
-                                data-unfold-animation-out="fadeOut">
-                                <span class="u-sidebar--account__toggle-text">{{ user.username }}</span>
-                                <img class="u-sidebar--account__toggle-img" src="{% static 'avatarr.jpg' %}" alt="Image Description">
+                                <a 
+                                    class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg" 
+                                    href="#" 
+                                    role="button"
+                                >
+                                    <span class="u-sidebar--account__toggle-text">{{ user.username }}</span>
+                                    <span class="avatar avatar-xs avatar-circle">
+                                        <img class="avatar-img" src="{% static 'avatar.jpg' %}" alt="Image Description">
+                                    </span>
                                 </a>
                                 <!-- End Account Dropdown -->
                 
@@ -137,7 +132,7 @@
             </div>
             <!-- End Topbar -->
 
-            <div id="logoAndNav" class="container">
+            <div id="logoAndNav" class="container-fluid">
                 <!-- Nav -->
                 <nav class="js-mega-menu navbar navbar-expand-lg">
                     <!-- Logo -->
