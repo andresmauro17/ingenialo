@@ -52,8 +52,10 @@ print(STATIC_ROOT)
 
 # webpack loader
 INSTALLED_APPS += (
+    'django_extensions',
     'webpack_loader',
 )
+
 
 WEBPACK_LOADER = {
     'DEFAULT': {
