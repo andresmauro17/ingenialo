@@ -27,14 +27,17 @@ urlpatterns = [
     path('', include('ingenialo.home.urls'),name='home'),
     path('', include('ingenialo.account.urls'),name='account'),
     path('producto/', include('ingenialo.products.urls'),name='products'),
-    path('admin/', admin.site.urls),   
+    path('admin/', admin.site.urls),
+    path('api/home/', include('ingenialo.home.api.urls')),
+
 ]
 
 if settings.DEBUG:
+    # static and urls
     urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    #adding debug toolbar
+    # debug toolbar urls
     import debug_toolbar
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
