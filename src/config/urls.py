@@ -27,7 +27,7 @@ urlpatterns = [
     path('', include('ingenialo.home.urls'),name='home'),
     path('', include('ingenialo.account.urls'),name='account'),
     path('producto/', include('ingenialo.products.urls'),name='products'),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('api/home/', include('ingenialo.home.api.urls')),
 
 ]

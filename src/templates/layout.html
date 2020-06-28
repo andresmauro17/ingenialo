@@ -1,44 +1,13 @@
-{% load render_bundle from webpack_loader %}
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Title -->
-  <title>ingenialo-ui</title>
 
-  <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block app %}
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{% static '/favicon.ico' %}">
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
-
-</head>
-<body>
-  
-  <div id="app">
+        {% include 'layout/top-message.html' %}
         {% include 'layout/header-component.html'%}
 
-        {% comment %} {% include 'base/message.html' %} {% endcomment %}
 
         {% block content %}{% endblock %}
         
         {% include 'layout/footer-component.html'%}
-  </div>
-
-  <!-- JS Global Compulsory -->
-  <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/jquery-migrate/dist/jquery-migrate.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
-
-  <!-- JS Front -->
-  <script src="{% static 'js/hs.core.js' %}"></script>
-
-
-  {% render_bundle 'main' %}
-
-</body>
-</html>
+{% endblock app %}

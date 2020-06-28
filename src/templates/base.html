@@ -1,64 +1,37 @@
+{% load render_bundle from webpack_loader %}
 {% load static %}
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <!-- Title -->
-        <title>Ingenialo</title>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>ingenialo-ui</title>
 
-        <!-- Required Meta Tags Always Come First -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{% static '/favicon.ico' %}">
 
-         <!-- Font -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
-        
-        <!-- Css global Sources -->
-        {% include 'base/css.html' %}
-        <!-- Css view Sources -->
-        {% block base_head %}{% endblock base_head%}
-        
-        
-    </head>
-    <body>
-        {% include 'base/header.html'%}
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
 
-        {% comment %} {% include 'base/message.html' %} {% endcomment %}
+  <!-- Css global Sources -->
+  {% include 'base/css.html' %}
+  {% block base_head %}{% endblock base_head%}
 
-        {% block content %}{% endblock %}
-        
-        {% comment %} {% include 'base/footer.html'%} {% endcomment %}
+</head>
+<body>
+  
+  <div id="app">
+        {% block app %}{% endblock %}
+  </div>
 
+  {% include 'base/js.html' %}
 
-        <!-- Go to Top -->
-        <a class="js-go-to go-to position-fixed" 
-            href="javascript:;" 
-            style="visibility: hidden;"
-            data-hs-go-to-options='{
-                "offsetTop": 700,
-                "position": {
-                "init": {
-                    "right": 15
-                },
-                "show": {
-                    "bottom": 15
-                },
-                "hide": {
-                    "bottom": -15
-                }
-                }
-            }'
-        >
-            <i class="las la-arrow-up go-to-inner"></i>
-        </a>
-        <!-- End Go to Top -->
+  {% block javascript %}{% endblock %}
 
-        <!-- Js global sources-->
-        {% include 'base/js.html' %}
-        <!-- Js view Sources -->
-        {% block javascript %}{% endblock %}
-        
-    </body>
-  </html>
+  {% render_bundle 'main' %}
+
+</body>
+</html>
