@@ -37,7 +37,7 @@
         <!-- End Search -->
         <div class="header-section">
             <!-- Topbar -->
-            <div class="container-fluid header-hide-content pt-2">
+            <div class="container header-hide-content pt-2">
                 <div class="d-flex align-items-center">
                     <div class="ml-auto">
                         <!-- <div class="ml-auto">
@@ -90,33 +90,58 @@
                         {% if user.is_authenticated %}
                             <!-- Account Login -->
                             <li class="list-inline-item">
-                                <!-- Account Dropdown -->
-                                <a 
-                                    class="btn btn-xs btn-text-secondary u-sidebar--account__toggle-bg" 
-                                    href="#" 
-                                    role="button"
-                                >
-                                    <span class="u-sidebar--account__toggle-text">{{ user.username }}</span>
-                                    <span class="avatar avatar-xs avatar-circle">
-                                        <img class="avatar-img" src="{% static 'avatar.jpg' %}" alt="Image Description">
-                                    </span>
-                                </a>
-                                <!-- End Account Dropdown -->
-                
-                                <div id="account-dropdown" class="dropdown-menu dropdown-unfold dropdown-menu-sm-right" aria-labelledby="account-dropdown-invoker">
-                                    <!-- <a class="dropdown-item" href="#">
-                                        <span class="fas fa-user-circle dropdown-item-icon"></span>
-                                        Profile
+                                <!-- Account -->
+                                <div class="hs-unfold">
+                                    <a class="js-hs-unfold-invoker rounded-circle" href="javascript:;"
+                                        data-hs-unfold-options='{
+                                        "target": "#accountDropdown",
+                                        "type": "css-animation",
+                                        "event": "hover",
+                                        "duration": 50,
+                                        "delay": 0,
+                                        "hideOnScroll": "true"
+                                        }'>
+                                        <span class="avatar avatar-xs avatar-circle">
+                                            <img class="avatar-img" src="{% static 'avatar.jpg' %}" alt="Avatar Image">
+                                        </span>
                                     </a>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="fas fa-cog dropdown-item-icon"></span>
-                                        Settings
-                                    </a>  -->
-                                    <a class="dropdown-item" href="{% url 'account:logout' %}">
-                                        <span class="fas fa-sign-out-alt dropdown-item-icon"></span>
-                                        salir
-                                    </a>
+                                    <div id="accountDropdown" class="hs-unfold-content dropdown-menu dropdown-menu-sm-right dropdown-menu-no-border-on-mobile p-0" style="min-width: 245px;">
+                                        <div class="card">
+                                        <!-- Header -->
+                                        <div class="card-header p-4">
+                                            <a class="media align-items-center" href="#">
+                                            <div class="avatar mr-3">
+                                                <img class="avatar-img" src="{% static 'avatar.jpg' %}" alt="Avatar Image">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="d-block font-weight-bold">{{ user.username }}{% comment %}<span class="badge badge-success ml-1">Pro</span>{% endcomment %}</span> 
+                                                <span class="d-block small text-muted">{{ user.email }}</span>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <!-- End Header -->
+
+                                        <!-- Body -->
+                                        <div class="card-body py-3">
+                                            <a class="dropdown-item px-0" href="#">
+                                                <span class="dropdown-item-icon">
+                                                    <i class="fas fa-user"></i>
+                                                </span>
+                                                Cuenta
+                                            </a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item px-0" href="{% url 'account:logout' %}">
+                                                <span class="dropdown-item-icon">
+                                                    <i class="fas fa-power-off"></i>
+                                                </span>
+                                                Salir
+                                            </a>
+                                        </div>
+                                        <!-- End Body -->
+                                        </div>
+                                    </div>
                                 </div>
+                                <!-- End Account -->
                             </li>
                         {% else %}
                             <li class="list-inline-item">
@@ -132,7 +157,7 @@
             </div>
             <!-- End Topbar -->
 
-            <div id="logoAndNav" class="container-fluid">
+            <div id="logoAndNav" class="container">
                 <!-- Nav -->
                 <nav class="js-mega-menu navbar navbar-expand-lg">
                     <!-- Logo -->

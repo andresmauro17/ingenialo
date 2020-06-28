@@ -33,7 +33,7 @@ class MaintenanceModeMiddleware:
                 "end_date": '{"endDate":"'+MAINTENEANCE_MODE_END_DATE+'"}'
             }
             return render(request, "maintenance/coming-soon.html", context)
-
-        messages.info(request, 'Estas en modo mantenimiento!')
+        if IS_IN_MAINTENEANCE_MODE:
+            messages.info(request, 'Estas en modo mantenimiento!')
         response = self.get_response(request)
         return response
