@@ -1,74 +1,82 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "layout_log_sign.html" %}
 {% load humanize %}
-
-
-{% block base_head %}
-{% endblock base_head%}
-
 
 {% block content %}
 
-    <!-- ========== MAIN ========== -->
-    <main id="content" role="main">
-        <!-- Login Form -->
-        <div class="container space-2">
-          <form method="POST" action="" class="js-validate w-md-75 w-lg-50 mx-md-auto">
-            {% csrf_token %}
-            <!-- Title -->
-            <div class="mb-7">
-              <h2 class="h3 text-primary font-weight-normal mb-0">Estas de <span class="font-weight-semi-bold">Regreso!</span></h2>
-              <p>Ingresa a tu cuenta</p>
-            </div>
-            <!-- End Title -->
-    
-            <!-- Form Group -->
-            <div class="js-form-message form-group">
-              <label class="form-label" for="username">Nombre de usuario</label>
-              <input type="text" class="form-control" name="username" id="username" placeholder="escriba su nombre de usuario" required
-                     data-msg="ingrese el nombre de usuario"
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
-            </div>
-            <!-- End Form Group -->
-    
-            <!-- Form Group -->
-            <div class="js-form-message form-group">
-              <label class="form-label" for="signinSrPassword">
-                <span class="d-flex justify-content-between align-items-center">
-                  Contraseña
-                  <a class="link-muted text-capitalize font-weight-normal" href="recover-account-simple.html">Olvido su contraseña?</a>
-                </span>
-              </label>
-              <input type="password" class="form-control" name="password" id="signinSrPassword" placeholder="********" aria-label="********" required
-                     data-msg="su contraseña es invalida. por favor intente de nuevo."
-                     data-error-class="u-has-error"
-                     data-success-class="u-has-success">
-            </div>
-            <!-- End Form Group -->
-    
-            <!-- Button -->
-            <div class="row align-items-center mb-5">
-              <div class="col-6">
-                <span class="small text-muted">No tienes una cuenta aun?</span>
-                <a class="small" href="{% url 'account:register' %}"> <b>Registrate aqui!</b></a>
-              </div>
-    
-              <div class="col-6 text-right">
-                <button type="submit" class="btn btn-primary transition-3d-hover">Iniciar sesion</button>
-              </div>
-            </div>
-            <!-- End Button -->
-          </form>
+  <div class="row no-gutters">
+    <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 space-top-3 space-lg-0">
+      <!-- Form -->
+      <form method="POST" action="" class="js-validate">
+        {% csrf_token %}
+        <!-- Title -->
+        <div class="mb-5 mb-md-7">
+          <h1 class="h2">Estas de <span class="font-weight-semi-bold">Regreso!</span></h1>
+          <p>Ingresa a tu cuenta</p>
         </div>
-        <!-- End Login Form -->
-    </main>
-    <!-- ========== END MAIN ========== -->
+        <!-- End Title -->
+
+        <!-- Form Group -->
+        <div class="js-form-message form-group">
+          <label class="input-label" for="username">Nombre de usuario</label>
+          <input 
+                type="text" 
+                class="form-control" 
+                name="username" 
+                id="username" 
+                tabindex="1" 
+                placeholder="escriba su nombre de usuario" 
+                data-msg="ingrese el nombre de usuario"
+                data-error-class="u-has-error"
+                data-success-class="u-has-success"
+                required
+                >
+          {% comment %} <input type="email" class="form-control" name="email" id="signinSrEmail" tabindex="1" placeholder="Email address" aria-label="Email address" required
+                  data-msg="Please enter a valid email address."> {% endcomment %}
+
+        </div>
+        <!-- End Form Group -->
+
+        <!-- Form Group -->
+        <div class="js-form-message form-group">
+          <label class="input-label" for="signinSrPassword" tabindex="0">
+            <span class="d-flex justify-content-between align-items-center">
+              Contraseña
+              <a class="link-underline text-capitalize font-weight-normal" href="#">Olvido su contraseña?</a>
+            </span>
+          </label>
+          <input 
+              type="password" 
+              class="form-control" 
+              name="password" 
+              id="signinSrPassword" 
+              placeholder="********" 
+              aria-label="********" 
+              data-msg="su contraseña es invalida. por favor intente de nuevo."
+              data-error-class="u-has-error"
+              data-success-class="u-has-success"
+              tabindex="2"
+              required
+          >
+        </div>
+        <!-- End Form Group -->
+
+        <!-- Button -->
+        <div class="row align-items-center mb-5">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <span class="small text-muted">No tienes una cuenta aun?</span>
+            <a class="font-size-1 font-weight-bold" href="{% url 'account:register' %}">Registrate aqui!</a>
+          </div>
+
+          <div class="col-sm-6 text-sm-right">
+            <button type="submit" class="btn btn-primary transition-3d-hover">Iniciar sesion</button>
+          </div>
+        </div>
+        <!-- End Button -->
+      </form>
+      <!-- End Form -->
+    </div>
+  </div>
 
 {% endblock content%}
 
 
-{% block javascript %}
-
-
-{% endblock javascript%}
