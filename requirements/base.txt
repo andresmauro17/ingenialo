@@ -15,6 +15,7 @@ sqlparse==0.3.0
 # dotenv
 python-dotenv
 
-
+# webpack
+django-webpack-loader==0.7.0
 
 
