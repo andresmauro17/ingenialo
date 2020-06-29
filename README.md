@@ -24,7 +24,7 @@ for more information please visit http://www.ingenialo.com/
        
         
 2.  start a python virtual enviroment
-        cd ingenialo && python3 -m venv .venv
+        cd ingenialo && python3 -m venv .
         
 3.  active virtualenv 
         source bin/activate
