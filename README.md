@@ -1,8 +1,8 @@
 # ingenialo
 
-This repo is the ingeialo ecommerce project. 
+This repo is the ingenialo ecommerce project. 
 
-We are using django, jquery and gulp for assets.
+We are using django, jquery, vue2 and webpack for assets.
 
 for more information please visit http://www.ingenialo.com/
 
@@ -10,30 +10,39 @@ for more information please visit http://www.ingenialo.com/
 
 1.  clone this repository:
         git clone https://ingenialo@bitbucket.org/ingenialo/ingenialo.git
-2.  you have to create enviroment variables, in your bashrc or in .env file. maybe un bash files as show:
+2.  you have to create enviroment variables, in your .env file. maybe un bash files as show:
        
-        export INGENIALO_SECRET_KEY=""
-        export INGENIALO_DB_NAME=""
-        export INGENIALO_DB_USER=""
-        export INGENIALO_DB_PASSWORD=""
-        export INGENIALO_DB_HOST=""
-        export INGENIALO_DB_PORT=""
+        APP_ENV_SETTINGS="config.settings.local"
+        INGENIALO_SECRET_KEY=""
+        INGENIALO_DB_NAME="INGENIALO"
+        INGENIALO_DB_USER=""
+        INGENIALO_DB_PASSWORD=""
+        INGENIALO_DB_HOST=""
+        INGENIALO_DB_PORT=""
+        IS_IN_MAINTENEANCE_MODE=False
+        MAINTENEANCE_MODE_END_DATE = "2020/09/01"
+       
         
 2.  start a python virtual enviroment
         cd ingenialo && python3 -m venv .venv
+        
 3.  active virtualenv 
         source bin/activate
+        
 4.  install python dependencis
         pip install -r requirements/local.txt
+        
 5.  we need to install npm form some templates package. 
-6.  install gulp globaly, we need be sudo user for that
-        npm install gulp-cli -g
-7.  install node dependency
+
+7.  install node dependency with npm==6.13.4 and node==v12.16.1
+    cd ingenialo-ui
 	npm install
 	
 # runing the ingenialo web site:
 
-1.  run this command if APP_ENV_SETTINGS in .env file is not setted:
-        python3 manage.py runserver --settings=ingenialo.settings.local
+1.  run this command to up the django server:
+        python3 manage.py runserve
    
-   
+2. run this command to up the frontend:
+        cd ingenialo-ui
+        npm run dev
