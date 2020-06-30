@@ -3,7 +3,7 @@
 from .base import *  # NOQA
 
 # Base
-SECRET_KEY = os.getenv('MEDIAPP_SECRET_KEY')
+SECRET_KEY = os.getenv('INGENIALO_SECRET_KEY')
 ALLOWED_HOSTS = ['localhost','127.0.0.1','157.245.245.146','ingenialo.com']
 
 #databases
