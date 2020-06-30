@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 
 from django.views.generic import TemplateView
 
-
 urlpatterns = [
     # path('testing_react/', TemplateView.as_view(template_name='react/react.html')),
     path('', include('ingenialo.home.urls'),name='home'),
@@ -42,3 +41,20 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+
+
+# 'django.contrib.staticfiles' app only work in debug mode. this code is for set the static and media url
+# https://docs.djangoproject.com/en/2.1/ref/views/#django.views.static.serve
+
+if settings.LOCAL_CDN:
+    from django.urls import re_path
+    from django.views.static import serve
+    
+    urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+        re_path(r'^static/(?P<path>.*)$', serve, {
+            'document_root': settings.STATIC_ROOT,
+        }),
+    ]

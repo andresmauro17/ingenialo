@@ -63,3 +63,6 @@ WEBPACK_LOADER = {
         'STATS_FILE': os.path.join(BASE_DIR, 'ingenialo-ui/webpack-stats.json'),
     }
 }
+
+# LOCAL_CDN is a variable that is True for show statics from static_cdn folder
+LOCAL_CDN = False 
