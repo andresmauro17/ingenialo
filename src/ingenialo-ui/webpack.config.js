@@ -129,11 +129,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.output = {
-    path: path.resolve(__dirname, './src/assets/dist'),
-    publicPath: 'http://localhost:8000/static/dist/',
-    filename: 'build.js'
-  }
+  module.exports.output.publicPath =  'http://localhost:8000/static/'
 
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html

@@ -32,6 +32,7 @@ LOCAL_CDN = True # LOCAL_CDN is a variable that is True for show statics from st
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"ingenialo-ui","src","assets"),
+    os.path.join(BASE_DIR,"ingenialo-ui","dist"),
 ]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
