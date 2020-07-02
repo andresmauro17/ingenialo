@@ -20,8 +20,9 @@ class MaintenanceModeMiddleware:
         
         user_is_staff = request.user.is_staff
         is_admin_view = request.path.startswith('/admin/')
+        is_static = request.path.startswith('/static/')
 
-        if IS_IN_MAINTENEANCE_MODE and not user_is_staff and not is_admin_view:
+        if IS_IN_MAINTENEANCE_MODE and not user_is_staff and not is_admin_view and not is_static:
             """ 
                 Show maintenance view onli if, the os env var is setted to True the user isn't staff, 
                 and exclude adminview

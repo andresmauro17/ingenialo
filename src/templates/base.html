@@ -27,10 +27,11 @@
         {% block app %}{% endblock %}
   </div>
 
+  {% include 'base/js.html' %}
+
+  {% block javascript %}{% endblock %}
 
   {% render_bundle 'main' %}
-  {% include 'base/js.html' %}
-  {% block javascript %}{% endblock %}
 
 </body>
 </html>
