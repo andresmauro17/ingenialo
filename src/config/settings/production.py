@@ -17,7 +17,7 @@ DATABASES = {
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','157.245.245.146','ingenialo.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','157.245.245.146','ingenialo.com','www.ingenialo.com']
 
 # Static config in cdn service provider
 #STATIC_ROOT = 'staticfiles'
