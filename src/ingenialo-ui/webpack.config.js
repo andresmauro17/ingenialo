@@ -129,7 +129,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.output.publicPath =  'http://www.ingenialo.com:8000/static/'
+  module.exports.output.publicPath =  'http://www.ingenialo.com/static/'
 
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
