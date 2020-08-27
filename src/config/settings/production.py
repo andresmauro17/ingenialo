@@ -15,7 +15,7 @@ DATABASES = {
 }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','157.245.245.146','ingenialo.com','www.ingenialo.com','ecdb.ingenialo.com','www.ingenialo.io','ingenialo.io']
 
