@@ -14,7 +14,7 @@
                 v-for="hero in heros"
                 :key="hero.id"
                 class="js-slide rounded bg-img-hero-center space-3 space-md-3" 
-                :style="`background-image: url(${hero.image.url});`"
+                :style="`background-image: url(${hero.image});`"
             >
                 <!-- News Block -->
                 <div class="container-fluid">
@@ -56,10 +56,7 @@
     // <!-- JS Front -->
     import '@/assets/js/hs.slick-carousel.js'
 
-    export default {
-        data(){
-            return{
-                heros:[
+    var herosArray = [
                     {
                         'id':1,
                         'tittle':'microbit',
@@ -73,9 +70,21 @@
                         'image':{'url':'http://localhost:8000/media/hero/feathernest_XBc2nX1.jpg'},
                     }
                 ]
+
+    export default {
+        props: {
+            heros: {
+                type: Array,
+                default: [],
+                description:
+                    'Whether navbar menu is shown (valid for viewports < specified by `expand` prop)'
+            },
+        },
+        data(){
+            return{
             }
         },
-        mounted(){
+        updated(){
             console.log("hero")
             this.frontReady()
         },

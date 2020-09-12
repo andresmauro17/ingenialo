@@ -63,3 +63,9 @@ WEBPACK_LOADER = {
 
 # print("MEDIA_URL",MEDIA_URL)
 # print("MEDIA_ROOT",MEDIA_ROOT)
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+}

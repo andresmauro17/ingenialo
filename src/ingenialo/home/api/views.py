@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 # local imports
-from ..serializer import HeroSerializer
+from .serializer import HeroSerializer
 from ..models import Hero
 
 @api_view(['GET'])
