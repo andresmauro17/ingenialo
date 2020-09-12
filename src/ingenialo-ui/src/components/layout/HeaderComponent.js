@@ -22,7 +22,6 @@ const HeaderComponent = Vue.component('header-component', {
     },
     methods:{
         frontReady:function(){
-            console.log("hello front")
             // initialization of header
             var header = new HSHeader($('#header')).init();
         

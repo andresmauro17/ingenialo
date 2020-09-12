@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import Http404
 from django.views.generic import DetailView
+from django.views.generic import TemplateView
 
 from .models import Product
 
-class ProductDetailView(DetailView):
+class ProductTemplateView(TemplateView):
+    template_name = "products/detail.html"
+
+class ProductDetailViewOld(DetailView):
     # queryset = Product.objects.all()
     template_name = "products/detail.html"
 
