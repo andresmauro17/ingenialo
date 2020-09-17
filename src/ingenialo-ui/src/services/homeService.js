@@ -7,4 +7,9 @@ homeService.getHeroData = function(){
     .then(res=> res.data)
 }
 
+homeService.getAppSettings = function(){
+    return api.get('/home/app-settings')
+    .then(res=> res.data)
+}
+
 export default homeService
