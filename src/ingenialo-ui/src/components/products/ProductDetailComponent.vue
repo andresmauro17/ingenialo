@@ -4,7 +4,7 @@
     <!-- Hero Section -->
     <div class="container space-top-1 space-top-sm-2">
       <div class="row">
-        <div class="col-lg-7 mb-7 mb-lg-0">
+        <div class="col-lg-8 mb-8 mb-lg-0">
           <div class="pr-lg-4">
             <div class="position-relative">
               <!-- Main Slider -->
@@ -69,20 +69,7 @@
         </div>
 
         <!-- Product Description -->
-        <div class="col-lg-5">
-          <!-- Rating -->
-          <div class="d-flex align-items-center small mb-2">
-            <div class="text-warning mr-2">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <a class="link-underline" href="#reviewSection">Read all 287 reviews</a>
-          </div>
-          <!-- End Rating -->
-
+        <div class="col-lg-4">
           <!-- Title -->
           <div class="mb-5">
             <h1 class="h2">New Era 9Forty LA Dodgers adjustable cap in black</h1>
@@ -92,9 +79,10 @@
 
           <!-- Price -->
           <div class="mb-5">
-            <h2 class="font-size-1 text-body mb-0">Total price:</h2>
+            <h2 class="font-size-1 text-body mb-0">Precio:</h2>
             <span class="text-dark font-size-2 font-weight-bold">$159.99</span>
-            <span class="text-body ml-2"><del>$179.99</del></span>
+            <span class="d-block text-muted mb-0"> 1 en stock</span>
+            <!-- <span class="text-body ml-2"><del>$179.99</del></span> -->
           </div>
           <!-- End Price -->
 
@@ -102,7 +90,7 @@
           <div class="border rounded py-2 px-3 mb-3">
             <div class="js-quantity-counter row align-items-center">
               <div class="col-7">
-                <small class="d-block text-body font-weight-bold">Select quantity</small>
+                <small class="d-block text-body font-weight-bold">seleccione la cantidad</small>
                 <input class="js-result form-control h-auto border-0 rounded p-0" type="text" value="1">
               </div>
               <div class="col-5 text-right">
@@ -117,84 +105,8 @@
           </div>
           <!-- End Quantity -->
 
-          <!-- Accordion -->
-          <div id="shopCartAccordion" class="accordion mb-5">
-            <!-- Card -->
-            <div class="card border shadow-none">
-              <div class="card-body card-collapse" id="shopCardHeadingOne">
-                <a class="btn btn-link btn-block card-btn collapsed" href="javascript:;" role="button"
-                        data-toggle="collapse"
-                        data-target="#shopCardOne"
-                        aria-expanded="false"
-                        aria-controls="shopCardOne">
-                  <span class="row align-items-center">
-                    <span class="col-9">
-                      <span class="media align-items-center">
-                        <span class="w-100 max-w-6rem mr-3">
-                          <img class="img-fluid" :src="appSettings.STATIC_URL+'svg/icons/icon-65.svg'" alt="SVG">
-                        </span>
-                        <span class="media-body">
-                          <span class="d-block font-size-1 font-weight-bold">Free shipping</span>
-                        </span>
-                      </span>
-                    </span>
-                    <span class="col-3 text-right">
-                      <span class="card-btn-toggle">
-                        <span class="card-btn-toggle-default">&plus;</span>
-                        <span class="card-btn-toggle-active">&minus;</span>
-                      </span>
-                    </span>
-                  </span>
-                </a>
-              </div>
-              <div id="shopCardOne" class="collapse" aria-labelledby="shopCardHeadingOne" data-parent="#shopCartAccordion">
-                <div class="card-body">
-                  <p class="small mb-0">We offer free shipping anywhere in the U.S. A skilled delivery team will bring the boxes into your office.</p>
-                </div>
-              </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card border shadow-none">
-              <div class="card-body card-collapse" id="shopCardHeadingTwo">
-                <a class="btn btn-link btn-block card-btn collapsed" href="javascript:;" role="button"
-                        data-toggle="collapse"
-                        data-target="#shopCardTwo"
-                        aria-expanded="false"
-                        aria-controls="shopCardTwo">
-                  <span class="row align-items-center">
-                    <span class="col-9">
-                      <span class="media align-items-center">
-                        <span class="w-100 max-w-6rem mr-3">
-                          <img class="img-fluid" :src="appSettings.STATIC_URL+'svg/icons/icon-64.svg'" alt="SVG">
-                        </span>
-                        <span class="media-body">
-                          <span class="d-block font-size-1 font-weight-bold">30 Days return</span>
-                        </span>
-                      </span>
-                    </span>
-                    <span class="col-3 text-right">
-                      <span class="card-btn-toggle">
-                        <span class="card-btn-toggle-default">&plus;</span>
-                        <span class="card-btn-toggle-active">&minus;</span>
-                      </span>
-                    </span>
-                  </span>
-                </a>
-              </div>
-              <div id="shopCardTwo" class="collapse" aria-labelledby="shopCardHeadingTwo" data-parent="#shopCartAccordion">
-                <div class="card-body">
-                  <p class="small mb-0">If you're not satisfied, return it for a full refund. We'll take care of disassembly and return shipping.</p>
-                </div>
-              </div>
-            </div>
-            <!-- End Card -->
-          </div>
-          <!-- End Accordion -->
-
           <div class="mb-4">
-            <button  type="button" class="btn btn-block btn-primary btn-pill transition-3d-hover">Add to Cart</button>
+            <button  type="button" class="btn btn-block btn-primary btn-pill transition-3d-hover">Añadir al carro</button>
           </div>
 
           <!-- Help Link -->
@@ -213,6 +125,30 @@
       </div>
     </div>
     <!-- End Hero Section -->
+
+    <!-- Product Description Section -->
+    <div class="container space-top-2 space-lg-3">
+      <div class="row">
+        <div class="col-md-12 mb-5 mb-md-0">
+          <div class="pr-lg-12">
+            <h2>Descripcion</h2>
+            <p class="text-justify">As popular off field as they are on, New Era caps are standard issue amongst those with a passion for street culture, blending progressive styles with carefully crafted design. Known for their innovative use of colour, bold designs are added season upon season, referencing everything.</p>
+          </div>
+        </div>
+      </div>
+      <hr class="my-0 mb-3">
+      <div class="row">
+        <div class="col-md-12 mb-5 mb-md-0">
+          <div class="pr-lg-12">
+            <h2>detalles tecnicos</h2>
+            <p class="text-justify">As popular off field as they are on, New Era caps are standard issue amongst those with a passion for street culture, blending progressive styles with carefully crafted design. Known for their innovative use of colour, bold designs are added season upon season, referencing everything.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Product Description Section -->
+
+  
   </main>
   <!-- ========== END MAIN CONTENT ========== --> 
 </template>
