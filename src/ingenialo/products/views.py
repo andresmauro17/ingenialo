@@ -8,6 +8,11 @@ from .models import Product
 class ProductTemplateView(TemplateView):
     template_name = "products/detail.html"
 
+    def get(self, request, product_id, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        context['product_id'] = product_id
+        return self.render_to_response(context)
+
 class ProductDetailViewOld(DetailView):
     # queryset = Product.objects.all()
     template_name = "products/detail.html"

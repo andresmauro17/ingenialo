@@ -144,6 +144,9 @@
     import productService from '@/services/productService.js'
 
     export default {
+        props:[
+          'productId'
+        ],
         data () {
             return {
               product:{}
@@ -169,7 +172,7 @@
         },
         methods:{
             getData(){
-              productService.getProduct(1)
+              productService.getProduct(parseInt(this.productId))
               .then(res=>this.product=res)
             },
         }
