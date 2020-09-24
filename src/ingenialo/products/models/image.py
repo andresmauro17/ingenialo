@@ -21,7 +21,7 @@ def upload_image_path(instance, filename):
             )
 
 class Image(models.Model):
-    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(upload_to=upload_image_path)
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)

@@ -13,3 +13,15 @@ def products_list_view(request, *args, **kwargs):
     qs = Product.objects.all()
     serializer = ProductSerializer(qs, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def products_detail_view(request, product_id, *args, **kwargs):
+    print("requests------")
+    qs = Product.objects.filter(id=product_id)
+    if not qs.exists():
+        return Response({},status=404)
+    obj = qs.first()
+    print("-------obj------")
+    print(obj)
+    serializer = ProductSerializer(obj)
+    return Response(serializer.data, status=200)

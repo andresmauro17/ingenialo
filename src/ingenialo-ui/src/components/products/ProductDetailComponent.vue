@@ -18,15 +18,10 @@
                      "autoplaySpeed": 7000,
                      "asNavFor": "#heroSliderNav"
                    }'>
-                <div class="js-slide">
-                  <img class="img-fluid w-100 rounded" src="/static/img/600x600/img1.jpg" alt="Image Description">
+                <div class="js-slide"  v-for="image in product.images" >
+                  <img class="img-fluid w-100 rounded" :src="image.image" :alt="image.image">
                 </div>
-                <div class="js-slide">
-                  <img class="img-fluid w-100 rounded" src="/static/img/600x600/img2.jpg" alt="Image Description">
-                </div>
-                <div class="js-slide">
-                  <img class="img-fluid w-100 rounded" src="/static/img/600x600/img3.jpg" alt="Image Description">
-                </div>
+                
               </div>
               <!-- End Main Slider -->
 
@@ -46,19 +41,9 @@
                        "thumbsProgressContainer": ".js-slick-thumb-progress",
                        "asNavFor": "#heroSlider"
                      }'>
-                  <div class="js-slide p-1">
+                  <div class="js-slide p-1" v-for="image in product.images">
                     <a class="js-slick-thumb-progress d-block avatar avatar-circle border p-1" href="javascript:;">
-                      <img class="avatar-img" src="../../assets/img/100x100/img16.jpg" alt="Image Description">
-                    </a>
-                  </div>
-                  <div class="js-slide p-1">
-                    <a class="js-slick-thumb-progress d-block avatar avatar-circle border p-1" href="javascript:;">
-                      <img class="avatar-img" src="../../assets/img/100x100/img17.jpg" alt="Image Description">
-                    </a>
-                  </div>
-                  <div class="js-slide p-1">
-                    <a class="js-slick-thumb-progress d-block avatar avatar-circle border p-1" href="javascript:;">
-                      <img class="avatar-img" src="../../assets/img/100x100/img18.jpg" alt="Image Description">
+                      <img class="avatar-img" :src="image.image" :alt="image.image" alt="Image Description">
                     </a>
                   </div>
                 </div>
@@ -72,15 +57,15 @@
         <div class="col-lg-4">
           <!-- Title -->
           <div class="mb-5">
-            <h1 class="h2">New Era 9Forty LA Dodgers adjustable cap in black</h1>
-            <p>American label New Era manufacturing baseball hats for teams since the 1930s.</p>
+            <h1 class="h2">{{product.title}}</h1>
+            <p>{{ product.description | globalTruncate(60) }}</p>
           </div>
           <!-- End Title -->
 
           <!-- Price -->
           <div class="mb-5">
             <h2 class="font-size-1 text-body mb-0">Precio:</h2>
-            <span class="text-dark font-size-2 font-weight-bold">$159.99</span>
+            <span class="text-dark font-size-2 font-weight-bold">COP ${{ parseFloat(product.price) | globalFormatNumber}}</span>
             <span class="d-block text-muted mb-0"> 1 en stock</span>
             <!-- <span class="text-body ml-2"><del>$179.99</del></span> -->
           </div>
@@ -132,7 +117,7 @@
         <div class="col-md-12 mb-5 mb-md-0">
           <div class="pr-lg-12">
             <h2>Descripcion</h2>
-            <p class="text-justify">As popular off field as they are on, New Era caps are standard issue amongst those with a passion for street culture, blending progressive styles with carefully crafted design. Known for their innovative use of colour, bold designs are added season upon season, referencing everything.</p>
+            <p class="text-justify">{{product.description}}</p>
           </div>
         </div>
       </div>
@@ -141,7 +126,7 @@
         <div class="col-md-12 mb-5 mb-md-0">
           <div class="pr-lg-12">
             <h2>detalles tecnicos</h2>
-            <p class="text-justify">As popular off field as they are on, New Era caps are standard issue amongst those with a passion for street culture, blending progressive styles with carefully crafted design. Known for their innovative use of colour, bold designs are added season upon season, referencing everything.</p>
+            <p class="text-justify">{{product.tecnical_detail}}</p>
           </div>
         </div>
       </div>
@@ -154,10 +139,14 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+    import {mapState} from 'vuex'
+
+    import productService from '@/services/productService.js'
+
     export default {
         data () {
             return {
+              product:{}
             }
         },
         computed:{
@@ -169,15 +158,19 @@
         },
         updated() {
           // initialization of slick carousel
-          $('.js-slick-carousel').each(function() {
-            var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
-          });
+          if('images' in this.product){
+            $('.js-slick-carousel').each(function() {
+              var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
+            });
+          }
         },
         components:{
            
         },
         methods:{
             getData(){
+              productService.getProduct(1)
+              .then(res=>this.product=res)
             },
         }
     }
