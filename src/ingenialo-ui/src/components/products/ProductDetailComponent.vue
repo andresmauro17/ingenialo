@@ -58,7 +58,7 @@
           <!-- Title -->
           <div class="mb-5">
             <h1 class="h2">{{product.title}}</h1>
-            <p>{{ product.description | globalTruncate(60) }}</p>
+            <!-- <p>{{ product.description | globalTruncate(60) }}</p> -->
           </div>
           <!-- End Title -->
 
@@ -117,7 +117,7 @@
         <div class="col-md-12 mb-5 mb-md-0">
           <div class="pr-lg-12">
             <h2>Descripcion</h2>
-            <p class="text-justify">{{product.description}}</p>
+            <div v-html="compileProductDescriptiondMarkdown"></div>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
         <div class="col-md-12 mb-5 mb-md-0">
           <div class="pr-lg-12">
             <h2>detalles tecnicos</h2>
-            <p class="text-justify">{{product.tecnical_detail}}</p>
+            <div v-html="compileProductTecnicalDetailMarkdown"></div>
           </div>
         </div>
       </div>
@@ -153,7 +153,22 @@
             }
         },
         computed:{
-          ...mapState(['appSettings'])
+          ...mapState(['appSettings']),
+          compileProductDescriptiondMarkdown: function() {
+            if(this.product.description!=undefined){
+              return marked(this.product.description, { sanitize: true });
+            }
+            return ''
+
+          },
+          compileProductTecnicalDetailMarkdown: function() {
+            if(this.product.tecnical_detail!=undefined){
+              return marked(this.product.tecnical_detail, { sanitize: true });
+            }
+            return ''
+
+          },
+          
         }
         ,
         mounted:function(){
