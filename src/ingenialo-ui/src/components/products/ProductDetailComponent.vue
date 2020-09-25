@@ -66,7 +66,7 @@
           <div class="mb-5">
             <h2 class="font-size-1 text-body mb-0">Precio:</h2>
             <span class="text-dark font-size-2 font-weight-bold">COP ${{ parseFloat(product.price) | globalFormatNumber}}</span>
-            <span class="d-block text-muted mb-0"> 1 en stock</span>
+            <span class="d-block text-muted mb-0"> {{product.quantity}} en stock</span>
             <!-- <span class="text-body ml-2"><del>$179.99</del></span> -->
           </div>
           <!-- End Price -->
