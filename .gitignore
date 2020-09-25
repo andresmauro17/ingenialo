@@ -120,7 +120,7 @@ ENV/
 *.code-workspace
 
 #database temp
-src/db.sqlite3
+# src/db.sqlite3
 
 
 # Front Template
