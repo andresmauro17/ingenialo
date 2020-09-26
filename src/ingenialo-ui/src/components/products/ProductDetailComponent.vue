@@ -5,6 +5,8 @@
     <div class="container space-top-1 space-top-sm-2">
       <div class="row">
         <div class="col-lg-8 mb-8 mb-lg-0">
+          
+          <!-- Product image -->
           <div class="pr-lg-4">
             <div class="position-relative">
               <!-- Main Slider -->
@@ -51,87 +53,111 @@
               <!-- End Slider Nav -->
             </div>
           </div>
-        </div>
+          <!-- End product image -->
 
-        <!-- Product Description -->
-        <div class="col-lg-4">
-          <!-- Title -->
-          <div class="mb-5">
-            <h1 class="h2">{{product.title}}</h1>
-            <!-- <p>{{ product.description | globalTruncate(60) }}</p> -->
-          </div>
-          <!-- End Title -->
+          <!-- Product Description Section -->
+          <div class="row space-top-1">
 
-          <!-- Price -->
-          <div class="mb-5">
-            <h2 class="font-size-1 text-body mb-0">Precio:</h2>
-            <span class="text-dark font-size-2 font-weight-bold">COP ${{ parseFloat(product.price) | globalFormatNumber}}</span>
-            <span class="d-block text-muted mb-0"> {{product.quantity}} en stock</span>
-            <!-- <span class="text-body ml-2"><del>$179.99</del></span> -->
-          </div>
-          <!-- End Price -->
-
-          <!-- Quantity -->
-          <div class="border rounded py-2 px-3 mb-3">
-            <div class="js-quantity-counter row align-items-center">
-              <div class="col-7">
-                <small class="d-block text-body font-weight-bold">seleccione la cantidad</small>
-                <input class="js-result form-control h-auto border-0 rounded p-0" type="text" value="1">
-              </div>
-              <div class="col-5 text-right">
-                <a class="js-minus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="javascript:;">
-                  <i class="fas fa-minus"></i>
-                </a>
-                <a class="js-plus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="javascript:;">
-                  <i class="fas fa-plus"></i>
-                </a>
+            <!-- description -->
+            <div class="col-md-12 mb-5 mb-md-0">
+              <div class="pr-lg-12">
+                <h2>Descripcion</h2>
+                <div v-html="compileProductDescriptiondMarkdown"></div>
               </div>
             </div>
-          </div>
-          <!-- End Quantity -->
 
-          <div class="mb-4">
-            <button  type="button" class="btn btn-block btn-primary btn-pill transition-3d-hover">Añadir al carro</button>
-          </div>
-
-          <!-- Help Link -->
-          <div class="media align-items-center">
-            <span class="w-100 max-w-6rem mr-2">
-              <img class="img-fluid" :src="appSettings.STATIC_URL+'svg/icons/icon-4.svg'" alt="SVG">
-            </span>
-            <div class="media-body text-body small">
-              <span class="font-weight-bold mr-1">Necesitas ayuda?</span>
-              <a class="link-underline" href="#">Chatea ahora</a>
+            <hr class="my-0 mb-3">
+            
+            <!-- Technical details -->
+            <div class="row">
+              <div class="col-md-12 mb-5 mb-md-0">
+                <div class="pr-lg-12">
+                  <h2>detalles tecnicos</h2>
+                  <div v-html="compileProductTecnicalDetailMarkdown"></div>
+                </div>
+              </div>
             </div>
+
           </div>
-          <!-- End Help Link -->
+          <!-- End Product Description Section -->
+
         </div>
-        <!-- End Product Description -->
+
+        <!-- Product pricing -->
+        <div class="col-lg-4" id="stickyBlockStartPoint">
+          <div class="js-sticky-block pl-lg-4"
+               data-hs-sticky-block-options='{
+                 "parentSelector": "#stickyBlockStartPoint",
+                 "targetSelector": "#logoAndNav",
+                 "startPoint": "#stickyBlockStartPoint",
+                 "endPoint": "#stickyBlockEndPoint",
+                 "stickyOffsetTop": 24,
+                 "stickyOffsetBottom": 130
+               }'>
+          
+          
+                <!-- Title -->
+                <div class="mb-5">
+                  <h1 class="h2">{{product.title}}</h1>
+                  <!-- <p>{{ product.description | globalTruncate(60) }}</p> -->
+                </div>
+                <!-- End Title -->
+
+                <!-- Price -->
+                <div class="mb-5">
+                  <h2 class="font-size-1 text-body mb-0">Precio:</h2>
+                  <span class="text-dark font-size-2 font-weight-bold">COP ${{ parseFloat(product.price) | globalFormatNumber}}</span>
+                  <span class="d-block text-muted mb-0"> {{product.quantity}} en stock</span>
+                  <!-- <span class="text-body ml-2"><del>$179.99</del></span> -->
+                </div>
+                <!-- End Price -->
+
+                <!-- Quantity -->
+                <div class="border rounded py-2 px-3 mb-3">
+                  <div class="js-quantity-counter row align-items-center">
+                    <div class="col-7">
+                      <small class="d-block text-body font-weight-bold">seleccione la cantidad</small>
+                      <input class="js-result form-control h-auto border-0 rounded p-0" type="text" value="1">
+                    </div>
+                    <div class="col-5 text-right">
+                      <a class="js-minus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="javascript:;">
+                        <i class="fas fa-minus"></i>
+                      </a>
+                      <a class="js-plus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="javascript:;">
+                        <i class="fas fa-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Quantity -->
+
+                <div class="mb-4">
+                  <button  type="button" class="btn btn-block btn-primary btn-pill transition-3d-hover">Añadir al carro</button>
+                </div>
+
+                <!-- Help Link -->
+                <div class="media align-items-center">
+                  <span class="w-100 max-w-6rem mr-2">
+                    <img class="img-fluid" :src="appSettings.STATIC_URL+'svg/icons/icon-4.svg'" alt="SVG">
+                  </span>
+                  <div class="media-body text-body small">
+                    <span class="font-weight-bold mr-1">Necesitas ayuda?</span>
+                    <a class="link-underline" href="#">Chatea ahora</a>
+                  </div>
+                </div>
+                <!-- End Help Link -->
+          
+          
+          </div>
+        </div>
+        <!-- End Product pricing -->
       </div>
     </div>
     <!-- End Hero Section -->
 
-    <!-- Product Description Section -->
-    <div class="container space-top-2 space-lg-3">
-      <div class="row">
-        <div class="col-md-12 mb-5 mb-md-0">
-          <div class="pr-lg-12">
-            <h2>Descripcion</h2>
-            <div v-html="compileProductDescriptiondMarkdown"></div>
-          </div>
-        </div>
-      </div>
-      <hr class="my-0 mb-3">
-      <div class="row">
-        <div class="col-md-12 mb-5 mb-md-0">
-          <div class="pr-lg-12">
-            <h2>detalles tecnicos</h2>
-            <div v-html="compileProductTecnicalDetailMarkdown"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Product Description Section -->
+    <!-- Sticky Block End Point -->
+    <div id="stickyBlockEndPoint"></div>
+
 
   
   </main>
@@ -173,6 +199,7 @@
         ,
         mounted:function(){
             this.getData()
+            
         },
         updated() {
           // initialization of slick carousel
@@ -181,6 +208,9 @@
               var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
             });
           }
+          $('.js-sticky-block').each(function () {
+              var stickyBlock = new HSStickyBlock($(this)).init();
+            });
         },
         components:{
            
