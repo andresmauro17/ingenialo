@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+
+
+{% block base_head %}
+
+<link rel="stylesheet" href="{% static 'vendor/cubeportfolio/css/cubeportfolio.min.css' %}">
+
+{% endblock base_head%}
+
+
+{% block content %}
+
+  <categories-component>
+
+  </categories-component>
+
+
+{% endblock content%}
+
+
+
+{% block javascript %}
+
+<script src="{% static 'vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
+<script src="{% static 'js/hs.cubeportfolio.js' %}"></script>
+
+{% endblock javascript%}

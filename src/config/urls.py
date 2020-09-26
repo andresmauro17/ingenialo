@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('ingenialo.home.urls'),name='home'),
     path('', include('ingenialo.account.urls'),name='account'),
     path('', include('ingenialo.products.urls'),name='products'),
+    path('', include('ingenialo.categories.urls'),name='categories'),
     path('admin/', admin.site.urls, name='admin'),
 ]
 
