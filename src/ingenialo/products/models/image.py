@@ -31,3 +31,6 @@ class Image(models.Model):
         self.image.delete()
         super().delete(*args,**kwars)
 
+    def __str__(self):
+        return self.product.title
+

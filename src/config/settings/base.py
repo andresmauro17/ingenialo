@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'rest_framework',
     'rest_framework.authtoken',
+    'import_export',
     'ingenialo.home',
     'ingenialo.account',
     'ingenialo.products',
@@ -52,6 +53,22 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 AUTH_USER_MODEL = 'account.User'
+
+# Database
+# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'host': os.getenv('INGENIALO_DB_HOST'),
+            # 'port': os.getenv('INGENIALO_DB_PORT'),
+            'database' : os.getenv('INGENIALO_DB_NAME'),
+            'user' : os.getenv('INGENIALO_DB_USER'),
+            'password' : os.getenv('INGENIALO_DB_PASSWORD'),
+        },
+    }
+}
 
 TEMPLATES = [
     {

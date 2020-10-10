@@ -12,6 +12,12 @@ djangorestframework==3.9.0
 # Sql
 sqlparse==0.3.0
 
+#mysqlclient
+mysqlclient==2.0.1
+
+#django-import-export
+django-import-export==2.4.0
+
 # dotenv
 python-dotenv
 
