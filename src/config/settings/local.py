@@ -1,13 +1,17 @@
 from .base import *
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('INGENIALO_SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
+# Base
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','157.245.245.146','ingenialo.com','www.ingenialo.com','ecdb.ingenialo.com','www.ingenialo.io','ingenialo.io']
+# SECURITY
+SECRET_KEY = os.getenv('INGENIALO_SECRET_KEY')
+ALLOWED_HOSTS = [
+    "localhost",
+    "0.0.0.0",
+    "127.0.0.1",
+]
 
+# Django debug toolbar
 INSTALLED_APPS += (
     'debug_toolbar',
 )
@@ -20,42 +24,29 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+#Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ]
+}
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# Statics
+
+# LOCAL_CDN is a variable that is True for show statics from static_cdn folder
+LOCAL_CDN = False 
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"ingenialo-ui","src","assets"),
-    # os.path.join(BASE_DIR,"Front","assets"),
 ]
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
-
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
-# MEDIA_ROOT = os.path.join(BASE_DIR, "assets")
-
-print(STATIC_ROOT)
-
-# webpack loader
+# Webpack loader
 INSTALLED_APPS += (
-    'django_extensions',
     'webpack_loader',
 )
-
 
 WEBPACK_LOADER = {
     'DEFAULT': {
@@ -64,13 +55,3 @@ WEBPACK_LOADER = {
     }
 }
 
-# LOCAL_CDN is a variable that is True for show statics from static_cdn folder
-LOCAL_CDN = False 
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ]
-}

@@ -129,11 +129,12 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.output.publicPath =  'http://www.ingenialo.com/static/'
+  module.exports.output.publicPath =  '/static/'
 
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
+    new BundleTracker({filename:'webpack-stats-production.json'}),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'

@@ -110,6 +110,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -122,4 +130,5 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 
