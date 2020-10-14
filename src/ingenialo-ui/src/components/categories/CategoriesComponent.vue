@@ -6,7 +6,7 @@
 
             <template v-for="category in categories" >
                 <!-- Title -->
-                <div class="row justify-content-md-between align-items-md-center mb-7 space-1 space-lg-1"">
+                <div class="row justify-content-md-between align-items-md-center mb-7 space-1 space-lg-1">
                     <div class="col-lg-5">
                     <h2>{{category.name}}</h2>
                     </div>
@@ -89,6 +89,8 @@
     import {mapState} from 'vuex'
 
     import categoriesArray from "./categories"
+
+    import categoryService from '@/services/categoryService.js'
     
     
     export default {
@@ -134,7 +136,13 @@
             getData(){
              console.log("getting data from categories")
              console.log(categoriesArray)
-             this.categories = categoriesArray
+            //  this.categories = categoriesArray
+            categoryService.getCategories()
+              .then(
+                  res=>this.categories=res
+                  )
+             
+             
             },
         }
     }
