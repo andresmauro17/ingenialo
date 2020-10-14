@@ -16,3 +16,6 @@ def front(request):
         "content":"welcome to home page"
     }
     return render(request, "base_temp.html", context)
+
+def termsandconditions(request):
+    return render(request, "home/termsandconditions.html", {})

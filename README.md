@@ -10,7 +10,8 @@ for more information please visit http://www.ingenialo.com/
 
 1.  clone this repository:
         git clone https://ingenialo@bitbucket.org/ingenialo/ingenialo.git
-2.  you have to create enviroment variables, in your .env file. maybe un bash files as show:
+
+2.  Create enviroment variables, in your .env file. maybe a bash files as show:
        
         APP_ENV_SETTINGS="config.settings.local"
         INGENIALO_SECRET_KEY=""

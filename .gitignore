@@ -132,3 +132,6 @@ package-lock.json
 
 static_cdn/*
 
+.vscode/settings.json
+
+Scripts/*
