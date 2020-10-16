@@ -15,3 +15,11 @@ def categories_list_view(request, *args, **kwargs):
     serializer = CategorySerializer(qs, many=True)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def category_detail_view(request, category_id, *args, **kwargs):
+    qs = Category.objects.filter(id=category_id)
+    if not qs.exists():
+        return Response({},status=404)
+    obj = qs.first()
+    serializer = CategorySerializer(obj)
+    return Response(serializer.data, status=200)

@@ -7,4 +7,9 @@ CategoryService.getCategories = function(){
     .then(res=> res.data)
 }
 
+CategoryService.getCategory = function(categoryId){
+    return api.get(`/categories/${categoryId}`)
+    .then(res=> res.data)
+}
+
 export default CategoryService

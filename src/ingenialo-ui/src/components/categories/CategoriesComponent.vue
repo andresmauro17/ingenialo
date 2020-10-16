@@ -2,17 +2,17 @@
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
         <!-- Portfolio Section -->
-        <div class="container space-1 space-lg-1">
+        <div class="container space-2">
 
             <template v-for="category in categories" >
                 <!-- Title -->
-                <div class="row justify-content-md-between align-items-md-center mb-7 space-1 space-lg-1">
+                <div class="row justify-content-md-between align-items-md-center mb-2">
                     <div class="col-lg-5">
-                    <h2>{{category.name}}</h2>
+                        <h2>{{category.name}}</h2>
                     </div>
 
                     <div class="col-lg-6 text-lg-right mt-lg-auto">
-                    <a class="font-weight-bold" :href="`/category/${category.id}`">
+                    <a class="font-weight-bold" :href="`/categories/${category.id}`">
                         Ver mas
                         <i class="fas fa-angle-right fa-sm ml-1"></i>
                     </a>
@@ -77,6 +77,7 @@
 
                     
                 </div>
+                <br>
             </template>
 
 
