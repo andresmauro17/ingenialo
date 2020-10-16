@@ -12,6 +12,6 @@ class ProductAdmin(ImportExportModelAdmin, admin.ModelAdmin):
         ImageInline,
     ]
     list_display = ['__str__', 'title', 'price', 'quantity', 'featured', 'active', 'timestamp']
-    list_editable = []
+    list_editable = ['title', 'price', 'quantity', 'featured', 'active']
     ordering = ['timestamp']
     save_as = True

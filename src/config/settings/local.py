@@ -48,6 +48,9 @@ INSTALLED_APPS += (
     'webpack_loader',
 )
 
+# django-extensions
+INSTALLED_APPS += ['django_extensions']  # noqa F405
+
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'dist/',

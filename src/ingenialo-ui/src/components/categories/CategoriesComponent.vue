@@ -4,7 +4,7 @@
         <!-- Portfolio Section -->
         <div class="container space-2">
 
-            <template v-for="category in categories" >
+            <template v-for="category in categories" v-if="category.products.length">
                 <!-- Title -->
                 <div class="row justify-content-md-between align-items-md-center mb-2">
                     <div class="col-lg-5">

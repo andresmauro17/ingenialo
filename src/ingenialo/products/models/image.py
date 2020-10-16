@@ -20,12 +20,25 @@ def upload_image_path(instance, filename):
             final_filename=final_filename
             )
 
+class ImageQuerySet(models.query.QuerySet):
+    def active(self):
+        return self.filter(active=True)
+class ImageManager(models.Manager):
+    def get_queryset(self):
+        return ImageQuerySet(self.model, using=self._db)
+
+    def all(self):
+        return self.get_queryset().active()
+
+
 class Image(models.Model):
     product = models.ForeignKey(Product,related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(upload_to=upload_image_path)
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    objects = ImageManager()
 
     def delete(self, *args, **kwars):
         self.image.delete()
