@@ -117,13 +117,13 @@
                   <div class="js-quantity-counter row align-items-center">
                     <div class="col-7">
                       <small class="d-block text-body font-weight-bold">seleccione la cantidad</small>
-                      <input class="js-result form-control h-auto border-0 rounded p-0" type="text" value="1">
+                      <input v-model="form.quantity" class="js-result form-control h-auto border-0 rounded p-0" type="text" value="1">
                     </div>
                     <div class="col-5 text-right">
-                      <a class="js-minus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="javascript:;">
+                      <a class="js-minus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="#" @click.prevent="decrementQuantity">
                         <i class="fas fa-minus"></i>
                       </a>
-                      <a class="js-plus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="javascript:;">
+                      <a class="js-plus btn btn-xs btn-icon btn-outline-secondary rounded-circle" href="#" @click.prevent="incrementQuantity">
                         <i class="fas fa-plus"></i>
                       </a>
                     </div>
@@ -132,7 +132,7 @@
                 <!-- End Quantity -->
 
                 <div class="mb-4">
-                  <button  type="button" class="btn btn-block btn-primary btn-pill transition-3d-hover">Añadir al carro</button>
+                  <button  @click="addToCart" type="button" class="btn btn-block btn-primary btn-pill transition-3d-hover">Añadir al carro</button>
                 </div>
 
                 <!-- Help Link -->
@@ -175,7 +175,12 @@
         ],
         data () {
             return {
-              product:{}
+              product:{},
+              isFrontImagesInitialized:false,
+              form:{
+                product:this.productId,
+                quantity:1,
+              }
             }
         },
         computed:{
@@ -195,18 +200,28 @@
 
           },
           
-        }
-        ,
+        },
+        watch:{
+          'form.quantity':function(newVal,oldVal){
+            if(newVal > this.product.quantity){
+              this.form.quantity = this.product.quantity
+            }
+            if(newVal < 0){
+              this.form.quantity = 1
+            }
+          }
+        },
         mounted:function(){
             this.getData()
             
         },
         updated() {
           // initialization of slick carousel
-          if('images' in this.product){
+          if('images' in this.product && !this.isFrontImagesInitialized){
             $('.js-slick-carousel').each(function() {
               var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
             });
+            this.isFrontImagesInitialized=true
           }
           $('.js-sticky-block').each(function () {
               var stickyBlock = new HSStickyBlock($(this)).init();
@@ -220,6 +235,21 @@
               productService.getProduct(parseInt(this.productId))
               .then(res=>this.product=res)
             },
+            decrementQuantity(){
+              let value = value = parseInt(this.form.quantity)
+
+              if(value != 1){
+                  value = value -1
+              }
+
+              this.form.quantity = value
+            },
+            incrementQuantity(){
+              this.form.quantity = parseInt(this.form.quantity)+1
+            },
+            addToCart(){
+              if(this.form.quantity <= 0){this.form.quantity=1}
+            }
         }
     }
 </script>
