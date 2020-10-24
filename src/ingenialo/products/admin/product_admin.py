@@ -15,3 +15,10 @@ class ProductAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_editable = ['title', 'price', 'quantity', 'featured', 'active']
     ordering = ['timestamp']
     save_as = True
+
+
+class ProductInline(admin.TabularInline):
+    model = Product
+    extra = 0
+    can_delete = True
+    show_change_link = True

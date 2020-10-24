@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'ingenialo.account',
     'ingenialo.products',
     'ingenialo.categories',
+    'ingenialo.carts',
 ]
 
 MIDDLEWARE = [
