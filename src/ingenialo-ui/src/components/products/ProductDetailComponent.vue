@@ -248,7 +248,17 @@
               this.form.quantity = parseInt(this.form.quantity)+1
             },
             addToCart(){
+            console.log("add to cart method")
+
               if(this.form.quantity <= 0){this.form.quantity=1}
+
+              productService.addToCart(this.form)
+              .then(
+                res=>{
+                  console.log("request sended")
+                  console.log(res)
+                }
+              )
             }
         }
     }

@@ -7,4 +7,9 @@ ProductService.getProduct = function(produtId){
     .then(res=> res.data)
 }
 
+ProductService.addToCart = function(form){
+    return api.post(`/cart/add`,form)
+    .then(res=>res.data)
+}
+
 export default ProductService

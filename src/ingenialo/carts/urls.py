@@ -5,5 +5,5 @@ from .views import cart
 
 urlpatterns = [
     path('cart', cart, name='cart'),
-    # path('api/products/', include('ingenialo.products.api.urls')),
+    path('api/cart/', include('ingenialo.carts.api.urls')),
 ]
