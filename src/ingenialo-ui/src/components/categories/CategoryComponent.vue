@@ -25,7 +25,7 @@
         </div>
         <!-- End Title Section -->
         <!-- Products List Section -->
-        <div class="container">
+        <div class="container space-1">
             <ul class="list-unstyled">
                 <!-- Products -->
                 <li v-for="product in category.products" :key="product.id" class="card border shadow-none mb-3 mb-md-5">
@@ -45,15 +45,20 @@
                                 <span v-if="product.featured" class="badge badge-success badge-pill ml-1">destacado</span>
                             </span>
                             <div  mt-2 v-html="compileProductDescriptiondMarkdown(product.description)"></div>
-                            <div class="d-block">
+                        </div>
+                        <div class="row mx-1">
+                            <div class="col-xs-12 col-sm-6">
+                            <!-- <a class="btn btn-primary btn-block btn-pill" href="#">Pagar</a> -->
+                             <a  :href="`/products/${product.id}`"  class="btn btn-sm btn-block btn-primary btn-pill transition-3d-hover mr-1">Ver mas</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
                                 <span class="h3">COP ${{ parseFloat(product.price) | globalFormatNumber}}</span>
                             </div>
                         </div>
-
-                        <button type="button" class="btn btn-sm btn-outline-primary btn-pill transition-3d-hover mr-1">Añadir al carro</button>
-                        <button type="button" class="btn btn-sm btn-soft-secondary btn-pill transition-3d-hover">
+                       
+                        <!-- <button type="button" class="btn btn-sm btn-soft-secondary btn-pill transition-3d-hover">
                             <i class="far fa-heart mr-1"></i>lista de deseo
-                        </button>
+                        </button> -->
                     </div>
                     </div>
                 </div>

@@ -1,8 +1,30 @@
 <template>
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
+        <!-- Title Section -->
+        <div class="bg-light">
+            <div class="container py-5">
+                <div class="row align-items-sm-center">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <h1 class="h4 mb-0">Tienda</h1>
+                </div>
+
+                <div class="col-sm-6">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-no-gutter justify-content-sm-end mb-0">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">tienda</li>
+                    </ol>
+                    </nav>
+                    <!-- End Breadcrumb -->
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Title Section -->
         <!-- Portfolio Section -->
-        <div class="container space-2">
+        <div class="container space-1">
 
             <template v-for="category in categories" v-if="category.products.length">
                 <!-- Title -->
