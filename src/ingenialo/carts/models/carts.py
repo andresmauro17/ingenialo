@@ -1,10 +1,12 @@
 # python imports
 import uuid
+import decimal
 
 # Django imports
 from django.db import models
 from django.conf import settings
 from django.db.models.signals import pre_save
+from django.db.models.signals import m2m_changed
 
 # Local imports
 from ingenialo.products.models import Product
@@ -19,6 +21,25 @@ class Cart(models.Model):
     total       = models.DecimalField(default=0.00, max_digits=65, decimal_places=2)
     updated     = models.DateTimeField(auto_now=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
+
+    FEE = 0.05 # 0.5%
+
+    def update_totals(self):
+        self.update_subtotal()
+        self.update_total()
+    
+    def update_subtotal(self):
+        self.subtotal = sum([
+            cp.quantity * cp.product.price for cp in self.products_related()
+         ])
+        self.save() 
+    
+    def update_total(self):
+        self.total = self.subtotal + (self.subtotal * decimal.Decimal(Cart.FEE))
+        self.save()
+
+    def products_related(self):
+        return self.cartproducts_set.select_related('product')
 
     def __str__(self):
         return str(self.cart_id)
