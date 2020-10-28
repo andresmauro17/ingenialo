@@ -8,39 +8,31 @@
           <!-- Title -->
           <div class="d-flex justify-content-between align-items-end border-bottom pb-3 mb-7">
             <h1 class="h3 mb-0">Carrito de compras</h1>
-            <span>2 items</span>
+            <span>{{cart.products.length}} items</span>
           </div>
           <!-- End Title -->
 
           <form>
             <!-- Product Content -->
-            <div class="border-bottom pb-5 mb-5">
+            <div v-for="product in cart.products" :key="product.id" class="border-bottom pb-5 mb-5">
               <div class="media">
                 <div class="max-w-15rem w-100 mr-3">
-                  <img class="img-fluid" src="../../assets/img/320x320/img2.jpg" alt="Image Description">
+                  <img class="img-fluid" :src="product.product.images[0].image" alt="Image Description">
                 </div>
                 <div class="media-body">
                   <div class="row">
                     <div class="col-md-7 mb-3 mb-md-0">
-                      <a class="h5 d-block" href="#">Originals national backpack</a>
+                      <a class="h5 d-block" href="#">{{product.product.title | globalTruncate(30)}}</a>
 
-                      <div class="d-block d-md-none">
-                        <span class="h5 d-block mb-1">$29.99</span>
-                      </div>
-
-                      <div class="text-body font-size-1 mb-1">
+                      <!-- <div class="text-body font-size-1 mb-1">
                         <span>Gender:</span>
                         <span>Men</span>
                       </div>
                       <div class="text-body font-size-1 mb-1">
                         <span>Color:</span>
                         <span>Grey</span>
-                      </div>
-                      <div class="text-body font-size-1 mb-1">
-                        <span>Size:</span>
-                        <span>One size</span>
-                        <a class="link-underline ml-2" href="javascript:;">Edit</a>
-                      </div>
+                      </div> -->
+
                     </div>
 
                     <div class="col-md-3">
@@ -75,7 +67,7 @@
                     </div>
 
                     <div class="col-4 col-md-2 d-none d-md-inline-block text-right">
-                      <span class="h5 d-block mb-1">$29.99</span>
+                      <span class="h5 d-block mb-1">${{ product.product.price }}</span>
                     </div>
                   </div>
                 </div>
@@ -105,9 +97,9 @@
 
               <div class="border-bottom pb-4 mb-4">
                 <div class="media align-items-center mb-3">
-                  <span class="d-block font-size-1 mr-3">Subtotal (2)</span>
+                  <span class="d-block font-size-1 mr-3">Subtotal ({{cart.products.length}})</span>
                   <div class="media-body text-right">
-                    <span class="text-dark font-weight-bold">$73.98</span>
+                    <span class="text-dark font-weight-bold">${{cart.subtotal}}</span>
                   </div>
                 </div>
 
@@ -150,14 +142,14 @@
               <div class="media align-items-center mb-3">
                 <span class="d-block font-size-1 mr-3">Impuesto extimado</span>
                 <div class="media-body text-right">
-                  <span class="text-dark font-weight-bold">--</span>
+                  <span class="text-dark font-weight-bold">${{cart.total - cart.subtotal }}</span>
                 </div>
               </div>
 
               <div class="media align-items-center mb-3">
                 <span class="d-block font-size-1 mr-3">Total</span>
                 <div class="media-body text-right">
-                  <span class="text-dark font-weight-bold">$73.98</span>
+                  <span class="text-dark font-weight-bold">${{ cart.total }}</span>
                 </div>
               </div>
 
@@ -229,7 +221,7 @@
 
 <script>
     import {mapState} from 'vuex'
-
+    import CartService from '@/services/cartService'
     
 
     export default {
@@ -237,6 +229,7 @@
         ],
         data () {
             return {
+              cart:{}
             }
         },
         computed:{
@@ -255,6 +248,11 @@
         methods:{
             getData(){
               console.log("get cart data")
+              CartService.getCurrentCart()
+              .then(
+                res => this.cart = res
+              )
+
             },
         }
     }
