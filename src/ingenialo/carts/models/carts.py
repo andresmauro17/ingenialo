@@ -22,7 +22,7 @@ class Cart(models.Model):
     updated     = models.DateTimeField(auto_now=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
 
-    FEE = 0.05 # 0.5%
+    FEE = 0.19 # 0.19%
 
     def update_totals(self):
         self.update_subtotal()
