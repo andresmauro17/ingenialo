@@ -23,6 +23,21 @@
             </div>
         </div>
         <!-- End Title Section -->
+        <!-- Hero Section -->
+        <div class="container space-top-2 space-bottom-1 space-bottom-sm-2">
+        <div class="w-lg-75">
+            <h1 class="display-3 mb-5">
+            Activa tú
+            <span class="text-primary">
+                <span class="js-text-animation"></span>
+            </span>
+            <br>
+            En la ingeniería
+            </h1>
+            <p class="lead">En ingenialo.com encontraras todo lo que necesitas para tus proyectos :)</p>
+        </div>
+        </div>
+        <!-- End Hero Section -->
         <!-- Portfolio Section -->
         <div class="container space-1">
 
@@ -154,6 +169,14 @@
                     $('.js-sticky-block').each(function () {
                     var stickyBlock = new HSStickyBlock($(this)).init();
                     });
+                });
+                // initialization of text animation (typing)
+                var typed = new Typed(".js-text-animation", {
+                    strings: ["creatividad", "ingenio", "pasión"],
+                    typeSpeed: 70,
+                    loop: true,
+                    backSpeed: 40,
+                    backDelay: 2000
                 });
             },
             getData(){
