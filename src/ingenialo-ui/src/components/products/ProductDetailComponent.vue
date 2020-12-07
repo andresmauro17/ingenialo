@@ -279,6 +279,8 @@
               .then(
                 res=>{
                   console.log(res)
+                  localStorage.setItem('producAdded', this.product.title);
+                  window.location.href = "/cart";
                 }
               )
             }

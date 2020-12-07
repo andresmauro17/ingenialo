@@ -32,15 +32,15 @@ const HeaderComponent = Vue.component('header-component', {
             var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
         
             // initialization of form validation
-            $('.js-validate').each(function() {
-              $.HSCore.components.HSValidation.init($(this), {
-                rules: {
-                  confirmPassword: {
-                    equalTo: '#signupPassword'
-                  }
-                }
-              });
-            });
+            // $('.js-validate').each(function() {
+            //   $.HSCore.components.HSValidation.init($(this), {
+            //     rules: {
+            //       confirmPassword: {
+            //         equalTo: '#signupPassword'
+            //       }
+            //     }
+            //   });
+            // });
         
             // initialization of show animations
             $('.js-animation-link').each(function () {

@@ -69,12 +69,12 @@
                                     href="/cart"
                                 >
                                     <i class="fas fa-shopping-cart font-size-1"></i>
-                                    <span class="btn-status btn-primary">
-                                        <span class="btn-status-initials">1</span>
+                                    {% if items_in_cart %}
+                                        <span class="btn-status btn-primary">
+                                        <span class="btn-status-initials">{{items_in_cart}}</span>
+                                    {% endif %}
                                     </span>
                                 </a>
-            
-                                
                             </div>
                         </li>
                         <!-- End Shopping Cart -->

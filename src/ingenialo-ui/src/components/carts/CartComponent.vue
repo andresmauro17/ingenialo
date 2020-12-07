@@ -3,26 +3,36 @@
   <main id="content" role="main">
     <!-- Cart Section -->
     <div class="container space-1 space-md-2">
+      <!-- product added alert -->
+      <div v-if="productAdded" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{productAdded}}.</strong> fue añadido al carrito!.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <svg aria-hidden="true" class="mb-0" width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
+          </svg>
+        </button>
+      </div>
+
       <div class="row">
         <div class="col-lg-8 mb-7 mb-lg-0">
           <!-- Title -->
           <div class="d-flex justify-content-between align-items-end border-bottom pb-3 mb-7">
             <h1 class="h3 mb-0">Carrito de compras</h1>
-            <span>{{cart.products.length}} items</span>
+            <span v-if="cart.products">{{cart.products.length}} items</span>
           </div>
           <!-- End Title -->
 
           <form>
             <!-- Product Content -->
-            <div v-for="product in cart.products" :key="product.id" class="border-bottom pb-5 mb-5">
+            <div v-for="(product, index) in cart.products" :key="product.id" class="border-bottom pb-5 mb-5">
               <div class="media">
                 <div class="max-w-15rem w-100 mr-3">
                   <img class="img-fluid" :src="product.product.images[0].image" alt="Image Description">
                 </div>
                 <div class="media-body">
                   <div class="row">
-                    <div class="col-md-7 mb-3 mb-md-0">
-                      <a class="h5 d-block" href="#">{{product.product.title | globalTruncate(30)}}</a>
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <a class="h5 d-block" :href="`products/${product.product.id}`">{{product.product.title | globalTruncate(30)}}</a>
 
                       <!-- <div class="text-body font-size-1 mb-1">
                         <span>Gender:</span>
@@ -33,12 +43,18 @@
                         <span>Grey</span>
                       </div> -->
 
+                      <div class="text-body font-size-1 mb-1">
+                        <span class="d-block text-muted mb-0"> {{product.product.quantity}} en stock</span>
+                      </div>
+
                     </div>
 
+                    <!-- Quantity -->
                     <div class="col-md-3">
                       <div class="row">
                         <div class="col-auto">
-                          <select class="custom-select custom-select-sm w-auto mb-3">
+                            <input type="number" id="exampleFormControlInput1" class="form-control" @change="changeQuantity(index)" v-model="product.quantity">
+                          <!-- <select class="custom-select custom-select-sm w-auto mb-3">
                             <option value="quantity1">1</option>
                             <option value="quantity2">2</option>
                             <option value="quantity3">3</option>
@@ -49,7 +65,7 @@
                             <option value="quantity8">8</option>
                             <option value="quantity9">9</option>
                             <option value="quantity10">10</option>
-                          </select>
+                          </select> -->
                         </div>
 
                         <div class="col-auto">
@@ -97,7 +113,7 @@
 
               <div class="border-bottom pb-4 mb-4">
                 <div class="media align-items-center mb-3">
-                  <span class="d-block font-size-1 mr-3">Subtotal ({{cart.products.length}})</span>
+                  <span v-if="cart.products" class="d-block font-size-1 mr-3">Subtotal ({{cart.products.length}})</span>
                   <div class="media-body text-right">
                     <span class="text-dark font-weight-bold">${{cart.subtotal}}</span>
                   </div>
@@ -229,7 +245,8 @@
         ],
         data () {
             return {
-              cart:{}
+              cart:{},
+              productAdded:null
             }
         },
         computed:{
@@ -238,6 +255,10 @@
         ,
         mounted:function(){
             this.getData()
+            // 
+            this.productAdded =  localStorage.getItem('producAdded')?localStorage.getItem('producAdded'):null;
+            localStorage.removeItem('producAdded');
+
         },
         updated() {
           
@@ -254,6 +275,20 @@
               )
 
             },
+            changeQuantity(productIndex){
+
+              //if is minor than 1 set to 1
+              if(this.cart.products[productIndex].quantity <= 0){
+                this.cart.products[productIndex].quantity = 1
+              }
+
+              // if is major than stock set to stock
+              if(this.cart.products[productIndex].quantity > this.cart.products[productIndex].product.quantity ){
+                console.log("is major")
+                this.cart.products[productIndex].quantity = this.cart.products[productIndex].product.quantity
+                }
+
+            }
         }
     }
 </script>
