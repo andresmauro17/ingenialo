@@ -2,7 +2,7 @@
    <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
     <!-- Cart Section -->
-    <div class="container space-1 space-md-2">
+    <div v-if="cart.products && cart.products.length>0" class="container space-1 space-md-2">
       <!-- product added alert -->
       <div v-if="productAdded" class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{productAdded}}.</strong> fue añadido al carrito!.
@@ -69,7 +69,7 @@
                         </div>
 
                         <div class="col-auto">
-                          <a class="d-block text-body font-size-1 mb-1" href="javascript:;">
+                          <a class="d-block text-body font-size-1 mb-1" @click.prevent="remove(index)" href="javascript:;">
                             <i class="far fa-trash-alt text-hover-primary mr-1"></i>
                             <span class="font-size-1 text-hover-primary">Remove</span>
                           </a>
@@ -231,6 +231,21 @@
       </div>
     </div>
     <!-- End Cart Section -->
+
+    <!-- Empty Cart Section -->
+    <div v-else class="container space-2 space-lg-3">
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+        <figure class="max-w-10rem max-w-sm-15rem mx-auto mb-3">
+          <img class="img-fluid" :src="appSettings.STATIC_URL+'svg/illustrations/empty-cart.svg'" alt="SVG">
+        </figure>
+        <div class="mb-5">
+          <h1 class="h2">Tu carrito esta vacio</h1>
+          <p>Antes de proceder a comprar debes agregar algun producto a tu carrito de compras. Podras estar interezado en algun producto de nuestro catalogo.</p>
+        </div>
+        <a class="btn btn-primary btn-pill transition-3d-hover px-5" href="/categories">Ir a Comprar</a>
+      </div>
+    </div>
+    <!-- Empty Cart Section -->
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 </template>
@@ -238,6 +253,8 @@
 <script>
     import {mapState} from 'vuex'
     import CartService from '@/services/cartService'
+    import Swal from 'sweetalert2'
+
     
 
     export default {
@@ -267,8 +284,38 @@
            
         },
         methods:{
+            remove(index){
+              let product = this.cart.products[index]
+
+              Swal.fire({
+                title: 'Estas seguro?',
+                text: "No podras revertirlo!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, borralo!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+
+                   CartService.removeProduct(product.product.id)
+                  .then(
+                    res => {
+                      Swal.fire(
+                        'Eliminado!',
+                        'El producto salio del carrito',
+                        'success'
+                      )
+                      this.getData()
+                    }
+                  )
+                  
+                }
+              })
+
+             
+            },
             getData(){
-              console.log("get cart data")
               CartService.getCurrentCart()
               .then(
                 res => this.cart = res
@@ -284,7 +331,6 @@
 
               // if is major than stock set to stock
               if(this.cart.products[productIndex].quantity > this.cart.products[productIndex].product.quantity ){
-                console.log("is major")
                 this.cart.products[productIndex].quantity = this.cart.products[productIndex].product.quantity
                 }
 

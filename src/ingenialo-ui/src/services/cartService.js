@@ -7,4 +7,9 @@ CartService.getCurrentCart = function(){
     .then(res=> res.data)
 }
 
+CartService.removeProduct = function(id){
+    return api.delete(`/cart/product/${id}`)
+    .then(res=> res.data)
+}
+
 export default CartService

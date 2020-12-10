@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 # DRF imports
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
 
 # Local
 from ..utils import get_or_create_cart
@@ -34,3 +35,17 @@ def add_product(request):
     print(cart_product)
     
     return Response({'cart':'added!'})
+
+@api_view(['delete'])
+def remove_product(request,id):
+    """
+    this method remove a product to the cart
+    """
+    cart = get_or_create_cart(request)
+    product = get_object_or_404(Product,pk = id)
+
+    print("remove product method")
+    print(cart)
+    print(product)
+    cart.products.remove(product)
+    return Response({'product':'removed!'},status=200)
