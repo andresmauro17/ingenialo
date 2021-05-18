@@ -1,12 +1,12 @@
-var path = require('path')
+const path = require('path');
 var webpack = require('webpack')
-var BundleTracker = require('webpack-bundle-tracker')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
+  mode: 'development',
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: 'http://localhost:8080/dist/',
     filename: 'build.js'
   },
   module: {
@@ -96,11 +96,12 @@ module.exports = {
     ]
   },
   plugins:[
+    // make sure to include the plugin for the magic
+    new VueLoaderPlugin()
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
     //   jQuery: 'jquery'
     // }),
-    new BundleTracker({filename:'webpack-stats.json'})
   ],
   resolve: {
     alias: {
@@ -120,7 +121,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map',
+  // devtool: '#eval-source-map'
   
   externals: {
     jquery: 'jQuery'
@@ -129,25 +130,27 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.output.publicPath =  '/static/'
+  // module.exports.output.publicPath =  '/static/'
 
-  module.exports.devtool = '#source-map'
+  module.exports.mode= 'production'
+
+  // module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new BundleTracker({filename:'webpack-stats-production.json'}),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
+  // module.exports.plugins = (module.exports.plugins || []).concat([
+  //   // new BundleTracker({filename:'webpack-stats-production.json'}),
+  //   new webpack.DefinePlugin({
+  //     'process.env': {
+  //       NODE_ENV: '"production"'
+  //     }
+  //   }),
+  //   new webpack.optimize.UglifyJsPlugin({
+  //     sourceMap: true,
+  //     compress: {
+  //       warnings: false
+  //     }
+  //   }),
+  //   new webpack.LoaderOptionsPlugin({
+  //     minimize: true
+  //   })
+  // ])
 }

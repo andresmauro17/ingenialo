@@ -1,4 +1,4 @@
-{% load render_bundle from webpack_loader %}
+{% comment %} {% load render_bundle from webpack_loader %} {% endcomment %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,8 @@
 
   {% block javascript %}{% endblock %}
 
-  {% render_bundle 'main' %}
+  <script src="{% static 'build.js' %}"></script>
+  {% comment %} {% render_bundle 'main' %} {% endcomment %}
 
 </body>
 </html>

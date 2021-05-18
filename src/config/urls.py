@@ -46,6 +46,14 @@ if settings.DEBUG:
 # 'django.contrib.staticfiles' app only work in debug mode. this code is for set the static and media url
 # https://docs.djangoproject.com/en/2.1/ref/views/#django.views.static.serve
 
+# print("--------------------------")
+# print("LOCAL_CDN:",settings.LOCAL_CDN)
+# print("STATIC_URL:",settings.STATIC_URL)
+# print("STATIC_ROOT:",settings.STATIC_ROOT)
+# print("MEDIA_URL:",settings.MEDIA_URL)
+# print("MEDIA_ROOT:",settings.MEDIA_ROOT)
+
+
 if settings.LOCAL_CDN:
     from django.urls import re_path
     from django.views.static import serve

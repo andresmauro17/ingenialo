@@ -41,20 +41,11 @@ LOCAL_CDN = False
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"ingenialo-ui","src","assets"),
+    os.path.join(BASE_DIR,"ingenialo-ui","dist"),
 ]
 
-# Webpack loader
-INSTALLED_APPS += (
-    'webpack_loader',
-)
 
 # django-extensions
 INSTALLED_APPS += ['django_extensions']  # noqa F405
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'dist/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'ingenialo-ui/webpack-stats.json'),
-    }
-}
 
